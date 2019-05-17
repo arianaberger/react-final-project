@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-root 'dashboard#home'
+# Potentially edit in future to incorporate with a user login
+root "dashboard#home"
 
   namespace :api do
     resources :accounts, except: [:index]
