@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sender: MyString
+  date: 2019-05-16 20:49:34
+  amount: 1
+
+two:
+  sender: MyString
+  date: 2019-05-16 20:49:34
+  amount: 1
