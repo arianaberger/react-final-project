@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
 
   def home
-    render json: Account.all
+    render plain: "Hello!"
   end
 
 end

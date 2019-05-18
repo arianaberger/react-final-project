@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_17_005056) do
+ActiveRecord::Schema.define(version: 2019_05_18_162204) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -19,24 +19,14 @@ ActiveRecord::Schema.define(version: 2019_05_17_005056) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "credits", force: :cascade do |t|
-    t.string "receiver"
+  create_table "transactions", force: :cascade do |t|
+    t.string "counterparty"
     t.datetime "date"
     t.integer "amount"
     t.integer "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_credits_on_account_id"
-  end
-
-  create_table "debits", force: :cascade do |t|
-    t.string "sender"
-    t.datetime "date"
-    t.integer "amount"
-    t.integer "account_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_debits_on_account_id"
+    t.index ["account_id"], name: "index_transactions_on_account_id"
   end
 
 end

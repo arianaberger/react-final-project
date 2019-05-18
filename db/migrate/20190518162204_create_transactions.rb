@@ -1,7 +1,7 @@
-class CreateDebits < ActiveRecord::Migration[5.2]
+class CreateTransactions < ActiveRecord::Migration[5.2]
   def change
-    create_table :debits do |t|
-      t.string :sender
+    create_table :transactions do |t|
+      t.string :counterparty
       t.datetime :date
       t.integer :amount
 

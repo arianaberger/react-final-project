@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  counterparty: MyString
+  date: 2019-05-18 12:22:04
+  amount: 1
+  account_id: 1
+
+two:
+  counterparty: MyString
+  date: 2019-05-18 12:22:04
+  amount: 1
+  account_id: 1

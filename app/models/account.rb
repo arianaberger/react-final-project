@@ -1,4 +1,3 @@
 class Account < ApplicationRecord
-  has_many :debits
-  has_many :credits
+  has_many :transactions
 end
