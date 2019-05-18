@@ -33,7 +33,7 @@ class Api::TransactionsController < ApplicationController
 
     def transaction_params
       #add .require(:transaction) when form is added
-      params.permit(:counterparty, :amount, :date, :account_id, :parent_id)
+      params.permit(:counterparty, :amount, :date, :account_id, :parent_id, :debit, :percentage)
     end
 
 end
