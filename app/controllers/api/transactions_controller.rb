@@ -1,5 +1,5 @@
 class Api::TransactionsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token #included when testing with postman
   before_action :set_transaction, only: [:destroy]
 
 
