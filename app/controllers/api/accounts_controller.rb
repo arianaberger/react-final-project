@@ -1,4 +1,5 @@
 class Api::AccountsController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def index
     @accounts = Account.all
@@ -17,7 +18,7 @@ class Api::AccountsController < ApplicationController
   private
 
     def account_params
-      params.require(:account).permit(:name, :main_account)
+      params.permit(:name, :main_account)
     end
 
 end
