@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_18_185154) do
+ActiveRecord::Schema.define(version: 2019_05_18_191314) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2019_05_18_185154) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "parent_id"
+    t.boolean "debit"
+    t.integer "percentage"
     t.index ["account_id"], name: "index_transactions_on_account_id"
   end
 
