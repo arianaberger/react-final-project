@@ -9,7 +9,8 @@ class Api::TransactionsController < ApplicationController
   end
 
   def create
-    if @transaction.save
+    transaction = Transaction.new(transaction_params)
+    if transaction.save
       render json: transaction
     else
       render json: { message: transaction.errors}, status: 400
@@ -32,7 +33,7 @@ class Api::TransactionsController < ApplicationController
 
     def transaction_params
       #add .require(:transaction) when form is added
-      params.permit(:counterparty, :amount, :date, :account_id)
+      params.permit(:counterparty, :amount, :date, :account_id, :parent_id)
     end
 
 end
