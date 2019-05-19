@@ -25,10 +25,10 @@ class AddTransactionContainer extends Component {
     return(
       <>
         <div className="AddTransaction">
-          + Add a Deposit
+          <a href="#" className="transaction-link">+ Add a Deposit</a>
         </div>
         <div className="AddTransaction">
-          + Add a Payment
+          <a href="#" className="transaction-link">+ Add a Payment</a>
         </div>
       </>
 

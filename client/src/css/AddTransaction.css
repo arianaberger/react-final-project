@@ -6,3 +6,14 @@
   margin: 5px;
   width: 15%;
 }
+
+.transaction-link {
+  text-decoration: none;
+  color: #fff;
+  background-color: #000;
+}
+
+.transaction-link:hover {
+  color: #000;
+  background-color: cyan;
+}
