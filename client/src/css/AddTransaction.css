@@ -1,0 +1,8 @@
+.AddTransaction {
+  float: left;
+  text-align: left;
+  padding: 2px;
+  display: inline-block;
+  margin: 5px;
+  width: 15%;
+}
