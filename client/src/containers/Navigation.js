@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navbar, Nav} from 'react-bootstrap'
+import {Navbar} from 'react-bootstrap'
 
 function Navigation() {
   return(
@@ -15,11 +15,6 @@ function Navigation() {
         />
         Savvy Saver (logo)
       </Navbar.Brand>
-
-      <Nav className="mr-auto">
-        <Nav.Link href="#home">+ Add Deposit</Nav.Link>
-        <Nav.Link href="#home">+ Add Transaction</Nav.Link>
-      </Nav>
       </Navbar>
     </>
   )
