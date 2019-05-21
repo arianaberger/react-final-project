@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://localhost:3001/api/accounts')
+    fetch('api/accounts')
       .then(resp => resp.json())
       .then(accounts => this.setState({ accounts }))
   }
