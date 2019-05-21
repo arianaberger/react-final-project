@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/AddTransaction.css';
+import './TransactionInput';
 
 class AddTransactionContainer extends Component {
   render() {
