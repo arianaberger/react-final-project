@@ -35,7 +35,9 @@ class App extends Component {
 
   componentDidMount() {
     fetch('api/accounts')
-      .then(resp => resp.json())
+      // .then(resp => resp.json())
+      .then(res => res.text())          // convert to plain text
+      .then(text => console.log("this is the response:", text)) 
       .then(accounts => this.setState({ accounts }))
   }
 
