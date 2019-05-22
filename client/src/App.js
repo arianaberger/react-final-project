@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import './css/App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink
+} from 'react-router-dom';
 import Navigation from './containers/Navigation';
 import FundsContainer from './containers/FundsContainer';
 import AddTransactionContainer from './containers/AddTransactionContainer';
+import './css/App.css';
 
 const funds = [
   {
@@ -36,7 +41,7 @@ class App extends Component {
   componentDidMount() {
     fetch('api/accounts')
       // .then(resp => resp.json())
-      .then(res => res.text())          // convert to plain text
+      .then(res => res.text()) // convert to plain text
       .then(text => console.log("this is the response:", text))
       .then(accounts => this.setState({ accounts }))
   }
@@ -45,12 +50,13 @@ class App extends Component {
     console.log(this.state)
     return (
       <>
+      <Router>
         <Navigation />
-        <div className='App'>
-          <AddTransactionContainer />
-          <FundsContainer funds={funds}/>
-        </div>
-      </>
+	      <Route exact path="/dashboard" component={Navigation} />
+	      <Route exact path="/addtransaction" component={AddTransactionContainer} />
+        <FundsContainer funds={funds} />
+    </Router>
+    </>
     );
   };
 }

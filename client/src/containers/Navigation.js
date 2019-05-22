@@ -1,7 +1,9 @@
 import React from 'react';
 import {Navbar} from 'react-bootstrap'
+import { NavLink } from 'react-router-dom';
 
-function Navigation() {
+
+const Navigation = () => {
   return(
     <>
       <Navbar bg="dark" variant="dark">
@@ -16,6 +18,13 @@ function Navigation() {
         Savvy Saver (logo)
       </Navbar.Brand>
       </Navbar>
+
+    <div className="navbar">
+     <NavLink to="/">Home</NavLink>
+     <NavLink to="/movies">Movies</NavLink>
+     <NavLink to="/directors">Directors</NavLink>
+     <NavLink to="/actors">Actors</NavLink>
+    </div>
     </>
   )
 }
