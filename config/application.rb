@@ -27,7 +27,7 @@ module Api
     #added for rack-cors gem to make calls to localhost:3000
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'localhost:3000'
+        origins 'http://localhost:3000'
         resource '*',
           headers: :any,
           methods: [:get, :post, :put, :patch, :delete, :options, :head]
