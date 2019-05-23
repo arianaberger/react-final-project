@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  NavLink
 } from 'react-router-dom';
 import Navigation from './containers/Navigation';
 import FundsContainer from './containers/FundsContainer';
@@ -22,14 +21,11 @@ class App extends Component {
   componentDidMount() {
     fetch('api/accounts')
       .then(resp => resp.json())
-      // .then(json => console.log(json))
-      // .then(res => res.text()) // convert to plain text
-      // .then(text => console.log("this is the response:", text))
       .then(accounts => this.setState({ accounts }))
   }
 
   render() {
-    console.log("le state is...", this.state.accounts)
+    console.log("the state is:", this.state.accounts)
     return (
       <>
       <Router>

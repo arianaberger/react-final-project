@@ -6,7 +6,7 @@ const Funds = (props) => (
     {props.funds.map(fund =>
       <div className='Fund' key={fund.id}>
         <h3>{fund.name}</h3>
-        <h1>${fund.amount}</h1>
+        <h1>${fund.amount}123</h1>
         Link to Edit
       </div>
     )}
