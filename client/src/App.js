@@ -9,25 +9,6 @@ import FundsContainer from './containers/FundsContainer';
 import AddTransactionContainer from './containers/AddTransactionContainer';
 import './css/App.css';
 
-const funds = [
-  {
-    name: "Treat Yourself",
-    amount: 500
-  },
-  {
-    name: "Give to Others",
-    amount: 400
-  },
-  {
-    name: "Big Purchases",
-    amount: 600
-  },
-  {
-    name: "Savings",
-    amount: 1000
-  }
-]
-
 class App extends Component {
 
   constructor(props) {
@@ -41,18 +22,21 @@ class App extends Component {
   componentDidMount() {
     fetch('api/accounts')
       .then(resp => resp.json())
+      // .then(json => console.log(json))
+      // .then(res => res.text()) // convert to plain text
+      // .then(text => console.log("this is the response:", text))
       .then(accounts => this.setState({ accounts }))
   }
 
   render() {
-    console.log(this.state)
+    console.log("le state is...", this.state.accounts)
     return (
       <>
       <Router>
         <Navigation />
 	      <Route exact path="/dashboard" component={Navigation} />
 	      <Route exact path="/addtransaction" component={AddTransactionContainer} />
-        <FundsContainer funds={funds} />
+        <FundsContainer funds={this.state.accounts} />
     </Router>
     </>
     );
