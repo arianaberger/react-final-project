@@ -1,6 +1,0 @@
-{
-  "proxy": "http://localhost:3001/",
-  "name": "api",
-  "private": true,
-  "dependencies": {},
-}
