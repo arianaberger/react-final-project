@@ -1,3 +1,12 @@
+Import provider
+create a store.js and import it into index.js
+https://github.com/BekahHW/Women-of-Trauma-Client/blob/master/src/store.js
+
+
+
+
+
+
 The code should be written in ES6 as much as possible
 Use the create-react-app generator to start your project.
 Follow the instructions on this repo to setup the generator: create-react-app
