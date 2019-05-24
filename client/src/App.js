@@ -8,6 +8,7 @@ import FundsContainer from './containers/FundsContainer';
 import AddTransactionContainer from './containers/AddTransactionContainer';
 import './css/App.css';
 
+
 class App extends Component {
 
   constructor(props) {
@@ -29,10 +30,13 @@ class App extends Component {
     return (
       <>
       <Router>
+        <div>
         <Navigation />
-	      <Route exact path="/dashboard" component={Navigation} />
-	      <Route exact path="/addtransaction" component={AddTransactionContainer} />
-        <FundsContainer funds={this.state.accounts} />
+	      <Route exact path="/"
+          render={(props) => <AccountsDashboard {...props} funds={this.state.accounts} />
+	      <Route
+          exact path="/addtransaction"
+          component={AddTransactionContainer} />
     </Router>
     </>
     );
