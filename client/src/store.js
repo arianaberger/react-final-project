@@ -6,7 +6,7 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 
-const accountsReducer = (state: [], action) => {
+const accountsReducer = (state: {}, action) => {
   switch (action.type) {
     case 'GET_ACCOUNTS_SUCCESS':
       return action.accounts;
@@ -30,5 +30,4 @@ export default createStore(
   composeEnhancers(
   applyMiddleware(...middleware)
   )
-
 )
