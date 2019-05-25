@@ -1,8 +1,10 @@
-Import provider
+Import provider to index.js
 create a store.js and import it into index.js
 https://github.com/BekahHW/Women-of-Trauma-Client/blob/master/src/store.js
 
-
+Add components to router with links
+Will link to another container that uses componentDidMount to get api data (usingmapstate to props)
+This is handed down to the component
 
 
 

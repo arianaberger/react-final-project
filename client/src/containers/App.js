@@ -27,7 +27,8 @@ class App extends Component {
   }
 
   render() {
-    console.log("the state is:", this.state.accounts)
+    setTimeout(() => {console.log("the state is:", this.state.accounts)}, 1000)
+
     return (
       <>
       <Router>
