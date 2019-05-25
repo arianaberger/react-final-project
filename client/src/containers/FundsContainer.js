@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import Funds from './Funds';
 import { connect } from 'react-redux';
-import { getAccounts} from '../actions/accounts'
+import { getAccounts} from '../actions/accounts';
 
 class FundsContainer extends Component {
+
+  componentDidMount(){
+    this.props.getAccounts()
+  }
+  
   render() {
     console.log("FundsContainer props are:", this.props.accounts)
     return(
