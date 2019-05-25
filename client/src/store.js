@@ -6,22 +6,11 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 
-const accountsReducer = (state = [], action) => {
-  console.log("State&Action:", state, action)
-
-  switch (action.type) {
-    case 'GET_ACCOUNTS_SUCCESS':
-      return action.accounts;
-
-    default:
-    return state;
-  }
-}
+import accounts from './reducers/accounts'
 
 const reducers = combineReducers({
-  accounts: accountsReducer
+  accounts
 });
-
 
 const middleware = [thunk];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

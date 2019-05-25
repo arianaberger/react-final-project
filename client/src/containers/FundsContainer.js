@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Funds from './Funds';
 import { connect } from 'react-redux';
+import { getAccounts} from '../actions/accounts'
 
 class FundsContainer extends Component {
   render() {
@@ -17,4 +18,4 @@ const mapStateToProps = (state) => {
     accounts: state.accounts
   })
 }
-export default connect(mapStateToProps)(FundsContainer)
+export default connect(mapStateToProps, { getAccounts })(FundsContainer)
