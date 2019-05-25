@@ -3,6 +3,7 @@ import '../css/Funds.css';
 
 const Funds = (props) => (
   <div className="wrapper">
+  --This is the funds container--
     {props.funds.map(fund =>
       <div className='Fund' key={fund.id}>
         <h3>{fund.name}</h3>
