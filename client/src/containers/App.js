@@ -8,6 +8,7 @@ import FundsContainer from './FundsContainer';
 import AddTransactionContainer from './AddTransactionContainer';
 import '../css/App.css';
 
+
 const Main = () =>  <h1>"Hello"</h1>
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
       <>
       <Router>
         <NavBar />
+        <FundsContainer />
 	      <Route exact path="/"
           component={Main}
            />

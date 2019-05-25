@@ -7,7 +7,8 @@ import {
 import thunk from 'redux-thunk';
 
 const accountsReducer = (state = [], action) => {
-  console.log("HELLO", state, action)
+  console.log("State&Action:", state, action)
+
   switch (action.type) {
     case 'GET_ACCOUNTS_SUCCESS':
       return action.accounts;
@@ -18,7 +19,6 @@ const accountsReducer = (state = [], action) => {
 }
 
 const reducers = combineReducers({
-  //FIX! without the empty array it's returning undefined
   accounts: accountsReducer
 });
 
