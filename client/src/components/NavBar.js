@@ -8,8 +8,7 @@ const NavBar = () => {
     <>
     <div className="navbar">
      <NavLink to="/">[ Home]</NavLink>
-     <NavLink to="/add-deposit">[ + Add Deposit ]</NavLink>
-     <NavLink to="/add-payment">[ + Add Payment ]</NavLink>
+     <NavLink to="/addtransaction">[ + Add transaction ]</NavLink>
     </div>
     </>
   )

@@ -8,35 +8,14 @@ import FundsContainer from './FundsContainer';
 import AddTransactionContainer from './AddTransactionContainer';
 import '../css/App.css';
 
-
-const Main = () =>  <h1>"Hello"</h1>
-
 class App extends Component {
-
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      accounts: []
-    }
-  }
-
-  componentDidMount() {
-    fetch('api/accounts')
-      .then(resp => resp.json())
-      .then(accounts => this.setState({ accounts }))
-  }
-
   render() {
-    setTimeout(() => {console.log("the state is:", this.state.accounts)}, 1000)
-
     return (
       <>
       <Router>
         <NavBar />
-        <FundsContainer />
 	      <Route exact path="/"
-          component={Main}
+          component={FundsContainer}
            />
 	      <Route
           exact path="/addtransaction"

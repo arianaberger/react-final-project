@@ -8,7 +8,7 @@ class FundsContainer extends Component {
   componentDidMount(){
     this.props.getAccounts()
   }
-  
+
   render() {
     console.log("FundsContainer props are:", this.props.accounts)
     return(
@@ -23,4 +23,5 @@ const mapStateToProps = (state) => {
     accounts: state.accounts
   })
 }
+
 export default connect(mapStateToProps, { getAccounts })(FundsContainer)
