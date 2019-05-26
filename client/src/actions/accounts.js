@@ -9,7 +9,8 @@ const setAccounts = accounts => {
 
 export const getAccounts = () => {
   return dispatch => {
-    return fetch(`${API_URL}/accounts`)
+    //fix issue with API_URL const!
+    return fetch(`http://localhost:3001/api/accounts`)
     .then(response => response.json())
     .then(accounts => dispatch(setAccounts(accounts)))
     .catch(error => console.log(error))
