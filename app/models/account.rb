@@ -6,7 +6,7 @@ class Account < ApplicationRecord
     debits = []
     credits = []
 
-    debits = account.transactions.each do |t|
+    account.transactions.each do |t|
       if t.debit
         debits.push(t.amount)
       else
