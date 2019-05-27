@@ -15,7 +15,6 @@ class FundsContainer extends Component {
       <Funds funds={this.props.accounts} />
     )
   }
-
 }
 
 const mapStateToProps = (state) => {
