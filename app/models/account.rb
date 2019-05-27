@@ -1,8 +1,8 @@
 class Account < ApplicationRecord
   has_many :transactions
 
-  def self.account_total(account_id)
-    account = Account.find_by(id: account_id)
+  def account_total
+    account = Account.find_by(id: params[:id])
     debits = []
     credits = []
 
