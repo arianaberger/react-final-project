@@ -2,11 +2,10 @@ class Account < ApplicationRecord
   has_many :transactions
 
   def account_total
-    account = Account.find_by(id: params[:id])
     debits = []
     credits = []
 
-    account.transactions.each do |t|
+    self.transactions.each do |t|
       if t.debit
         debits.push(t.amount)
       else

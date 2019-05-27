@@ -8,8 +8,8 @@ class Api::AccountsController < ApplicationController
   end
 
   def show
-    # render json: @account
-    render json: @account.as_json(methods: [:account_total])
+    account_total = @account.account_total
+    render json: account_total
   end
 
   def create

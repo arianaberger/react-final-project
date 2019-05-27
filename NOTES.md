@@ -1,3 +1,6 @@
+1. Seed data keeps duplicating on componentDidMount
+2. How to get account totals? State or model method?
+
 Import provider to index.js
 create a store.js and import it into index.js
 https://github.com/BekahHW/Women-of-Trauma-Client/blob/master/src/store.js
