@@ -6,6 +6,7 @@ import {
 import NavBar from '../components/NavBar';
 import FundsContainer from './FundsContainer';
 import AddTransactionContainer from './AddTransactionContainer';
+import AccountForm from './AccountForm';
 import '../css/App.css';
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
       <>
       <Router>
         <NavBar />
+        <AccountForm />
 	      <Route exact path="/"
           component={FundsContainer}
            />
