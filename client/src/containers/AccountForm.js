@@ -16,21 +16,22 @@ class AccountForm extends Component {
 
   handOnSubmit = event => {
     event.preventDefault();
+    //Console log not working
     console.log("form submitted")
   }
 
   render() {
-    const {name} = this.props.accountFormData
+    const {accountName} = this.props.accountFormData
 
     return(
       <div>
-        <form onSubmit={this.handOnSubmit}>
+        <form onSubmit={this.handleOnSubmit}>
           <label htmlform="Name">Name:</label>
             <input
               type="string"
               onChange={this.handleOnChange}
-              name="name"
-              value={name}
+              name="accountName"
+              value={accountName}
               />
         </form>
 
