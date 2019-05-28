@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/Funds.css';
+import AccountForm from './AccountForm'
 
 const Funds = (props) => (
   <div className="wrapper">
@@ -7,7 +8,7 @@ const Funds = (props) => (
       <div className='Fund' key={fund.id}>
         <h3>{fund.name}</h3>
         <h1>${fund.amount}123</h1>
-        Link to Edit
+        <AccountForm fundId={fund.id} />
       </div>
     )}
   </div>

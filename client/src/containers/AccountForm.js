@@ -6,10 +6,11 @@ import { createAccount } from '../actions/accounts'
 class AccountForm extends Component {
 
 //Need to review what is going on here!
-//Text reset after every letter entered if I keep 'name'!!
+//Somehow incorporate the right account id
   handleOnChange = event => {
     const currentAccountFormData = Object.assign({}, this.props.accountFormData, {
-      name: event.target.value
+      name: event.target.value,
+      id: this.props.fundId
     })
     this.props.updateAccountFormData(currentAccountFormData)
   }

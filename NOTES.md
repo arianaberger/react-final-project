@@ -1,4 +1,4 @@
-1. Seed data keeps duplicating on componentDidMount
+1. Finish submit function for account update form
 2. How to get account totals? State or model method? => show method gives account total given the account id
 
 Import provider to index.js
