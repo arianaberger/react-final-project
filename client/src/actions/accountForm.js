@@ -6,7 +6,7 @@ export const updateAccountFormData = accountFormData => {
 }
 
 export const resetAccountForm = () => {
-  return (
+  return {
     type: 'RESET_ACCOUNT_FORM'
-  )
+  }
 }

@@ -18,7 +18,7 @@ export const getAccounts = () => {
 
 export const createAccount = account => {
   return dispatch => {
-    return fetch(`${API_URL}/accounts/${account.id}`){
+    return fetch(`${API_URL}/accounts/${account.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'applications/json'

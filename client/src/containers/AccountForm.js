@@ -7,9 +7,9 @@ class AccountForm extends Component {
 
 //Need to review what is going on here!
   handleOnChange = event => {
-    const name = event.target;
+    const { name, value } = event.target;
     const currentAccountFormData = Object.assign({}, this.props.accountFormData, {
-      name: value
+      [name]: value
     })
     this.props.updateAccountFormData(currentAccountFormData)
   }
