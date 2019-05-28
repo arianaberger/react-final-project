@@ -6,6 +6,7 @@ import { createAccount } from '../actions/accounts'
 class AccountForm extends Component {
 
 //Need to review what is going on here!
+//Text reset after every letter entered!
   handleOnChange = event => {
     const { name, value } = event.target;
     const currentAccountFormData = Object.assign({}, this.props.accountFormData, {
@@ -21,7 +22,7 @@ class AccountForm extends Component {
   }
 
   render() {
-    const {accountName} = this.props.accountFormData
+    const {name} = this.props.accountFormData
 
     return(
       <div>
@@ -30,8 +31,8 @@ class AccountForm extends Component {
             <input
               type="string"
               onChange={this.handleOnChange}
-              name="accountName"
-              value={accountName}
+              name="name"
+              value={name}
               />
         </form>
 
