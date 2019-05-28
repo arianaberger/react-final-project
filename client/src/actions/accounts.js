@@ -15,3 +15,16 @@ export const getAccounts = () => {
     .catch(error => console.log(error))
   }
 }
+
+export const createAccount = account => {
+  return dispatch => {
+    return fetch(`${API_URL}/accounts/${account.id}`){
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'applications/json'
+    },
+      body: JSON.stringify({ account: account })
+  })
+
+  }
+}
