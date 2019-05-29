@@ -29,13 +29,14 @@ export const updateAccount = account => {
   return dispatch => {
     return fetch(`${API_URL}/accounts/${account.id}`, {
       method: 'PATCH',
+      body: JSON.stringify({account: account}),
       headers: {
         'Content-Type': 'applications/json'
-    },
-      body: JSON.stringify({ account: account })
+    }
   })
   .then(response => response.json())
   .then(account => {
+    console.log("updateaccount json response:", account)
     dispatch(editAccount(account))
     dispatch(resetAccountForm())
   })

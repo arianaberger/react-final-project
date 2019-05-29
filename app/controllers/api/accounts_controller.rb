@@ -22,7 +22,7 @@ class Api::AccountsController < ApplicationController
   end
 
   def update
-    # raise account_params.inspect
+    raise account_params.inspect
     if @account.update(account_params)
       render json: @account
     else
@@ -46,8 +46,8 @@ class Api::AccountsController < ApplicationController
     end
 
       def account_params
-        #add .require(:account) when form is added
-        params.permit(:name, :main_account)
+        # error: params is missing or value is empty
+        params.require(:account).permit(:name, :main_account)
       end
 
 end

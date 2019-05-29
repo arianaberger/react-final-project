@@ -1,6 +1,6 @@
 export const updateAccountFormData = accountFormData => {
   return {
-    type: 'UPDATED_DATA',
+    type: 'UPDATED_ACCOUNT',
     accountFormData
   }
 }

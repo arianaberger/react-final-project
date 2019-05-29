@@ -4,8 +4,7 @@ export default (state = [], action) => {
       return action.accounts;
 
       case 'UPDATE_ACCOUNT_SUCCESS' :
-        // return state;
-        console.log("you hit the reducer")
+          console.log("state from accounts reducer:", action.account)
 
       default: return state;
     }

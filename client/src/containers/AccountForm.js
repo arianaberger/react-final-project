@@ -16,8 +16,6 @@ class AccountForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    //the account form data I am accessing is undefined!
-    console.log("handle submit button:", this.props.AccountFormData)
     this.props.updateAccount(this.props.accountFormData)
       .then(this.props.resetAccountForm)
   }
