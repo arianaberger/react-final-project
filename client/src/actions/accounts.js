@@ -9,7 +9,7 @@ const setAccounts = accounts => {
   }
 }
 
-const updateAccount = account => {
+const editAccount = account => {
   return {
     type: 'UPDATE_ACCOUNT_SUCCESS',
     account
@@ -25,7 +25,7 @@ export const getAccounts = () => {
   }
 }
 
-export const createAccount = account => {
+export const updateAccount = account => {
   return dispatch => {
     return fetch(`${API_URL}/accounts/${account.id}`, {
       method: 'PATCH',
@@ -36,7 +36,7 @@ export const createAccount = account => {
   })
   .then(response => response.json())
   .then(account => {
-    dispatch(updateAccount(account))
+    dispatch(editAccount(account))
     dispatch(resetAccountForm())
   })
   .catch(error => console.log(error))

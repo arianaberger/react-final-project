@@ -1,4 +1,4 @@
-1. Finish submit function for account update form
+1. Finish reducer for account update form and make sure it's being updated in the backend
 2. How to get account totals? State or model method? => show method gives account total given the account id
 
 Import provider to index.js

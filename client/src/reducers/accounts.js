@@ -3,12 +3,10 @@ export default (state = [], action) => {
     case 'GET_ACCOUNTS_SUCCESS':
       return action.accounts;
 
-      case 'UPDATE_ACCOUNT_SUCCESS':
-        return {
-          ...state,
-          account: [...state.accounts.filter(account )]
-          state.concat(action.account);
+      case 'UPDATE_ACCOUNT_SUCCESS' :
+        // return state;
+        console.log("you hit the reducer")
 
       default: return state;
+    }
   }
-}
