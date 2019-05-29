@@ -6,7 +6,6 @@ import { createAccount } from '../actions/accounts'
 class AccountForm extends Component {
 
 //Need to review what is going on here!
-//Somehow incorporate the right account id
   handleOnChange = event => {
     const currentAccountFormData = Object.assign({}, this.props.accountFormData, {
       name: event.target.value,
@@ -15,10 +14,10 @@ class AccountForm extends Component {
     this.props.updateAccountFormData(currentAccountFormData)
   }
 
-  handOnSubmit = event => {
+  handleOnSubmit = event => {
     event.preventDefault();
-    //Console log not working
-    console.log("form submitted")
+    this.props.createAccount(this.props.accountFormData)
+      .then(this.props.resetAccountForm)
   }
 
   render() {
@@ -27,18 +26,16 @@ class AccountForm extends Component {
     return(
       <div>
         <form onSubmit={this.handleOnSubmit}>
-          <label htmlform="Name">Name:</label>
+          <label>Name:
             <input
-              type="string"
+              type="text"
               onChange={this.handleOnChange}
               name="accountName"
               value={accountName}
               />
+          </label>
+          <input type="submit" value="Update" />
         </form>
-
-        <button type="submit">
-          Update
-        </button>
       </div>
     )
   }

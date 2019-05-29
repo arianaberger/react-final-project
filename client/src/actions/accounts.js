@@ -1,9 +1,18 @@
+import { resetAccountForm } from './accountForm'
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 const setAccounts = accounts => {
   return {
     type: 'GET_ACCOUNTS_SUCCESS',
     accounts
+  }
+}
+
+const updateAccount = account => {
+  return {
+    type: 'UPDATE_ACCOUNT_SUCCESS',
+    account
   }
 }
 
@@ -25,6 +34,11 @@ export const createAccount = account => {
     },
       body: JSON.stringify({ account: account })
   })
-
+  .then(response => response.json())
+  .then(account => {
+    dispatch(updateAccount(account))
+    dispatch(resetAccountForm())
+  })
+  .catch(error => console.log(error))
   }
 }
