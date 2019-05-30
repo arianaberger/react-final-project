@@ -22,7 +22,6 @@ class Api::AccountsController < ApplicationController
   end
 
   def update
-    raise account_params.inspect
     if @account.update(account_params)
       render json: @account
     else
