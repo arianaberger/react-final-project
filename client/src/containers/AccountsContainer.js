@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import Funds from './Funds';
+import Accounts from './Accounts';
 import { connect } from 'react-redux';
 import { getAccounts} from '../actions/accounts';
 
-class FundsContainer extends Component {
+class AccountsContainer extends Component {
 
   componentDidMount(){
     this.props.getAccounts()
   }
 
   render() {
-    console.log("FundsContainer props are:", this.props.accounts)
+    console.log("AccountsContainer props are:", this.props.accounts)
     return(
-      <Funds funds={this.props.accounts} />
+      <Accounts accounts={this.props.accounts} />
     )
   }
 }
@@ -23,4 +23,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, { getAccounts })(FundsContainer)
+export default connect(mapStateToProps, { getAccounts })(AccountsContainer)

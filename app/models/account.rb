@@ -1,7 +1,13 @@
 class Account < ApplicationRecord
   has_many :transactions
 
-  def account_total
+  def update_totals(accounts)
+    accounts.each do |account|
+      account.account_total = accounts.calc_account_total
+    end
+  end
+
+  def calc_account_total
     debits = []
     credits = []
 

@@ -4,7 +4,7 @@ import {
   Route,
 } from 'react-router-dom';
 import NavBar from '../components/NavBar';
-import FundsContainer from './FundsContainer';
+import AccountsContainer from './AccountsContainer';
 import AddTransactionContainer from './AddTransactionContainer';
 import '../css/App.css';
 
@@ -15,7 +15,7 @@ class App extends Component {
       <Router>
         <NavBar />
 	      <Route exact path="/"
-          component={FundsContainer}
+          component={AccountsContainer}
            />
 	      <Route
           exact path="/addtransaction"

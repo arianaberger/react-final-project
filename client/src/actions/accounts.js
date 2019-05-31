@@ -27,19 +27,20 @@ export const getAccounts = () => {
 }
 
 
-
-export function updateAccount(id){
+//NOT MY CODE, why wasn't what I had before not working?
+export const updateAccount = id => {
   return function(dispatch){
     return patchAccount(id).then(account =>{
       if (account.status){
         alert(`Status: ${account.status}, ${account.error}`)
       } else {
         dispatch(patchAccountSuccess(account))
+        //reset form not working, says resetAccountForm is not defined
+        dispatch(resetAccountForm())
       }
     })
   }
 }
-
 
 async function patchAccount(account){
   const url = `/api/accounts/${account.id}.json;`
@@ -57,7 +58,7 @@ const jsonData = await response.json();
 return jsonData;
 }
 
-
+//MY OLD CODE:
 // export const updateAccount = account => {
 //   return dispatch => {
 //     return fetch(`${API_URL}/accounts/${account.id}`, {

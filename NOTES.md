@@ -1,7 +1,6 @@
-1. Finish reducer for account update form and make sure it's being updated in the backend
-  - AccountFormData is undefined??
-  - Account controller doesn't seem to be getting correct params
-  - Is there an issue with my reducer/actions? Or perhaps my form?
+1. Account update form is not my code but is working
+  - update component when state is updated
+  - resset form is not working
 2. How to get account totals? State or model method? => show method gives account total given the account id
 
 Import provider to index.js
