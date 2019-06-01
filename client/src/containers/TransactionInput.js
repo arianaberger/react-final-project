@@ -13,6 +13,15 @@ class TransactionInput extends Component {
     percentage: 0,
   }
 
+
+  componentDidMount() {
+    if (this.props.match.url === "/credit") {
+      this.setState({
+        debit: false
+      })
+    }
+  }
+
   handleOnChange(event) {
     this.setState({
       text: event.target.value
