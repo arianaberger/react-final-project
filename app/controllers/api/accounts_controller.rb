@@ -1,5 +1,6 @@
 class Api::AccountsController < ApplicationController
-  skip_before_action :verify_authenticity_token #included when testing with postman
+  # i'm assuming skipping authentication is not good?
+  skip_before_action :verify_authenticity_token
   before_action :set_account, only: [:show, :update, :destroy]
 
   def index
@@ -8,8 +9,7 @@ class Api::AccountsController < ApplicationController
   end
 
   def show
-    account_total = @account.calc_account_total
-    render json: account_total
+    render json: @account
   end
 
   def create
