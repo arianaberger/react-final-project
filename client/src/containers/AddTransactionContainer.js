@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import '../css/AddTransaction.css';
 import './TransactionInput';
 
@@ -7,10 +8,10 @@ class AddTransactionContainer extends Component {
     return(
       <>
         <div className="AddTransaction">
-          <a href="#" className="transaction-link">+ Add a Deposit</a>
+          <NavLink to="/debit" className="transaction-link">+ Add a Deposit</NavLink>
         </div>
         <div className="AddTransaction">
-          <a href="#" className="transaction-link">+ Add a Payment</a>
+          <NavLink to="/credit" className="transaction-link">+ Add a Payment</NavLink>
         </div>
       </>
 

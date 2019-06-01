@@ -6,6 +6,7 @@ import {
 import NavBar from '../components/NavBar';
 import AccountsContainer from './AccountsContainer';
 import AddTransactionContainer from './AddTransactionContainer';
+import TransactionInput from './TransactionInput';
 import '../css/App.css';
 
 class App extends Component {
@@ -20,6 +21,12 @@ class App extends Component {
 	      <Route
           exact path="/addtransaction"
           component={AddTransactionContainer} />
+        <Route
+          exact path="/debit"
+          component={TransactionInput} />
+        <Route
+          exact path="/credit"
+          component={TransactionInput} />
     </Router>
     </>
     );
