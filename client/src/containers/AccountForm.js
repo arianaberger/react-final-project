@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateAccountFormData } from '../actions/accountForm'
+import { updateAccountFormData, resetAccountForm } from '../actions/accountForm'
 import { updateAccount } from '../actions/accounts'
 
 class AccountForm extends Component {
@@ -49,5 +49,6 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
   updateAccountFormData,
-  updateAccount
+  updateAccount,
+  resetAccountForm
 })(AccountForm)

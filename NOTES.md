@@ -1,7 +1,6 @@
-1. Account update form is not my code but is working
-  - update component when state is updated
-  - resset form is not working
+1. reset account form is not working in actions/accounts.js line 39
 2. How to get account totals? State or model method? => show method gives account total given the account id
+3. rename fundid to account id
 
 Import provider to index.js
 create a store.js and import it into index.js
