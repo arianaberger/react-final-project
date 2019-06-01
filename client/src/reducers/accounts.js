@@ -5,15 +5,23 @@ transactions: []}, action) => {
       return {...state, accounts: action.accounts}
 
       case 'UPDATE_ACCOUNT_SUCCESS' :
-        const new_state = () => {
-          return {...state,
-          accounts: [...state.accounts.filter(account => account.id !== action.account.id)]
-          }
-        }
+      //new_state is a function because I couldn't figure out how to get the code working otherwise!
+        // const new_state = () => {
+        //   return {...state,
+        //   accounts: [...state.accounts.filter(account => account.id !== action.account.id)]
+        //   }
+        // }
+        // return {
+        //   ...new_state(),
+        //   accounts: [
+        //     ...new_state().accounts, action.account
+        //   ]
+        // }
+
         return {
-          ...new_state(),
+          ...state,
           accounts: [
-            ...new_state().accounts, action.account
+            ...state.accounts.map((account) => account.id === action.account.id ? {...account, name: action.account.name} : account)
           ]
         }
 
