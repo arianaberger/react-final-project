@@ -7,10 +7,10 @@ class ChooseTransactionComponent extends Component {
     return(
       <>
       <div className="AddTransaction">
-        <NavLink to="/debit" className="transaction-link">+ Add a Deposit</NavLink>
+        <NavLink to="addtransaction/debit" className="transaction-link">+ Add a Deposit</NavLink>
       </div>
       <div className="AddTransaction">
-        <NavLink to="/credit" className="transaction-link">
+        <NavLink to="addtransaction/credit" className="transaction-link">
           + Add a Payment
         </NavLink>
       </div>

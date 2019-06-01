@@ -17,7 +17,7 @@ class AddTransactionComponent extends Component {
 
   componentDidMount() {
     this.props.getAccounts()
-    if (this.props.match.url === "/credit") {
+    if (this.props.match.url === "addtransaction/credit") {
       this.setState({
         debit: false
       })

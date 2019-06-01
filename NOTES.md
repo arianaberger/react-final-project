@@ -1,5 +1,6 @@
 1. reset account form is not working in actions/accounts.js line 39
-2. How to get account totals? State or model method? => show method gives account total given the account id
+2. TransactionInput is not getting props???
+
 
 Import provider to index.js
 create a store.js and import it into index.js
