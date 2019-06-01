@@ -10,7 +10,8 @@ class AccountsContainer extends Component {
   }
 
   render() {
-    // console.log("AccountsContainer props are:", this.props.accounts.accounts)
+    //how are my props here undefined? Also account total is not showing up and should be zero
+    console.log("AccountsContainer props are:", this.props.accounts)
     return(
       <Accounts accounts={this.props.accounts} />
     )

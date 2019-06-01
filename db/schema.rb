@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_06_01_022656) do
     t.boolean "main_account"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "account_total"
+    t.integer "account_total", default: 0
   end
 
   create_table "transactions", force: :cascade do |t|
