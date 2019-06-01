@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import AccountsContainer from './AccountsContainer';
-import AddTransactionContainer from './AddTransactionContainer';
+import ChooseTransactionContainer from './ChooseTransactionContainer';
 import TransactionInput from './TransactionInput';
 import '../css/App.css';
 
@@ -20,13 +20,13 @@ class App extends Component {
            />
 	      <Route
           exact path="/addtransaction"
-          component={AddTransactionContainer} />
+          component={ChooseTransactionContainer} />
         <Route
           exact path="/debit"
-          component={TransactionInput} />
+          component={AddTransactionComponent} />
         <Route
           exact path="/credit"
-          component={TransactionInput} />
+          component={AddTransactionComponent} />
     </Router>
     </>
     );
