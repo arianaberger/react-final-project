@@ -9,12 +9,11 @@ transactions: []}, action) => {
           return {...state,
           accounts: [...state.accounts.filter(account => account.id !== action.account.id)]
           }
-          debugger
         }
         return {
-          ...new_state,
+          ...new_state(),
           accounts: [
-            ...new_state.accounts, action.account
+            ...new_state().accounts, action.account
           ]
         }
 

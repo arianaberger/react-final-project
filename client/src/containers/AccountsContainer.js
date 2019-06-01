@@ -10,7 +10,7 @@ class AccountsContainer extends Component {
   }
 
   render() {
-    console.log("AccountsContainer props are:", this.props.accounts.accounts)
+    // console.log("AccountsContainer props are:", this.props.accounts.accounts)
     return(
       <Accounts accounts={this.props.accounts} />
     )
@@ -19,6 +19,7 @@ class AccountsContainer extends Component {
 
 const mapStateToProps = (state) => {
   return ({
+    //is accounts.accounts. not considered best practice? Or is this okay?
     accounts: state.accounts.accounts
   })
 }
