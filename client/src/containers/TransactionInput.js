@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { getAccounts} from '../actions/accounts';
 import '../css/AddTransaction.css';
 
 class TransactionInput extends Component {
@@ -13,15 +11,6 @@ class TransactionInput extends Component {
     parent_id: '',
     debit: true,
     percentage: 0,
-  }
-
-  componentDidMount() {
-    this.props.getAccounts()
-    if (this.props.match.url === "/credit") {
-      this.setState({
-        debit: false
-      })
-    }
   }
 
   handleOnChange(event) {
@@ -82,10 +71,4 @@ class TransactionInput extends Component {
 
 }
 
-const mapStateToProps = (state) => {
-  return ({
-    accounts: state.accounts.accounts
-  })
-}
-
-export default connect(mapStateToProps, { getAccounts })(TransactionInput)
+export default TransactionInput

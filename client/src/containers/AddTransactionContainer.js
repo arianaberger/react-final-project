@@ -4,7 +4,6 @@ import { NavLink,
   Route, } from 'react-router-dom';
 import ChooseTransactionComponent from '../components/ChooseTransactionComponent'
 import AddTransactionComponent from './AddTransactionComponent'
-
 import '../css/AddTransaction.css';
 
 class AddTransactionContainer extends Component {
