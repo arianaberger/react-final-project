@@ -10,7 +10,7 @@ class AccountsContainer extends Component {
   }
 
   render() {
-    console.log("AccountsContainer props are:", this.props.accounts)
+    console.log("AccountsContainer props are:", this.props.accounts.accounts)
     return(
       <Accounts accounts={this.props.accounts} />
     )
@@ -19,7 +19,7 @@ class AccountsContainer extends Component {
 
 const mapStateToProps = (state) => {
   return ({
-    accounts: state.accounts
+    accounts: state.accounts.accounts
   })
 }
 
