@@ -11,6 +11,7 @@ class Api::TransactionsController < ApplicationController
   def create
     transaction = Transaction.new(transaction_params)
     if transaction.save
+      update_account_total(transaction.account_id)
       render json: transaction
     else
       render json: { message: transaction.errors}, status: 400

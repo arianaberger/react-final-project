@@ -4,7 +4,6 @@ class Api::AccountsController < ApplicationController
 
   def index
     @accounts = Account.all
-    # update_totals(@accounts)
     render json: @accounts
   end
 

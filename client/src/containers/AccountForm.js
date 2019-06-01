@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+//Does resetAccountForm need to be imported?
 import { updateAccountFormData, resetAccountForm } from '../actions/accountForm'
 import { updateAccount } from '../actions/accounts'
 
@@ -9,7 +10,7 @@ class AccountForm extends Component {
   handleOnChange = event => {
     const currentAccountFormData = Object.assign({}, this.props.accountFormData, {
       name: event.target.value,
-      id: this.props.fundId
+      id: this.props.accountId
     })
     this.props.updateAccountFormData(currentAccountFormData)
   }

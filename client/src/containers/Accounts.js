@@ -8,7 +8,7 @@ const Accounts = (props) => (
       <div className='Accounts' key={account.id}>
         <h3>{account.name}</h3>
         <h1>${account.amount}123</h1>
-        <AccountForm fundId={account.id} />
+        <AccountForm accountId={account.id} />
       </div>
     )}
   </div>
