@@ -4,6 +4,7 @@ import { NavLink,
   Route, } from 'react-router-dom';
 // import ChooseTransactionComponent from '../components/ChooseTransactionComponent'
 import AddTransactionComponent from './AddTransactionComponent'
+import TransactionInput from './TransactionInput'
 import '../css/AddTransaction.css';
 
 class AddTransactionContainer extends Component {
@@ -23,6 +24,8 @@ class AddTransactionContainer extends Component {
       debit_form: true,
       show_transaction_form: true
     })
+    console.log(this.state)
+
   }
 
   handleClickCredit(event) {
@@ -30,6 +33,7 @@ class AddTransactionContainer extends Component {
       debit_form: false,
       show_transaction_form: true
     })
+    console.log(this.state)
   }
 
   render() {
@@ -41,7 +45,7 @@ class AddTransactionContainer extends Component {
     )
     if (this.state.show_transaction_form) {
       return (
-        "show the form!"
+        "HELLO"
       )
     }
 
