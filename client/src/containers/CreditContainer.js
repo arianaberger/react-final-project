@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getAccounts} from '../actions/accounts';
 import TransactionInput from './TransactionInput'
 
-class AddTransactionComponent extends Component {
+class CreditContainer extends Component {
 
   state = {
     amount: '',
@@ -37,4 +37,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, { getAccounts })(AddTransactionComponent)
+export default connect(mapStateToProps, { getAccounts })(CreditContainer)

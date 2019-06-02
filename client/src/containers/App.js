@@ -5,8 +5,8 @@ import {
 } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import AccountsContainer from './AccountsContainer';
-import AddTransactionContainer from './AddTransactionContainer';
-import TransactionInput from './TransactionInput';
+import CreditContainer from './CreditContainer';
+import DebitContainer from './DebitContainer';
 import '../css/App.css';
 
 class App extends Component {
@@ -18,9 +18,12 @@ class App extends Component {
 	      <Route exact path="/"
           component={AccountsContainer}
            />
-	      <Route
-          exact path="/addtransaction"
-          component={AddTransactionContainer} />
+         <Route exact path="/addtransaction/debit"
+            component={DebitContainer}
+             />
+         <Route exact path="/addtransaction/credit"
+           component={CreditContainer}
+            />
     </Router>
     </>
     );
