@@ -7,7 +7,11 @@ import TransactionInput from './TransactionInput'
 import '../css/AddTransaction.css';
 
 class DebitContainer extends Component {
-
-
+  render() {
+    return(
+      "Hello"
+    )
+  }
+}
 
 export default DebitContainer

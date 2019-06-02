@@ -18,10 +18,10 @@ class App extends Component {
 	      <Route exact path="/"
           component={AccountsContainer}
            />
-         <Route exact path="/addtransaction/debit"
+         <Route exact path="/debit"
             component={DebitContainer}
              />
-         <Route exact path="/addtransaction/credit"
+         <Route exact path="/credit"
            component={CreditContainer}
             />
     </Router>
