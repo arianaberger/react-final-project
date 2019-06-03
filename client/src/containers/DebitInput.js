@@ -19,11 +19,11 @@ class DebitInput extends Component {
   }
 
   handleOnSubmit = (event) => {
-    event.preventDefault();
-    this.props.addRestaurant(this.state.text);
-    this.setState({
-      text: '',
-    });
+    // event.preventDefault();
+    // this.props.addRestaurant(this.state.text);
+    // this.setState({
+    //   text: '',
+    // });
   }
 
   render() {
