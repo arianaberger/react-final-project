@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getAccounts} from '../actions/accounts';
 
 class DebitContainer extends Component {
+
+  componentDidMount(){
+    this.props.getAccounts()
+
+    const {accounts} = this.props.accounts
+
+    //iterate over accounts to create an array of options for select
+    const list = accounts.map((account) => <option value={account.id} key={account.id} name="account">{account.name}</option>)
+
+  }
 
   state = {
     amount: '',
@@ -30,13 +41,6 @@ class DebitContainer extends Component {
 
   render() {
     console.log("Transaction input props are:", this.props.accounts)
-
-   //  const {accounts} = this.props.accounts
-   //
-   // //iterate over accounts to create an array of options for select
-   // const list = accounts.map((account) =>
-   //   <option value={account.id} key={account.id} name="account">{account.name}</option>
-   // )
 
     return(
       <div>
@@ -83,11 +87,10 @@ class DebitContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  debugger
   return ({
     //is accounts.accounts. not considered best practice? Or is this okay?
     accounts: state.accounts.accounts
   })
 }
 
-export default connect(mapStateToProps)(DebitContainer)
+export default connect(mapStateToProps, { getAccounts })(DebitContainer)
