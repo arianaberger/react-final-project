@@ -7,11 +7,20 @@ class DebitContainer extends Component {
 
   componentDidMount(){
     this.props.getAccounts()
+    let debitInput = this.props.accounts
   }
 
   render() {
+    if (this.props.accounts.count) {
+      this.debitInput = <DebitInput accounts={this.props.accounts} />
+    } else {
+      this.debitInput = "loading..."
+    }
+
     return(
-      <DebitInput accounts={this.props.accounts} />
+      <div>
+      {this.debitInput}
+      </div>
     )
   }
 

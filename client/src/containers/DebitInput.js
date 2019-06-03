@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 
 class DebitInput extends Component {
 
-  state = {
-    amount: '',
-    counterparty: '',
-    date: '',
-    account_id: '',
-    parent_id: '',
-    debit: true,
-    percentage: 0,
-  }
+    state = {
+      amount: '',
+      counterparty: '',
+      date: '',
+      account_id: '',
+      parent_id: '',
+      debit: true,
+      percentage: 0,
+    }
 
   handleOnChange = (event) => {
     this.setState({
@@ -28,7 +28,7 @@ class DebitInput extends Component {
 
   render() {
     console.log("Transaction input props are:", this.props.accounts)
-    const {accounts} = this.props.accounts
+    const accounts = this.props.accounts
     const list = accounts.map((account) => <option value={account.id} key={account.id} name="account">{account.name}</option>)
 
     return(
