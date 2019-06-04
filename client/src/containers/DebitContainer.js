@@ -12,7 +12,7 @@ class DebitContainer extends Component {
   render() {
 
     return(
-      <DebitInput accounts={this.props.accounts} />
+      <DebitInput accounts={this.props.accounts} transactionFormData={this.props.transactionFormData}/>
     )
   }
 

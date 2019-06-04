@@ -4,20 +4,11 @@ import { updateTransactionFormData } from '../actions/transactionForm'
 
 class DebitInput extends Component {
 
-    state = {
-      amount: '',
-      counterparty: '',
-      date: '',
-      account_id: '',
-      parent_id: '',
-      debit: true,
-      percentage: 0,
-    }
-
   handleOnChange = event => {
     const currentTransactionFormData = Object.assign({}, this.props.transactionFormData, {
-
+      [event.target.name]: event.target.value
     });
+    debugger
     this.props.updateTransactionFormData(currentTransactionFormData);
   }
 
@@ -30,6 +21,7 @@ class DebitInput extends Component {
   }
 
   render() {
+    const {amount, counterparty, date, percentage} = this.props.transactionFormData
     const accounts_list = this.props.accounts.map(account => {
       return <option value={account.id} key={account.id} name="account">{account.name}</option>
     })
@@ -42,7 +34,7 @@ class DebitInput extends Component {
               <input
                 type="text"
                 name="amount"
-                value={this.state.amount}
+                value={amount}
                 onChange={this.handleOnChange} />
             </label>
           </div>
@@ -52,7 +44,7 @@ class DebitInput extends Component {
               <input
                 type="text"
                 name="institution"
-                value={this.state.counterparty}
+                value={counterparty}
                 onChange={this.handleOnChange} />
             </label>
         </div>
@@ -62,7 +54,7 @@ class DebitInput extends Component {
             <input
               type="text"
               name="date"
-              value={this.state.date}
+              value={date}
               onChange={this.handleOnChange} />
           </label>
         </div>
@@ -72,7 +64,7 @@ class DebitInput extends Component {
             <input
               type="text"
               name="percentage"
-              value={this.state.date}
+              value={percentage}
               onChange={this.handleOnChange} />
           </label>
         </div>
@@ -89,6 +81,10 @@ class DebitInput extends Component {
       </div>
     )
   }
+}
+
+const mapDispatchToProps = {
+  updateTransactionFormData
 }
 
 export default DebitInput
