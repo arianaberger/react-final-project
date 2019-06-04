@@ -29,9 +29,9 @@ export const getAccounts = () => {
 
 //NOT MY CODE, why wasn't what I had before not working?
 export const updateAccount = id => {
-  return function(dispatch){
+  return function(dispatch) {
     return patchAccount(id).then(account =>{
-      if (account.status){
+      if (account.status) {
         alert(`Status: ${account.status}, ${account.error}`)
       } else {
         dispatch(patchAccountSuccess(account))
@@ -42,7 +42,7 @@ export const updateAccount = id => {
   }
 }
 
-async function patchAccount(account){
+async function patchAccount(account) {
   const url = `/api/accounts/${account.id}.json;`
   const settings = {
     method: 'PATCH',

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { updateTransactionFormData } from '../actions/transactionForm'
 import { connect } from 'react-redux';
-
+import { updateTransactionFormData } from '../actions/transactionForm'
+import { createTransaction } from '../actions/accounts'
 
 class DebitInput extends Component {
 
@@ -14,10 +14,8 @@ class DebitInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    // this.props.addRestaurant(this.state.text);
-    // this.setState({
-    //   text: '',
-    // });
+    this.props.createTransaction(this.props.transactionFormData)
+      .then(this.props.resetTransactionForm)
   }
 
   render() {
@@ -84,7 +82,8 @@ class DebitInput extends Component {
 }
 
 const mapDispatchToProps = {
-    updateTransactionFormData
+    updateTransactionFormData,
+    createTransaction
 }
 
 export default connect(null, mapDispatchToProps)(DebitInput)
