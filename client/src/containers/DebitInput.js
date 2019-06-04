@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { updateTransactionFormData } from '../actions/transactionForm'
+import { connect } from 'react-redux';
 
 
 class DebitInput extends Component {
@@ -8,7 +9,6 @@ class DebitInput extends Component {
     const currentTransactionFormData = Object.assign({}, this.props.transactionFormData, {
       [event.target.name]: event.target.value
     });
-    debugger
     this.props.updateTransactionFormData(currentTransactionFormData);
   }
 
@@ -43,7 +43,7 @@ class DebitInput extends Component {
             <label>Institution:
               <input
                 type="text"
-                name="institution"
+                name="counterparty"
                 value={counterparty}
                 onChange={this.handleOnChange} />
             </label>
@@ -84,7 +84,7 @@ class DebitInput extends Component {
 }
 
 const mapDispatchToProps = {
-  updateTransactionFormData
+    updateTransactionFormData
 }
 
-export default DebitInput
+export default connect(null, mapDispatchToProps)(DebitInput)

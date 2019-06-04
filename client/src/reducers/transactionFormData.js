@@ -10,11 +10,8 @@ const initialState = {
 
 export default(state = initialState, action) => {
   switch(action.type) {
-    case 'UPDATED_ACCOUNT':
-      return action.accountFormData;
-
-    case 'RESET_ACCOUNT_FORM' :
-      return initialState;
+    case 'UPDATED_TRANSACTION_DATA':
+      return action.transactionFormData;
 
     default: return state;
   }

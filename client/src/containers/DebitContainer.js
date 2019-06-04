@@ -10,21 +10,18 @@ class DebitContainer extends Component {
   }
 
   render() {
-
     return(
       <DebitInput accounts={this.props.accounts} transactionFormData={this.props.transactionFormData}/>
     )
   }
-
-
 }
 
 const mapStateToProps = (state) => {
-  return ({
+  return {
     //is accounts.accounts. not considered best practice? Or is this okay?
     accounts: state.accounts.accounts,
     transactionFormData: state.transactionFormData
-  })
+  }
 }
 
 export default connect(mapStateToProps, { getAccounts })(DebitContainer)
