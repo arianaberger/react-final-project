@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { updateTransactionFormData } from '../actions/transactionForm'
+
 
 class DebitInput extends Component {
 
@@ -12,13 +14,14 @@ class DebitInput extends Component {
       percentage: 0,
     }
 
-  handleOnChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
+  handleOnChange = event => {
+    const currentTransactionFormData = Object.assign({}, this.props.transactionFormData, {
+
+    });
+    this.props.updateTransactionFormData(currentTransactionFormData);
   }
 
-  handleOnSubmit = (event) => {
+  handleOnSubmit = event => {
     event.preventDefault();
     // this.props.addRestaurant(this.state.text);
     // this.setState({

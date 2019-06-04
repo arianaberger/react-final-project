@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getAccounts} from '../actions/accounts';
-import TransactionInput from './TransactionInput'
 
 class CreditContainer extends Component {
 
@@ -26,8 +25,7 @@ class CreditContainer extends Component {
 
   render() {
     return(
-      <TransactionInput account={this.props.accounts} />
-          )
+"Hello"          )
         }
       }
 

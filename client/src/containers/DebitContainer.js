@@ -22,7 +22,8 @@ class DebitContainer extends Component {
 const mapStateToProps = (state) => {
   return ({
     //is accounts.accounts. not considered best practice? Or is this okay?
-    accounts: state.accounts.accounts
+    accounts: state.accounts.accounts,
+    transactionFormData: state.transactionFormData
   })
 }
 

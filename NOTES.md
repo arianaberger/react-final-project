@@ -1,7 +1,8 @@
 1. reset account form is not working in actions/accounts.js line 39
-2. TransactionInput is not getting props???
-3. route keeps adding onto the ned of url!!!! gahhh
 
+4. need to just totally redo add transaction links ...
+- can wrap component with withRouter to get access to this.props.match props, etc
+https://medium.com/@jeremylenz/react-router-basics-what-i-wish-theyd-told-me-37b29201d40a
 
 
 
