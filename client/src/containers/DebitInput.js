@@ -19,7 +19,7 @@ class DebitInput extends Component {
   }
 
   handleOnSubmit = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     // this.props.addRestaurant(this.state.text);
     // this.setState({
     //   text: '',
@@ -27,30 +27,34 @@ class DebitInput extends Component {
   }
 
   render() {
-    console.log("Transaction input props are:", this.props.accounts)
-    const accounts = this.props.accounts
-    const list = accounts.map((account) => <option value={account.id} key={account.id} name="account">{account.name}</option>)
+    const accounts_list = this.props.accounts.map(account => {
+      return <option value={account.id} key={account.id} name="account">{account.name}</option>
+    })
 
     return(
       <div>
         <form onSubmit={this.handleOnSubmit}>
+          <div>
+            <label>Amount:
+              <input
+                type="text"
+                name="amount"
+                value={this.state.amount}
+                onChange={this.handleOnChange} />
+            </label>
+          </div>
 
-          <label>Amount:
-            <input
-              type="text"
-              name="amount"
-              value={this.state.amount}
-              onChange={this.handleOnChange} />
-          </label>
+          <div>
+            <label>Institution:
+              <input
+                type="text"
+                name="institution"
+                value={this.state.counterparty}
+                onChange={this.handleOnChange} />
+            </label>
+        </div>
 
-          <label>Institution:
-            <input
-              type="text"
-              name="institution"
-              value={this.state.counterparty}
-              onChange={this.handleOnChange} />
-          </label>
-
+        <div>
           <label>Date:
             <input
               type="text"
@@ -58,7 +62,9 @@ class DebitInput extends Component {
               value={this.state.date}
               onChange={this.handleOnChange} />
           </label>
+        </div>
 
+        <div>
           <label>Percentage:
             <input
               type="text"
@@ -66,6 +72,14 @@ class DebitInput extends Component {
               value={this.state.date}
               onChange={this.handleOnChange} />
           </label>
+        </div>
+
+        <div>
+          Deposit money into the following account:
+          <select>
+            {accounts_list}
+          </select>
+        </div>
 
           <input type="submit" value="Add Transaction" />
         </form>
