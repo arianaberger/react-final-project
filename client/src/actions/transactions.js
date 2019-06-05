@@ -8,12 +8,30 @@ const createTransactionSuccess = transaction => {
 }
 
 //FETCH FUNCTIONS
-export const createTransaction = () => {
+export const createTransaction = (transaction) => {
   return function(dispatch) {
-    if (transaction.status) {
-      alert(`Status: ${transaction.status}, ${transaction.error}`)
-    } else {
-      dispatch(createTransactionSuccess(transaction))
-    }
+    return postTransaction(transaction).then(transaction => {
+      if (transaction.status) {
+        alert(`Status: ${transaction.status}, ${transaction.error}`)
+      } else {
+        dispatch(createTransactionSuccess(transaction))
+      }
+    })
   }
+}
+
+async function postTransaction(transaction) {
+  const url = `/api/transactions.json;`
+  const settings = {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({transaction: transaction})
+  }
+  const fetchResult = fetch(url, settings);
+  const response = await fetchResult;
+  const jsonData = await response.json();
+  return jsonData;
 }

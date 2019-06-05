@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateTransactionFormData } from '../actions/transactionForm'
-import { createTransaction } from '../actions/accounts'
+import { createTransaction } from '../actions/transactions'
 
 class DebitInput extends Component {
 

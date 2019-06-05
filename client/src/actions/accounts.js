@@ -30,7 +30,7 @@ export const getAccounts = () => {
 //NOT MY CODE, why wasn't what I had before not working?
 export const updateAccount = id => {
   return function(dispatch) {
-    return patchAccount(id).then(account =>{
+    return patchAccount(id).then(account => {
       if (account.status) {
         alert(`Status: ${account.status}, ${account.error}`)
       } else {
@@ -51,11 +51,11 @@ async function patchAccount(account) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({account: account})
-}
-const fetchResult = fetch(url, settings);
-const response = await fetchResult;
-const jsonData = await response.json();
-return jsonData;
+  }
+  const fetchResult = fetch(url, settings);
+  const response = await fetchResult;
+  const jsonData = await response.json();
+  return jsonData;
 }
 
 //MY OLD CODE:

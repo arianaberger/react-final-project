@@ -9,6 +9,7 @@ class Api::TransactionsController < ApplicationController
   end
 
   def create
+    raise params.inspect
     transaction = Transaction.new(transaction_params)
     if transaction.save
       update_account_total(transaction.account_id)
@@ -34,7 +35,7 @@ class Api::TransactionsController < ApplicationController
 
     def transaction_params
       #add .require(:transaction) when form is added
-      params.permit(:counterparty, :amount, :date, :account_id, :parent_id, :debit, :percentage)
+      params.require(:transaction).permit(:counterparty, :amount, :date, :account_id, :parent_id, :debit, :percentage)
     end
 
 end
