@@ -9,8 +9,18 @@ class Api::TransactionsController < ApplicationController
   end
 
   def create
-    raise params.inspect
-    transaction = Transaction.new(transaction_params)
+    #create parent transaction
+    if params[:transaction][:debit]
+      transaction_parent = Transaction.new(transaction_params)
+      transaction_parent.parent_id = transaction_parent.id
+      if transaction_parent.save
+        update_bankaccount_total(transaction_parent.amount)
+      else
+        render json: { message: transaction_parent.errors}, status: 400
+    else
+      #create credit
+    end
+
     if transaction.save
       update_account_total(transaction.account_id)
       render json: transaction
