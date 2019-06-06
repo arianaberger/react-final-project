@@ -31,6 +31,7 @@ export const getAccounts = () => {
 export const updateAccount = id => {
   return function(dispatch) {
     return patchAccount(id).then(account => {
+      debugger
       if (account.status) {
         alert(`Status: ${account.status}, ${account.error}`)
       } else {
