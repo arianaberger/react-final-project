@@ -8,6 +8,10 @@ import { createTransaction } from '../actions/transactions'
 
 class DebitContainer extends Component {
 
+  state = {
+    first_submit: false
+  }
+
   componentDidMount(){
     this.props.getAccounts()
     //this.props.getTransactions()
@@ -23,14 +27,14 @@ class DebitContainer extends Component {
   handleFirstSubmit = event => {
     event.preventDefault();
     this.props.createTransaction(this.props.transactionFormData)
-    debugger
+    this.setState({ first_submit: true })
   }
 
   render() {
     return(
       <>
       <DebitFirstInput transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange}  handleFirstSubmit={this.handleFirstSubmit} />
-      <DebitSecondInput accounts={this.props.accounts} transactionFormData={this.props.transactionFormData} />
+      {this.state.first_submit ? <DebitSecondInput accounts={this.props.accounts} transactionFormData={this.props.transactionFormData} /> : null}
 </>
     )
   }

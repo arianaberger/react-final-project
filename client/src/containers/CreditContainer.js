@@ -1,38 +1,89 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getAccounts} from '../actions/accounts';
+import { updateTransactionFormData } from '../actions/transactionForm'
+import { createTransaction } from '../actions/transactions'
 
-class CreditContainer extends Component {
+class DebitInput extends Component {
 
-  state = {
-    amount: '',
-    counterparty: '',
-    date: '',
-    account_id: '',
-    parent_id: '',
-    debit: true,
-    percentage: 0,
+  handleOnChange = event => {
+    const currentTransactionFormData = Object.assign({}, this.props.transactionFormData, {
+      [event.target.name]: event.target.value
+    });
+    this.props.updateTransactionFormData(currentTransactionFormData);
   }
 
-  componentDidMount() {
-    this.props.getAccounts()
-    if (this.props.match.url.includes("credit")) {
-      this.setState({
-        debit: false
-      })
-    }
+  handleOnSubmit = event => {
+    event.preventDefault();
+    this.props.createTransaction(this.props.transactionFormData)
+      .then(this.props.resetTransactionForm)
   }
 
   render() {
-    return(
-"Hello"          )
-        }
-      }
+    const {amount, counterparty, date, percentage} = this.props.transactionFormData
+    const accounts_list = this.props.accounts.map(account => {
+      return <option value={account.id} key={account.id} name="account">{account.name}</option>
+    })
 
-const mapStateToProps = (state) => {
-  return ({
-    accounts: state.accounts.accounts
-  })
+    return(
+      <div>
+        <form onSubmit={this.handleOnSubmit}>
+          <div>
+            <label>Amount:
+              <input
+                type="text"
+                name="amount"
+                value={amount}
+                onChange={this.handleOnChange} />
+            </label>
+          </div>
+
+          <div>
+            <label>Institution:
+              <input
+                type="text"
+                name="counterparty"
+                value={counterparty}
+                onChange={this.handleOnChange} />
+            </label>
+        </div>
+
+        <div>
+          <label>Date:
+            <input
+              type="text"
+              name="date"
+              value={date}
+              onChange={this.handleOnChange} />
+          </label>
+        </div>
+
+        <div>
+          <label>Percentage:
+            <input
+              type="text"
+              name="percentage"
+              value={percentage}
+              onChange={this.handleOnChange} />
+          </label>
+        </div>
+
+        <div>
+          Deposit money into the following account:
+          <select>
+            {accounts_list}
+          </select>
+        </div>
+
+          <input type="submit" value="Add Transaction" />
+        </form>
+      </div>
+    )
+  }
 }
 
-export default connect(mapStateToProps, { getAccounts })(CreditContainer)
+const mapDispatchToProps = {
+    updateTransactionFormData,
+    createTransaction
+}
+
+export default connect(null, mapDispatchToProps)(DebitInput)
