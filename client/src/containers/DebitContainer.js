@@ -33,7 +33,7 @@ class DebitContainer extends Component {
   render() {
     return(
       <>
-      <DebitFirstInput transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange}  handleFirstSubmit={this.handleFirstSubmit} />
+      {this.state.first_submit ? null : <DebitFirstInput transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange} handleFirstSubmit={this.handleFirstSubmit} />}
       {this.state.first_submit ? <DebitSecondInput accounts={this.props.accounts} transactionFormData={this.props.transactionFormData} /> : null}
 </>
     )

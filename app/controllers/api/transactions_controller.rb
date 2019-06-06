@@ -14,18 +14,13 @@ class Api::TransactionsController < ApplicationController
       transaction_parent = Transaction.new(transaction_params)
       transaction_parent.parent_id = transaction_parent.id
       if transaction_parent.save
-        update_bankaccount_total(transaction_parent.amount)
+        update_bankaccount_total(transaction_parent.account_id)
       else
         render json: { message: transaction_parent.errors}, status: 400
-    else
+      end
+    elsif
       #create credit
-    end
-
-    if transaction.save
-      update_account_total(transaction.account_id)
-      render json: transaction
-    else
-      render json: { message: transaction.errors}, status: 400
+      null
     end
   end
 

@@ -13,7 +13,8 @@ import transactionFormData from './reducers/transactionFormData'
 const reducers = combineReducers({
   accounts,
   accountFormData,
-  transactionFormData
+  transactionFormData,
+  transactions
 });
 
 const middleware = [thunk];
