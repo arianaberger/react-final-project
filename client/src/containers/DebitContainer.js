@@ -21,6 +21,7 @@ class DebitContainer extends Component {
     const currentTransactionFormData = Object.assign({}, this.props.transactionFormData, {
       [event.target.name]: event.target.value
     });
+    debugger
     this.props.updateTransactionFormData(currentTransactionFormData);
   }
 
