@@ -1,69 +1,24 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { updateTransactionFormData } from '../actions/transactionForm'
-import { createTransaction } from '../actions/transactions'
 
-class DebitInput extends Component {
-
-  handleOnChange = event => {
-    const currentTransactionFormData = Object.assign({}, this.props.transactionFormData, {
-      [event.target.name]: event.target.value
-    });
-    this.props.updateTransactionFormData(currentTransactionFormData);
-  }
-
-  handleOnSubmit = event => {
-    event.preventDefault();
-    this.props.createTransaction(this.props.transactionFormData)
-      .then(this.props.resetTransactionForm)
-  }
+class DebitSecondInput extends Component {
 
   render() {
-    const {amount, counterparty, date, percentage} = this.props.transactionFormData
+    const percentage = this.props.transactionFormData
+    const percentage_options = [0,1,2,3,4,5,6,7,8,9,10]
+    const percentage_select = percentage_options.map(percent => {
+      return <option value={percent} key={percent} name="percentage">{percent}%</option>
+    })
 
     return(
       <div>
-        <form onSubmit={this.handleOnSubmit}>
-          <div>
-            <label>Amount:
-              <input
-                type="text"
-                name="amount"
-                value={amount}
-                onChange={this.handleOnChange} />
-            </label>
-          </div>
-
-          <div>
-            <label>Institution:
-              <input
-                type="text"
-                name="counterparty"
-                value={counterparty}
-                onChange={this.handleOnChange} />
-            </label>
-        </div>
-
+        <form onSubmit={this.props.handleSecondSubmit}>
         <div>
-          <label>Date:
-            <input
-              type="text"
-              name="date"
-              value={date}
-              onChange={this.handleOnChange} />
+          <label>What percentage of this deposit should be allocated to each fund?
+            <select>
+              {percentage_select}
+            </select>
           </label>
         </div>
-
-        <div>
-          <label>Percentage:
-            <input
-              type="text"
-              name="percentage"
-              value={percentage}
-              onChange={this.handleOnChange} />
-          </label>
-        </div>
-
 
           <input type="submit" value="Add Transaction" />
         </form>
@@ -72,9 +27,4 @@ class DebitInput extends Component {
   }
 }
 
-const mapDispatchToProps = {
-    updateTransactionFormData,
-    createTransaction
-}
-
-export default connect(null, mapDispatchToProps)(DebitInput)
+export default DebitSecondInput

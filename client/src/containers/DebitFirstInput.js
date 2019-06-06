@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class DebitInput extends Component {
+class DebitFirstInput extends Component {
 
   render() {
     const {amount, counterparty, date} = this.props.transactionFormData
@@ -47,4 +47,4 @@ class DebitInput extends Component {
 
 
 
-export default DebitInput
+export default DebitFirstInput

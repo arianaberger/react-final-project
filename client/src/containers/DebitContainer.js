@@ -30,11 +30,16 @@ class DebitContainer extends Component {
     this.setState({ first_submit: true })
   }
 
+  handleSecondSubmit = event => {
+    event.preventDefault();
+
+  }
+
   render() {
     return(
       <>
       {this.state.first_submit ? null : <DebitFirstInput transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange} handleFirstSubmit={this.handleFirstSubmit} />}
-      {this.state.first_submit ? <DebitSecondInput accounts={this.props.accounts} transactionFormData={this.props.transactionFormData} /> : null}
+      {this.state.first_submit ? <DebitSecondInput accounts={this.props.accounts} transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange} handleSecondSubmit={this.handleSecondSubmit}/> : null}
 </>
     )
   }
