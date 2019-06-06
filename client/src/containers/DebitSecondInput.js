@@ -20,9 +20,6 @@ class DebitInput extends Component {
 
   render() {
     const {amount, counterparty, date, percentage} = this.props.transactionFormData
-    const accounts_list = this.props.accounts.map(account => {
-      return <option value={account.id} key={account.id} name="account">{account.name}</option>
-    })
 
     return(
       <div>
@@ -67,12 +64,6 @@ class DebitInput extends Component {
           </label>
         </div>
 
-        <div>
-          Deposit money into the following account:
-          <select>
-            {accounts_list}
-          </select>
-        </div>
 
           <input type="submit" value="Add Transaction" />
         </form>

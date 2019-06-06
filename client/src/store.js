@@ -9,6 +9,7 @@ import thunk from 'redux-thunk';
 import accounts from './reducers/accounts'
 import accountFormData from './reducers/accountFormData'
 import transactionFormData from './reducers/transactionFormData'
+import transactions from './reducers/transactions'
 
 const reducers = combineReducers({
   accounts,

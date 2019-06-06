@@ -12,9 +12,10 @@ class Api::TransactionsController < ApplicationController
     #create parent transaction
     if params[:transaction][:debit]
       transaction_parent = Transaction.new(transaction_params)
-      transaction_parent.parent_id = transaction_parent.id
       if transaction_parent.save
-        update_bankaccount_total(transaction_parent.account_id)
+        transaction_parent.parent_id = transaction_parent.id
+        Account.update_account_total(transaction_parent.account_id)
+        render json: transaction_parent
       else
         render json: { message: transaction_parent.errors}, status: 400
       end

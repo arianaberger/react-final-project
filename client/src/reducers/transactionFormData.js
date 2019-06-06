@@ -2,7 +2,7 @@ const initialState = {
   amount: '',
   counterparty: '',
   date: '',
-  account_id: '',
+  account_id: 1,
   parent_id: '',
   debit: true,
   percentage: 0,

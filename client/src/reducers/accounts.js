@@ -1,6 +1,5 @@
-export default (state = {accounts: [],
-transactions: []}, action) => {
-  
+export default (state = {accounts: []}, action) => {
+
   switch(action.type) {
     case 'GET_ACCOUNTS_SUCCESS':
       return {...state, accounts: action.accounts}

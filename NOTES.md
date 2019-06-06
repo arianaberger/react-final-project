@@ -1,4 +1,5 @@
 1. reset account form is not working in actions/accounts.js line 39
+2. fix reducers so i don't have to do accounts.accounts
 
 4. need to just totally redo add transaction links ...
 - can wrap component with withRouter to get access to this.props.match props, etc
