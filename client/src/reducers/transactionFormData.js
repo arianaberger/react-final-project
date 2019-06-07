@@ -5,7 +5,7 @@ const initialState = {
   account_id: 1,
   parent_id: '',
   debit: true,
-  percentage: 0,
+  percentage: '',
 }
 
 export default(state = initialState, action) => {
