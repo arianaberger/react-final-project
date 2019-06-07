@@ -21,7 +21,6 @@ class DebitContainer extends Component {
     const currentTransactionFormData = Object.assign({}, this.props.transactionFormData, {
       [event.target.name]: event.target.value
     });
-    debugger
     this.props.updateTransactionFormData(currentTransactionFormData);
   }
 
@@ -33,6 +32,7 @@ class DebitContainer extends Component {
 
   handleSecondSubmit = event => {
     event.preventDefault();
+    debugger
 
   }
 
