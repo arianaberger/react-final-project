@@ -12,14 +12,15 @@ class Transaction < ApplicationRecord
       if a.id === 1
         t[:amount] = main_account_amount
         t[:account_id] = a.id
+        t_array.push(t)
       else
         t[:amount] = split_amount
         t[:account_id] = a.id
-        raise t.inspect
+        t_array.push(t)
       end
-      t_array.push(t)
     end
     return t_array
+    raise t_array.inspect
   end
   # create method that takes the % of total x4
   # create transaction object for each
