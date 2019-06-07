@@ -1,4 +1,4 @@
-reuiqre 'pry'
+require 'pry'
 
 class Api::TransactionsController < ApplicationController
   skip_before_action :verify_authenticity_token #included when testing with postman

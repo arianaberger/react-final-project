@@ -5,7 +5,7 @@
 - can wrap component with withRouter to get access to this.props.match props, etc
 https://medium.com/@jeremylenz/react-router-basics-what-i-wish-theyd-told-me-37b29201d40a
 
-
+nvm install node -> for any rake start errors
 
 
 The code should be written in ES6 as much as possible
