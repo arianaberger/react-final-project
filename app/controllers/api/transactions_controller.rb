@@ -22,15 +22,16 @@ class Api::TransactionsController < ApplicationController
         render json: { message: transaction_parent.errors}, status: 400
       end
     elsif params[:transaction][:debit] && params[:transaction][:percentage]
-      transactions_array = create_transactions(transaction_params)
+      transactions_array = Transaction.create_transaction_params(transaction_params)
+      raise transactions_array.inspect
       transactions_array.each do |t|
         new_t = Transaction.new(t)
+        #assign each transaction
+        new_t.parent_id = Transaction.all[Transaction.length - 1].id
+        #add validation?
         new_t.save
       end
-
-      create method that takes the % of total x4
-      create transaction object for each
-      create transaction object that goes into main account of the difference
+      #redirect to homepage with success message
     elsif
       #create credit
       null
