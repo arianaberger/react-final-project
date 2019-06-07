@@ -1,4 +1,4 @@
-require 'pry'
+# require 'pry'
 
 class Api::TransactionsController < ApplicationController
   skip_before_action :verify_authenticity_token #included when testing with postman
@@ -22,7 +22,15 @@ class Api::TransactionsController < ApplicationController
         render json: { message: transaction_parent.errors}, status: 400
       end
     elsif params[:transaction][:debit] && params[:transaction][:percentage]
-      binding.pry
+      transactions_array = create_transactions(transaction_params)
+      transactions_array.each do |t|
+        new_t = Transaction.new(t)
+        new_t.save
+      end
+
+      create method that takes the % of total x4
+      create transaction object for each
+      create transaction object that goes into main account of the difference
     elsif
       #create credit
       null
