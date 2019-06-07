@@ -1,9 +1,7 @@
-# require 'pry'
 
 class Api::TransactionsController < ApplicationController
   skip_before_action :verify_authenticity_token #included when testing with postman
   before_action :set_transaction, only: [:destroy]
-
 
   def index
     @transactions = Transaction.all
@@ -11,7 +9,7 @@ class Api::TransactionsController < ApplicationController
   end
 
   def create
-    #create parent transaction
+    #create parent debit
     if params[:transaction][:debit] && params[:transaction][:percentage].empty?
       transaction_parent = Transaction.new(transaction_params)
       if transaction_parent.save
@@ -21,19 +19,30 @@ class Api::TransactionsController < ApplicationController
       else
         render json: { message: transaction_parent.errors}, status: 400
       end
+      #Create child debit
     elsif params[:transaction][:debit] && params[:transaction][:percentage]
+      # Account.all.each do |a|
+      #   if a.id === 1
+      #     t_params = Transaction.create_main_amount(transaction_params)
+      #     t_new = Transaction.new(t_params)
+      #     t_new.save
+      #   else
+      #     t_params = Transaction.create_split_amount(transaction_params)
+      #     t_new = Transaction.new(t_params)
+      #     t_new.save
+      #   end
+      # end
       transactions_array = Transaction.create_transaction_params(transaction_params)
-      raise transactions_array.inspect
       transactions_array.each do |t|
         new_t = Transaction.new(t)
-        #assign each transaction
-        new_t.parent_id = Transaction.all[Transaction.length - 1].id
-        #add validation?
+        binding.pry
+        new_t.parent_id = transaction_parent.id
         new_t.save
       end
+      binding.pry
       #redirect to homepage with success message
     elsif
-      #create credit
+      #Create credit
       null
     end
   end
