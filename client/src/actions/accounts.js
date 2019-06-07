@@ -19,7 +19,8 @@ const patchAccountSuccess = account => {
 // FETCH FUNCTIONS
 export const getAccounts = () => {
   return dispatch => {
-    return fetch(`${API_URL}/accounts`)
+    return fetch('http://localhost:3001/api/accounts')
+    // return fetch(`${API_URL}/accounts`)
     .then(response => response.json())
     .then(accounts => dispatch(setAccounts(accounts)))
     .catch(error => console.log(error))
