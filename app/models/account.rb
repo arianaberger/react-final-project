@@ -11,13 +11,15 @@ class Account < ApplicationRecord
     credits = []
 
     self.transactions.each do |t|
-      if t.debit
-        debits.push(t.amount)
-      else
-        credits.push(t.amount)
+      if t.amount
+        if t.debit
+          debits.push(t.amount)
+        else
+          credits.push(t.amount)
+        end
       end
     end
-
+    binding.pry
     account_total = debits.sum - credits.sum
     return account_total
   end

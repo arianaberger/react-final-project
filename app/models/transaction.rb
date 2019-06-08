@@ -18,9 +18,7 @@ class Transaction < ApplicationRecord
   end
 
   def calc_split_amount
-    binding.pry
     split = self.split_amount
-    split
   end
 
 end

@@ -28,6 +28,7 @@ class Api::TransactionsController < ApplicationController
         end
         t_new.save
         Account.update_account_total(t_new.account_id)
+        render json: t_new
       end
 
     else
