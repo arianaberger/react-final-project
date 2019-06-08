@@ -4,6 +4,7 @@ class Account < ApplicationRecord
   def self.update_account_total(account_id)
     account = Account.find_by(id: account_id)
     account.account_total = account.calc_account_total
+    account.save
   end
 
   def calc_account_total
