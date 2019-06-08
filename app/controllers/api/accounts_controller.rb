@@ -1,5 +1,4 @@
 class Api::AccountsController < ApplicationController
-  # i'm assuming skipping authentication is not good?
   skip_before_action :verify_authenticity_token
   before_action :set_account, only: [:show, :update, :destroy]
 

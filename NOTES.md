@@ -5,6 +5,8 @@
 - can wrap component with withRouter to get access to this.props.match props, etc
 https://medium.com/@jeremylenz/react-router-basics-what-i-wish-theyd-told-me-37b29201d40a
 
+5. naming conventions so I don't have to use self. in my model methods??
+
 nvm install node -> for any rake start errors
 
 
