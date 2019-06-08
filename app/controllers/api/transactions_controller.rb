@@ -16,7 +16,6 @@ class Api::TransactionsController < ApplicationController
         t_new.parent_id = t_new.id
         t_new.save
       end
-      render json: t_new
 
     #Create child debit
     elsif transaction_params[:debit] && transaction_params[:percentage]
@@ -24,16 +23,19 @@ class Api::TransactionsController < ApplicationController
         if a.id === 1
           t_new.amount = t_new.calc_main_amount
         else
+          binding.pry
           t_new.amount = t_new.calc_split_amount
         end
+        binding.pry
+        t_new.account_id = a.id
         t_new.save
         Account.update_account_total(t_new.account_id)
-        render json: t_new
       end
-
+      binding.pry
     else
       #Create credit
     end
+    render json: t_new
   end
 
   def destroy

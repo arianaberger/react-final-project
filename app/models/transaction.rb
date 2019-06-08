@@ -3,14 +3,6 @@ require 'pry'
 class Transaction < ApplicationRecord
   belongs_to :account
 
-  def total_amount
-    self.amount.to_i
-  end
-
-  def split_amount
-    self.total_amount * (self.percentage.to_i / 100.0)
-  end
-
   def calc_main_amount
     total = self.total_amount
     split = self.split_amount
@@ -19,6 +11,14 @@ class Transaction < ApplicationRecord
 
   def calc_split_amount
     split = self.split_amount
+  end
+
+  def total_amount
+    self.amount.to_i
+  end
+
+  def split_amount
+    self.total_amount * (self.percentage.to_i / 100.0)
   end
 
 end

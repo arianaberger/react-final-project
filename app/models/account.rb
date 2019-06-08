@@ -19,7 +19,6 @@ class Account < ApplicationRecord
         end
       end
     end
-    binding.pry
     account_total = debits.sum - credits.sum
     return account_total
   end
