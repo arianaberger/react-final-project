@@ -29,11 +29,13 @@ class Api::TransactionsController < ApplicationController
         t_new.account_id = a.id
         t_new.parent_id = t_new.get_parent(i)
         t_new.save
-        Account.update_account_total(a.id)
       end
+
     # else
       #Create credit
     end
+    #Update account totals
+    Account.update_account_totals
     render json: t_new
   end
 
