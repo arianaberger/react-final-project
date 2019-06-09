@@ -12,15 +12,16 @@ class Account < ApplicationRecord
     credits = []
 
     self.transactions.each do |t|
-      if t.amount
-        if t.debit
+      # binding.pry
+      if t.amount && t.debit && t.percentage != 100
           debits.push(t.amount)
-        else
-          credits.push(t.amount)
-        end
+          # binding.pry
+      elsif t.amount && !t.debit && t.percent != 100
+        credits.push(t.amount)
       end
     end
     account_total = debits.sum - credits.sum
+    # binding.pry
     return account_total
   end
 

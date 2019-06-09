@@ -10,6 +10,11 @@ https://medium.com/@jeremylenz/react-router-basics-what-i-wish-theyd-told-me-37b
 nvm install node -> for any rake start errors
 
 
+Transaction.all.each do |t|
+  t.destroy
+end
+
+
 The code should be written in ES6 as much as possible
 Use the create-react-app generator to start your project.
 Follow the instructions on this repo to setup the generator: create-react-app

@@ -17,11 +17,11 @@ class Api::TransactionsController < ApplicationController
         t_new.save
       end
 
-    #Create child debit
-  else transaction_params[:debit] && transaction_params[:percentage]
+    #Create child debits
+    else transaction_params[:debit] && transaction_params[:percentage]
       Account.all.each_with_index do |a, i|
         t_new = Transaction.new(transaction_params)
-        if i == 0
+        if a.main_account
           t_new.amount = t_new.calc_main_amount
         else
           t_new.amount = t_new.calc_split_amount
@@ -29,7 +29,7 @@ class Api::TransactionsController < ApplicationController
         t_new.account_id = a.id
         t_new.parent_id = t_new.get_parent(i)
         t_new.save
-        Account.update_account_total(t_new.account_id)
+        Account.update_account_total(a.id)
       end
     # else
       #Create credit

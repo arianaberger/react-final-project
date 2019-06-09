@@ -21,4 +21,8 @@ class Transaction < ApplicationRecord
     self.total_amount * (self.percentage.to_i / 100.0)
   end
 
+  def get_parent(i)
+    Transaction.all[Transaction.all.count - (i+1)].id || Transaction.all[0]
+  end
+
 end
