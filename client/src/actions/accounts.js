@@ -27,7 +27,6 @@ export const getAccounts = () => {
   }
 }
 
-
 //NOT MY CODE, why wasn't what I had before not working?
 export const updateAccount = id => {
   return function(dispatch) {
@@ -36,7 +35,7 @@ export const updateAccount = id => {
         alert(`Status: ${account.status}, ${account.error}`)
       } else {
         dispatch(patchAccountSuccess(account))
-        //reset form not working, says resetAccountForm is not defined
+        //RESET not working again
         dispatch(resetAccountForm())
       }
     })

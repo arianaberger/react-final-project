@@ -13,7 +13,6 @@ class CreditContainer extends Component {
   handleOnChange = event => {
     const currentTransactionFormData = Object.assign({}, this.props.transactionFormData, {
       [event.target.name]: event.target.value,
-      debit: false
     });
     this.props.updateTransactionFormData(currentTransactionFormData);
   }
@@ -21,7 +20,6 @@ class CreditContainer extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.props.createTransaction(this.props.transactionFormData)
-    debugger
   }
 
   render() {

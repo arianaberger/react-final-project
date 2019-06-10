@@ -6,7 +6,6 @@ import { updateAccount } from '../actions/accounts'
 
 class AccountForm extends Component {
 
-//Need to review what is going on here!
   handleOnChange = event => {
     const currentAccountFormData = Object.assign({}, this.props.accountFormData, {
       name: event.target.value,

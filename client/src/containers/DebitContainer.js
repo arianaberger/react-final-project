@@ -14,7 +14,6 @@ class DebitContainer extends Component {
 
   componentDidMount(){
     this.props.getAccounts()
-    //this.props.getTransactions()
   }
 
   handleOnChange = event => {
@@ -33,7 +32,8 @@ class DebitContainer extends Component {
   handleSecondSubmit = event => {
     event.preventDefault();
     this.props.createTransaction(this.props.transactionFormData)
-
+    this.setState({ first_submit: false })
+    //need to redirect to accounts page '/'
   }
 
   render() {
@@ -54,5 +54,8 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { getAccounts, updateTransactionFormData,
-createTransaction })(DebitContainer)
+export default connect(mapStateToProps, {
+  getAccounts,
+  updateTransactionFormData,
+  createTransaction
+})(DebitContainer)

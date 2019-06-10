@@ -1,3 +1,5 @@
+1. Account form not resetting again
+
 2. fix reducers so i don't have to do accounts.accounts
 3. Transaction forms don't seem to be resetting
   - they also need to redirect to the main page

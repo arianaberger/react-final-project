@@ -17,7 +17,7 @@ export const createTransaction = (transaction) => {
         alert(`Status: ${transaction.status}, ${transaction.error}`)
       } else {
         dispatch(createTransactionSuccess(transaction))
-        // dispatch(resetTransactionForm())
+        dispatch(resetTransactionForm())
       }
     })
   }

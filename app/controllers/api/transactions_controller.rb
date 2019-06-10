@@ -16,7 +16,6 @@ class Api::TransactionsController < ApplicationController
         t_new.parent_id = t_new.id
         t_new.save
       end
-
     #Create child debits
     elsif transaction_params[:debit] && transaction_params[:percentage]
       Account.all.each_with_index do |a, i|
@@ -30,11 +29,11 @@ class Api::TransactionsController < ApplicationController
         t_new.parent_id = t_new.get_parent(i)
         t_new.save
       end
-
     #Create credit
     else
-      binding.pry
-
+      t_new = Transaction.new(transaction_params)
+      t_new.debit = false
+      t_new.save
     end
     #Update account totals
     Account.update_account_totals

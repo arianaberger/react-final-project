@@ -1,7 +1,6 @@
 const initialState = {
   id: 1,
-  name: '',
-  main_account: false
+  name: ''
 }
 
 export default(state = initialState, action) => {
