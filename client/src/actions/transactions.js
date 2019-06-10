@@ -1,5 +1,6 @@
 import { resetTransactionForm } from './transactionForm'
 import { getTotal } from './accounts'
+import { getAccounts } from './accounts'
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -19,6 +20,7 @@ export const createTransaction = (transaction) => {
       } else {
         dispatch(createTransactionSuccess(transaction))
         dispatch(getTotal())
+        dispatch(getAccounts())
       }
     })
   }

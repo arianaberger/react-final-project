@@ -7,7 +7,7 @@ import NavBar from '../components/NavBar';
 import AccountsContainer from './AccountsContainer';
 import CreditContainer from './CreditContainer';
 import DebitContainer from './DebitContainer';
-import AccountComponent from '../components/AccountComponent'
+import AccountComponent from '../components/AccountComponent';
 import '../css/App.css';
 
 class App extends Component {

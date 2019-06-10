@@ -1,8 +1,11 @@
-export default (state = {accounts: [], total: []}, action) => {
+export default (state = {accounts: [], total: [], account: []}, action) => {
 
   switch(action.type) {
     case 'GET_ACCOUNTS_SUCCESS':
       return {...state, accounts: action.accounts}
+
+      case 'GET_ACCOUNT_SUCCESS':
+        return {...state, account: action.account}
 
       case 'GET_TOTAL_SUCCESS':
         return {...state, total: action.total}
