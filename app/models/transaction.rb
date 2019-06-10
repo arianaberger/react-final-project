@@ -22,7 +22,10 @@ class Transaction < ApplicationRecord
   end
 
   def get_parent(i)
-    Transaction.all[Transaction.all.count - (i+1)].id || Transaction.all[0]
+    if Transaction.all.count
+      Transaction.all[Transaction.all.count - (i+1)].id
+    end
   end
+
 
 end
