@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { getAccounts} from '../actions/accounts';
 import { updateTransactionFormData, resetTransactionForm } from '../actions/transactionForm'
 import { createTransaction } from '../actions/transactions'
 
 class CreditContainer extends Component {
+
+  state = {
+    authenticate: false
+  }
 
   componentDidMount(){
     this.props.getAccounts()
@@ -23,6 +28,8 @@ class CreditContainer extends Component {
     event.preventDefault();
     this.props.createTransaction(this.props.transactionFormData)
     this.props.resetTransactionForm()
+    this.setState({ authenticate: true })
+
   }
 
   render() {
@@ -30,6 +37,11 @@ class CreditContainer extends Component {
     const accounts_list = this.props.accounts.map(account => {
       return <option value={account.id} key={account.id}>{account.name}</option>
     })
+
+    //Redirect to accounts page when form is submitted
+    if (this.state.authenticate === true) {
+      return <Redirect to='/' />
+    }
 
     return(
       <div>

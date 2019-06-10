@@ -7,8 +7,14 @@ class Api::TransactionsController < ApplicationController
     render json: @transactions
   end
 
+  #Gets total of all parent transactions minus credits
+  def show
+    t_total = Transaction.get_transaction_totals
+    render json: t_total
+  end
+
   def create
-    binding.pry
+
     #Create parent debit
     if transaction_params[:debit] && transaction_params[:percentage].empty?
       t_new = Transaction.new(transaction_params)
@@ -17,6 +23,7 @@ class Api::TransactionsController < ApplicationController
         t_new.parent_id = t_new.id
         t_new.save
       end
+
     #Create child debits
     elsif transaction_params[:debit] && transaction_params[:percentage]
       Account.all.each_with_index do |a, i|
@@ -30,12 +37,13 @@ class Api::TransactionsController < ApplicationController
         t_new.parent_id = t_new.get_parent(i)
         t_new.save
       end
+
     #Create credit
     else
       t_new = Transaction.new(transaction_params)
       t_new.save
     end
-    #Update account totals
+
     Account.update_account_totals
     render json: t_new
   end
@@ -55,7 +63,6 @@ class Api::TransactionsController < ApplicationController
     end
 
     def transaction_params
-      #add .require(:transaction) when form is added
       params.require(:transaction).permit(:counterparty, :amount, :date, :account_id, :parent_id, :debit, :percentage)
     end
 

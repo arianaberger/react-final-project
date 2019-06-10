@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { getAccounts} from '../actions/accounts';
 import DebitFirstInput from './DebitFirstInput'
 import DebitSecondInput from './DebitSecondInput'
@@ -9,7 +10,8 @@ import { createTransaction } from '../actions/transactions'
 class DebitContainer extends Component {
 
   state = {
-    first_submit: false
+    first_submit: false,
+    authenticate: false
   }
 
   componentDidMount(){
@@ -34,16 +36,21 @@ class DebitContainer extends Component {
     event.preventDefault();
     this.props.createTransaction(this.props.transactionFormData)
     this.props.resetTransactionForm()
-    this.setState({ first_submit: false })
+    this.setState({ first_submit: false, authenticate: true })
     //need to redirect to accounts page '/'
   }
 
   render() {
+    //Redirect to accounts page when form is submitted
+    if (this.state.authenticate === true) {
+      return <Redirect to='/' />
+    }
+
     return(
       <>
-      {this.state.first_submit ? null : <DebitFirstInput transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange} handleFirstSubmit={this.handleFirstSubmit} />}
-      {this.state.first_submit ? <DebitSecondInput accounts={this.props.accounts} transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange} handleSecondSubmit={this.handleSecondSubmit}/> : null}
-</>
+        {this.state.first_submit ? null : <DebitFirstInput transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange} handleFirstSubmit={this.handleFirstSubmit} />}
+        {this.state.first_submit ? <DebitSecondInput accounts={this.props.accounts} transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange} handleSecondSubmit={this.handleSecondSubmit}/> : null}
+      </>
     )
   }
 }

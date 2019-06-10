@@ -5,6 +5,6 @@ root "dashboard#home"
 
   namespace :api do
     resources :accounts, except: [:new]
-    resources :transactions, only: [:index, :create, :destroy]
+    resources :transactions, only: [:index, :create, :show, :destroy]
   end
 end
