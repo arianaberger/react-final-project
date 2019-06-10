@@ -27,5 +27,4 @@ class Transaction < ApplicationRecord
     end
   end
 
-
 end

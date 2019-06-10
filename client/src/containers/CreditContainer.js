@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getAccounts} from '../actions/accounts';
 import { updateTransactionFormData } from '../actions/transactionForm'
 import { createTransaction } from '../actions/transactions'
 
-class DebitInput extends Component {
+class CreditContainer extends Component {
+
+  componentDidMount(){
+    this.props.getAccounts()
+  }
 
   handleOnChange = event => {
     const currentTransactionFormData = Object.assign({}, this.props.transactionFormData, {
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
+      debit: false
     });
     this.props.updateTransactionFormData(currentTransactionFormData);
   }
@@ -15,13 +21,13 @@ class DebitInput extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.props.createTransaction(this.props.transactionFormData)
-      .then(this.props.resetTransactionForm)
+    debugger
   }
 
   render() {
-    const {amount, counterparty, date, percentage} = this.props.transactionFormData
+    const {amount, counterparty, date, account_id} = this.props.transactionFormData
     const accounts_list = this.props.accounts.map(account => {
-      return <option value={account.id} key={account.id} name="account">{account.name}</option>
+      return <option value={account.id} key={account.id}>{account.name}</option>
     })
 
     return(
@@ -58,20 +64,11 @@ class DebitInput extends Component {
         </div>
 
         <div>
-          <label>Percentage:
-            <input
-              type="text"
-              name="percentage"
-              value={percentage}
-              onChange={this.handleOnChange} />
+          <label>Add expense to the following account:
+            <select onChange={this.handleOnChange} name="account_id">
+              {accounts_list}
+            </select>
           </label>
-        </div>
-
-        <div>
-          Deposit money into the following account:
-          <select>
-            {accounts_list}
-          </select>
         </div>
 
           <input type="submit" value="Add Transaction" />
@@ -81,9 +78,18 @@ class DebitInput extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    //is accounts.accounts. not considered best practice? Or is this okay?
+    accounts: state.accounts.accounts,
+    transactionFormData: state.transactionFormData
+  }
+}
+
 const mapDispatchToProps = {
+    getAccounts,
     updateTransactionFormData,
     createTransaction
 }
 
-export default connect(null, mapDispatchToProps)(DebitInput)
+export default connect(mapStateToProps, mapDispatchToProps)(CreditContainer)

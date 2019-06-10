@@ -14,7 +14,6 @@ export default(state = initialState, action) => {
       return action.transactionFormData;
 
     case 'RESET_TRANSACTION_FORM':
-    debugger
       return initialState;
 
     default: return state;

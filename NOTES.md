@@ -1,11 +1,11 @@
-1. reset account form is not working in actions/accounts.js line 39
 2. fix reducers so i don't have to do accounts.accounts
+3. Transaction forms don't seem to be resetting
+  - they also need to redirect to the main page
 
 4. need to just totally redo add transaction links ...
 - can wrap component with withRouter to get access to this.props.match props, etc
 https://medium.com/@jeremylenz/react-router-basics-what-i-wish-theyd-told-me-37b29201d40a
 
-5. naming conventions so I don't have to use self. in my model methods??
 
 nvm install node -> for any rake start errors
 
