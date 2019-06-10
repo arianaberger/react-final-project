@@ -9,6 +9,13 @@ const setAccounts = accounts => {
   }
 }
 
+const setTotal = total => {
+  return {
+    type: 'GET_TOTAL_SUCCESS',
+    total
+  }
+}
+
 const patchAccountSuccess = account => {
   return {
     type: 'UPDATE_ACCOUNT_SUCCESS',
@@ -20,9 +27,17 @@ const patchAccountSuccess = account => {
 export const getAccounts = () => {
   return dispatch => {
     return fetch('http://localhost:3001/api/accounts')
-    // return fetch(`${API_URL}/accounts`)
     .then(response => response.json())
     .then(accounts => dispatch(setAccounts(accounts)))
+    .catch(error => console.log(error))
+  }
+}
+
+export const getTotal = () => {
+  return dispatch => {
+    return fetch('http://localhost:3001/api/transactions/1')
+    .then(response => response.json())
+    .then(total => dispatch(setTotal(total)))
     .catch(error => console.log(error))
   }
 }
