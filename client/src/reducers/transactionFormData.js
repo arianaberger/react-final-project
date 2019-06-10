@@ -13,6 +13,10 @@ export default(state = initialState, action) => {
     case 'UPDATED_TRANSACTION_DATA':
       return action.transactionFormData;
 
+    case 'RESET_TRANSACTION_FORM':
+    debugger
+      return initialState;
+
     default: return state;
   }
 }

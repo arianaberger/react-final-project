@@ -33,7 +33,7 @@ class DebitContainer extends Component {
   handleSecondSubmit = event => {
     event.preventDefault();
     this.props.createTransaction(this.props.transactionFormData)
-    
+
   }
 
   render() {

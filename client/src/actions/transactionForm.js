@@ -4,3 +4,9 @@ export const updateTransactionFormData = transactionFormData => {
     transactionFormData
   }
 }
+
+export const resetTransactionForm = () => {
+  return {
+    type: 'RESET_TRANSACTION_FORM'
+  }
+}

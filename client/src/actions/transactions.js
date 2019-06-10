@@ -1,3 +1,5 @@
+import { resetTransactionForm } from './transactionForm'
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 const createTransactionSuccess = transaction => {
@@ -15,6 +17,7 @@ export const createTransaction = (transaction) => {
         alert(`Status: ${transaction.status}, ${transaction.error}`)
       } else {
         dispatch(createTransactionSuccess(transaction))
+        dispatch(resetTransactionForm())
       }
     })
   }

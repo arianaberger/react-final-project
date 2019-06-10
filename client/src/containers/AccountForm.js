@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //Does resetAccountForm need to be imported?
-import { updateAccountFormData, resetAccountForm } from '../actions/accountForm'
+import { updateAccountFormData } from '../actions/accountForm'
 import { updateAccount } from '../actions/accounts'
 
 class AccountForm extends Component {
@@ -18,11 +18,10 @@ class AccountForm extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.props.updateAccount(this.props.accountFormData)
-      .then(this.props.resetAccountForm)
   }
 
   render() {
-    const {accountName} = this.props.accountFormData
+    const {name} = this.props.accountFormData
 
     return(
       <div>
@@ -31,8 +30,8 @@ class AccountForm extends Component {
             <input
               type="text"
               onChange={this.handleOnChange}
-              name="accountName"
-              value={accountName}
+              name="name"
+              value={name}
               />
           </label>
           <input type="submit" value="Update" />
@@ -51,5 +50,4 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {
   updateAccountFormData,
   updateAccount,
-  resetAccountForm
 })(AccountForm)

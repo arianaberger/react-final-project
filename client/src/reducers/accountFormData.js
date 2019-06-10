@@ -9,7 +9,7 @@ export default(state = initialState, action) => {
     case 'UPDATED_ACCOUNT':
       return action.accountFormData;
 
-    case 'RESET_ACCOUNT_FORM' :
+    case 'RESET_ACCOUNT_FORM':
       return initialState;
 
     default: return state;
