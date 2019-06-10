@@ -8,6 +8,7 @@ class CreditContainer extends Component {
 
   componentDidMount(){
     this.props.getAccounts()
+    this.props.resetTransactionForm()
   }
 
   handleOnChange = event => {
