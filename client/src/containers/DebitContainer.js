@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getAccounts} from '../actions/accounts';
 import DebitFirstInput from './DebitFirstInput'
 import DebitSecondInput from './DebitSecondInput'
-import { updateTransactionFormData } from '../actions/transactionForm'
+import { updateTransactionFormData, resetTransactionForm } from '../actions/transactionForm'
 import { createTransaction } from '../actions/transactions'
 
 class DebitContainer extends Component {
@@ -32,6 +32,7 @@ class DebitContainer extends Component {
   handleSecondSubmit = event => {
     event.preventDefault();
     this.props.createTransaction(this.props.transactionFormData)
+    this.props.resetTransactionForm()
     this.setState({ first_submit: false })
     //need to redirect to accounts page '/'
   }
@@ -57,5 +58,6 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   getAccounts,
   updateTransactionFormData,
-  createTransaction
+  createTransaction,
+  resetTransactionForm
 })(DebitContainer)

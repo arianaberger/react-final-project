@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getAccounts} from '../actions/accounts';
-import { updateTransactionFormData } from '../actions/transactionForm'
+import { updateTransactionFormData, resetTransactionForm } from '../actions/transactionForm'
 import { createTransaction } from '../actions/transactions'
 
 class CreditContainer extends Component {
@@ -13,6 +13,7 @@ class CreditContainer extends Component {
   handleOnChange = event => {
     const currentTransactionFormData = Object.assign({}, this.props.transactionFormData, {
       [event.target.name]: event.target.value,
+      debit: false
     });
     this.props.updateTransactionFormData(currentTransactionFormData);
   }
@@ -20,6 +21,7 @@ class CreditContainer extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.props.createTransaction(this.props.transactionFormData)
+    this.props.resetTransactionForm()
   }
 
   render() {
@@ -87,7 +89,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
     getAccounts,
     updateTransactionFormData,
-    createTransaction
+    createTransaction,
+    resetTransactionForm
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreditContainer)

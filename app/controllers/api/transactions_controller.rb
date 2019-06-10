@@ -31,8 +31,8 @@ class Api::TransactionsController < ApplicationController
       end
     #Create credit
     else
+      binding.pry
       t_new = Transaction.new(transaction_params)
-      t_new.debit = false
       t_new.save
     end
     #Update account totals

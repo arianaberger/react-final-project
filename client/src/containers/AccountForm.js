@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//Does resetAccountForm need to be imported?
 import { updateAccountFormData } from '../actions/accountForm'
 import { updateAccount } from '../actions/accounts'
 
