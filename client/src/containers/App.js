@@ -17,13 +17,13 @@ class App extends Component {
         <NavBar />
 	      <Route exact path="/"
           component={AccountsContainer}
-           />
+         />
          <Route exact path="/debit"
             component={DebitContainer}
-             />
+           />
          <Route exact path="/credit"
            component={CreditContainer}
-            />
+          />
     </Router>
     </>
     );

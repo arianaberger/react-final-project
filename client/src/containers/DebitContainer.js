@@ -37,7 +37,6 @@ class DebitContainer extends Component {
     this.props.createTransaction(this.props.transactionFormData)
     this.props.resetTransactionForm()
     this.setState({ first_submit: false, authenticate: true })
-    //need to redirect to accounts page '/'
   }
 
   render() {

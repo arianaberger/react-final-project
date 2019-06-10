@@ -34,6 +34,7 @@ export const getAccounts = () => {
 }
 
 export const getTotal = () => {
+  debugger
   return dispatch => {
     return fetch('http://localhost:3001/api/transactions/1')
     .then(response => response.json())
