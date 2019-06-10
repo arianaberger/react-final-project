@@ -21,7 +21,7 @@ class AccountForm extends Component {
   }
 
   render() {
-    const {name} = this.props.accountFormData
+    const {account_name} = this.props.accountFormData
 
     return(
       <div>
@@ -30,8 +30,8 @@ class AccountForm extends Component {
             <input
               type="text"
               onChange={this.handleOnChange}
-              name="name"
-              value={name}
+              name="account_name"
+              value={account_name}
               />
           </label>
           <input type="submit" value="Update" />
