@@ -8,7 +8,7 @@ const TransactionsContainer = (props) => (
       <h4>Counterparty: {transaction.counterparty}</h4>
       <p>Date: {transaction.date}</p>
       <h5>${transaction.amount}</h5>
-      <h6>[Remove]</h6>
+      <button onClick={() => props.onDeleteClick(transaction.id)}>[Remove]</button>
     </div>
     )}
   </div>
