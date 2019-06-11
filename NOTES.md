@@ -1,6 +1,6 @@
 1. Account form not resetting again
-3. fix reducers so i don't have to do accounts.accounts
-4. How to not include parent debits in main account list??
+2. fix reducers so i don't have to do accounts.accounts
+3. Validations for transaction forms
 
 - can wrap component with withRouter to get access to this.props.match props, etc
 https://medium.com/@jeremylenz/react-router-basics-what-i-wish-theyd-told-me-37b29201d40a

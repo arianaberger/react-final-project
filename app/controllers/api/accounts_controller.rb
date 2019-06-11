@@ -29,8 +29,6 @@ class Api::AccountsController < ApplicationController
     end
   end
 
-  end
-
   private
 
     def set_account

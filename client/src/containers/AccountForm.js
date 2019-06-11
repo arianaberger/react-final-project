@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateAccountFormData } from '../actions/accountForm'
+import { updateAccountFormData, resetAccountForm } from '../actions/accountForm'
 import { updateAccount } from '../actions/accounts'
 
 class AccountForm extends Component {
@@ -15,7 +15,9 @@ class AccountForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.updateAccount(this.props.accountFormData)
+    this.props.updateAccount(this.props.accountFormData);
+    //Not working
+    this.props.resetAccountForm();
   }
 
   render() {
@@ -48,4 +50,5 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {
   updateAccountFormData,
   updateAccount,
+  resetAccountForm
 })(AccountForm)

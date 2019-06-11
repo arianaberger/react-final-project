@@ -48,9 +48,9 @@ class Api::TransactionsController < ApplicationController
   end
 
   def update
-    @transaction.update = (account_id: 1)
-    Account.update_account_totals
-    render json: @transaction
+    # @transaction.update = (account_id: 1)
+    # Account.update_account_totals
+    # render json: @transaction
   end
 
   # def destroy
