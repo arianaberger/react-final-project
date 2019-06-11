@@ -7,8 +7,8 @@ import { getAccounts, getTotal} from '../actions/accounts';
 class AccountsContainer extends Component {
 
   componentDidMount(){
-    this.props.getAccounts();
     this.props.getTotal();
+    this.props.getAccounts();
   }
 
   render() {

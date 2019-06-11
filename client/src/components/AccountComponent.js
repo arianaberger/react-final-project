@@ -4,14 +4,18 @@ import { getAccount } from '../actions/accounts';
 
 class AccountComponent extends Component {
 
+  componentDidMount(){
+    const id = this.props.match.params.id;
+    this.props.getAccount(id)
+  }
 
   render() {
+    console.log("Account is:", this.props.account)
     return(
-      <>
       "hello"
-      </>
     )
   }
+
 }
 
 const mapStateToProps = (state) => {
@@ -20,4 +24,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, { getAccount })(Component);
+export default connect(mapStateToProps, { getAccount })(AccountComponent)

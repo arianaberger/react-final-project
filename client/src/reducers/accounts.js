@@ -18,7 +18,6 @@ export default (state = {accounts: [], total: [], account: []}, action) => {
           ]
         }
 
-
       default: return state;
     }
   }

@@ -10,7 +10,6 @@ const setAccounts = accounts => {
 }
 
 const setAccount = account => {
-  debugger
   return {
     type: 'GET_ACCOUNT_SUCCESS',
     account
@@ -42,7 +41,6 @@ export const getAccounts = () => {
 }
 
 export const getAccount = (id) => {
-  debugger
   return dispatch => {
     return fetch(`http://localhost:3001/api/accounts/${id}`)
     .then(response => response.json())
