@@ -27,7 +27,6 @@ class AccountContainer extends Component {
       </div>
     )
   }
-
 }
 
 const mapStateToProps = (state) => {

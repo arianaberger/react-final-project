@@ -8,7 +8,8 @@ class Api::AccountsController < ApplicationController
   end
 
   def show
-    render json: @account
+    account = @account.remove_parent_debits
+    render json: account
   end
 
   def create

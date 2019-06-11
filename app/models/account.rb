@@ -1,6 +1,12 @@
 class Account < ApplicationRecord
   has_many :transactions
 
+  def remove_parent_debits
+    transactions = self.transactions.map { |t| t if t.percentage != 100 }.compact
+    self.transactions = transactions
+    return self
+  end
+
   def self.update_account_totals
     Account.all.each do |a|
       account = Account.find_by(id: a.id)

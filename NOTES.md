@@ -1,10 +1,7 @@
 1. Account form not resetting again
+3. fix reducers so i don't have to do accounts.accounts
+4. How to not include parent debits in main account list??
 
-2. fix reducers so i don't have to do accounts.accounts
-3. Transaction forms don't seem to be resetting
-  - they also need to redirect to the main page
-
-4. need to just totally redo add transaction links ...
 - can wrap component with withRouter to get access to this.props.match props, etc
 https://medium.com/@jeremylenz/react-router-basics-what-i-wish-theyd-told-me-37b29201d40a
 
