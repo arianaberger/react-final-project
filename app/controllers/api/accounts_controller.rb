@@ -1,6 +1,6 @@
 class Api::AccountsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_account, only: [:show, :update, :destroy]
+  before_action :set_account, only: [:show, :update]
 
   def index
     @accounts = Account.all
@@ -28,13 +28,6 @@ class Api::AccountsController < ApplicationController
       render json: { message: "Unable to update account"}
     end
   end
-
-  def destroy
-    if @account.destroy
-      render plain: "Deleted!"
-    else
-      render json: { message: "Unable to delete account"}
-    end
 
   end
 

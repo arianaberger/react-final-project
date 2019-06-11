@@ -1,20 +1,19 @@
 class Api::TransactionsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_transaction, only: [:destroy]
+  before_action :set_transaction, only: [:update]
 
   def index
     @transactions = Transaction.all
     render json: @transactions
   end
 
-  #Gets total of all parent transactions minus credits
   def show
+    #Gets total of all parent transactions minus credits
     t_total = Transaction.get_transaction_totals
     render json: t_total
   end
 
   def create
-
     #Create parent debit
     if transaction_params[:debit] && transaction_params[:percentage].empty?
       t_new = Transaction.new(transaction_params)
@@ -48,13 +47,19 @@ class Api::TransactionsController < ApplicationController
     render json: t_new
   end
 
-  def destroy
-    if @transaction.destroy
-      render plain: "Deleted!"
-    else
-      render json: { message: "Unable to delete transaction"}
-    end
+  def update
+    @transaction.update = (account_id: 1)
+    Account.update_account_totals
+    render json: @transaction
   end
+
+  # def destroy
+  #   if @transaction.destroy
+  #     render plain: "Deleted!"
+  #   else
+  #     render json: { message: "Unable to delete transaction"}
+  #   end
+  # end
 
   private
 
