@@ -7,7 +7,7 @@ import NavBar from '../components/NavBar';
 import AccountsContainer from './AccountsContainer';
 import CreditContainer from './CreditContainer';
 import DebitContainer from './DebitContainer';
-import AccountComponent from '../components/AccountComponent';
+import AccountContainer from './AccountContainer';
 import '../css/App.css';
 
 class App extends Component {
@@ -26,7 +26,7 @@ class App extends Component {
            component={CreditContainer}
           />
           <Route exact path="/accounts/:id"
-            component={AccountComponent}
+            component={AccountContainer}
           />
     </Router>
     </>
