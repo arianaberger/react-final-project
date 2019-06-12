@@ -29,7 +29,11 @@ class AccountContainer extends Component {
       <h1>{name}</h1>
       <h3>Current Balance: ${account_total}</h3>
       <h4>Transactions:</h4>
-      <TransactionsContainer transactions={transactions} onDeleteClick={this.onDeleteClick}/>
+      <TransactionsContainer
+        transactions={transactions}
+        account_id={this.props.account.id}
+        onDeleteClick={this.onDeleteClick}
+      />
       </div>
     )
   }
