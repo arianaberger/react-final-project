@@ -1,5 +1,3 @@
-import { resetAccountForm } from './accountForm'
-
 const API_URL = process.env.REACT_APP_API_URL;
 
 const setAccounts = accounts => {
@@ -63,8 +61,6 @@ export const updateAccount = account => {
   return function(dispatch) {
     return patchAccount(account).then(account => {
       dispatch(patchAccountSuccess(account))
-      //RESET not working again
-      dispatch(resetAccountForm())
     })
   }
 }

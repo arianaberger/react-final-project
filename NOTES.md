@@ -1,4 +1,4 @@
-1. Account form not resetting again
+
 2. Account show page not re-rendering after removing transaction
 2. fix reducers so i don't have to do accounts.accounts
 3. Validations for transaction forms
