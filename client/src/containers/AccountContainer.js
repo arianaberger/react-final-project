@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getAccount } from '../actions/accounts';
+import { updateTransaction } from '../actions/transactions'
 import  TransactionsContainer  from './TransactionsContainer';
 
 class AccountContainer extends Component {
@@ -10,8 +11,8 @@ class AccountContainer extends Component {
     this.props.getAccount(id)
   }
 
-  onDeleteClick = (id) => {
-    console.log(id)
+  onDeleteClick = (transaction) => {
+    this.props.updateTransaction(transaction)
   }
 
   render() {
@@ -39,4 +40,7 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, { getAccount })(AccountContainer)
+export default connect(mapStateToProps, {
+  getAccount,
+  updateTransaction
+})(AccountContainer)

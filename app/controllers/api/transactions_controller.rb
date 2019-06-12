@@ -1,3 +1,5 @@
+require 'pry'
+
 class Api::TransactionsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_transaction, only: [:update]
@@ -48,9 +50,9 @@ class Api::TransactionsController < ApplicationController
   end
 
   def update
-    # @transaction.update = (account_id: 1)
-    # Account.update_account_totals
-    # render json: @transaction
+    @transaction.update(account_id: 1)
+    Account.update_account_totals
+    render json: @transaction
   end
 
   # def destroy

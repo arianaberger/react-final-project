@@ -59,16 +59,12 @@ export const getTotal = () => {
 }
 
 //NOT MY CODE, why wasn't what I had before not working?
-export const updateAccount = id => {
+export const updateAccount = account => {
   return function(dispatch) {
-    return patchAccount(id).then(account => {
-      if (account.status) {
-        alert(`Status: ${account.status}, ${account.error}`)
-      } else {
-        dispatch(patchAccountSuccess(account))
-        //RESET not working again
-        dispatch(resetAccountForm())
-      }
+    return patchAccount(account).then(account => {
+      dispatch(patchAccountSuccess(account))
+      //RESET not working again
+      dispatch(resetAccountForm())
     })
   }
 }

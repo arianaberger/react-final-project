@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateAccountFormData, resetAccountForm } from '../actions/accountForm'
 import { updateAccount } from '../actions/accounts'
 
 class AccountForm extends Component {
 
+  state = {
+    id: 1,
+    name: ''
+  }
+
   handleOnChange = event => {
-    const currentAccountFormData = Object.assign({}, this.props.accountFormData, {
+    this.setState({
       name: event.target.value,
       id: this.props.accountId
     })
-    this.props.updateAccountFormData(currentAccountFormData)
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.updateAccount(this.props.accountFormData);
-    //Not working
-    this.props.resetAccountForm();
+    this.props.updateAccount(this.state);
+    this.setState({
+      name: '',
+    })
   }
 
   render() {
-    const {account_name} = this.props.accountFormData
-
     return(
       <div>
         <form onSubmit={this.handleOnSubmit}>
@@ -31,7 +33,7 @@ class AccountForm extends Component {
               type="text"
               onChange={this.handleOnChange}
               name="account_name"
-              value={account_name}
+              value={this.state.name}
               />
           </label>
           <input type="submit" value="Update" />
@@ -41,14 +43,4 @@ class AccountForm extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    accountFormData: state.accountFormData
-  }
-}
-
-export default connect(mapStateToProps, {
-  updateAccountFormData,
-  updateAccount,
-  resetAccountForm
-})(AccountForm)
+export default connect(null, { updateAccount })(AccountForm)
