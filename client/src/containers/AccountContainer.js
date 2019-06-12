@@ -12,7 +12,8 @@ class AccountContainer extends Component {
   }
 
   onDeleteClick = (transaction) => {
-    this.props.updateTransaction(transaction)
+    const id = this.props.match.params.id;
+    this.props.updateTransaction(transaction, id)
   }
 
   render() {

@@ -8,12 +8,10 @@ import thunk from 'redux-thunk';
 
 import accounts from './reducers/accounts'
 import transactionFormData from './reducers/transactionFormData'
-import transactions from './reducers/transactions'
 
 const reducers = combineReducers({
   accounts,
   transactionFormData,
-  transactions
 });
 
 const middleware = [thunk];
