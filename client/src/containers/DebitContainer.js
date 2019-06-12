@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { getAccounts} from '../actions/accounts';
-import DebitFirstInput from './DebitFirstInput'
-import DebitSecondInput from './DebitSecondInput'
+import DebitFirstInput from '../components/DebitFirstInput'
+import DebitSecondInput from '../components/DebitSecondInput'
 import { updateTransactionFormData, resetTransactionForm } from '../actions/transactionForm'
 import { createTransaction } from '../actions/transactions'
 

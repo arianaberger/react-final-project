@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Accounts.css';
 import { NavLink } from 'react-router-dom';
-import AccountForm from './AccountForm'
+import AccountForm from '../containers/AccountForm'
 
 const Accounts = (props) => (
   <div className="wrapper">

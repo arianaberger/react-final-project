@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getAccount } from '../actions/accounts';
 import { updateTransaction } from '../actions/transactions'
-import  TransactionsContainer  from './TransactionsContainer';
+import  TransactionsContainer  from '../components/TransactionsContainer';
 
 class AccountContainer extends Component {
 

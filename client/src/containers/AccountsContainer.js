@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Accounts from './Accounts';
-import AccountTotal from './AccountTotal';
+import Accounts from '../components/Accounts';
+import AccountTotal from '../components/AccountTotal';
 import { connect } from 'react-redux';
 import { getAccounts, getTotal} from '../actions/accounts';
 
