@@ -1,10 +1,11 @@
 import React from 'react';
-import {FormControl, FormGroup, ControlLabel, HelpBlock, Checkbox, Radio, Button} from 'react-bootstrap';
+import {Form, FormControl, FormGroup, ControlLabel, HelpBlock, Checkbox, Radio, Button} from 'react-bootstrap';
 
 const DebitFirstInput = (props) => {
-
   const {amount, counterparty, date} = props.transactionFormData
 
+  return(
+  <div>
   <Form onSubmit={props.handleFirstSubmit}>
 
     <Form.Group controlId="formBasicAmount">
@@ -27,52 +28,12 @@ const DebitFirstInput = (props) => {
       />
     </Form.Group>
 
-    <Form.Group controlId="formBasicChecbox">
-      <Form.Check type="checkbox" label="Check me out" />
-    </Form.Group>
     <Button variant="primary" type="submit">
-      Submit
+      Add Deposit
     </Button>
   </Form>
-
-
-  return(
-    <div>
-      <form onSubmit={props.handleFirstSubmit}>
-        <div>
-          <label>Amount:
-            <input
-              type="text"
-              name="amount"
-              value={amount}
-              onChange={props.handleOnChange} />
-          </label>
-        </div>
-
-        <div>
-          <label>Institution:
-            <input
-              type="text"
-              name="counterparty"
-              value={counterparty}
-              onChange={props.handleOnChange} />
-          </label>
-      </div>
-
-      <div>
-        <label>Date:
-          <input
-            type="text"
-            name="date"
-            value={date}
-            onChange={props.handleOnChange} />
-        </label>
-      </div>
-
-        <input type="submit" value="Add Deposit" />
-      </form>
-    </div>
-  )
+  </div>
+)
 }
 
 export default DebitFirstInput
