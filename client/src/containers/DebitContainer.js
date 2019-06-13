@@ -11,7 +11,7 @@ class DebitContainer extends Component {
 
   state = {
     first_submit: false,
-    authenticate: false
+    authenticate: false,
   }
 
   componentDidMount(){

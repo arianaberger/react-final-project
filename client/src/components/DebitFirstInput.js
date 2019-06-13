@@ -1,7 +1,10 @@
 import React from 'react';
-import {Form, FormControl, FormGroup, ControlLabel, HelpBlock, Checkbox, Radio, Button} from 'react-bootstrap';
+import {Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const DebitFirstInput = (props) => {
+
   const {amount, counterparty, date} = props.transactionFormData
 
   return(
@@ -18,7 +21,7 @@ const DebitFirstInput = (props) => {
        />
     </Form.Group>
 
-    <Form.Group controlId="formBasiInstitution">
+    <Form.Group controlId="formBasicInstitution">
       <Form.Label>Institution:</Form.Label>
       <Form.Control
         type="text"
@@ -28,12 +31,25 @@ const DebitFirstInput = (props) => {
       />
     </Form.Group>
 
-    <Button variant="primary" type="submit">
+    <Form.Group controlId="formBasicDate">
+      <Form.Label>Date:</Form.Label>
+      <DatePicker
+        name="date"
+        selected={date}
+        value={date}
+        onChange={props.handleChange}
+        placeholderText="Click to select a date"
+      />
+    </Form.Group>
+
+
+    <Button variant="dark" type="submit">
       Add Deposit
     </Button>
   </Form>
   </div>
 )
+
 }
 
 export default DebitFirstInput
