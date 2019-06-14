@@ -7,12 +7,8 @@ const API_URL = process.env.REACT_APP_API_URL;
 export const createTransaction = (transaction) => {
   return function(dispatch) {
     return postTransaction(transaction).then(transaction => {
-      if (transaction.status) {
-        alert(`Status: ${transaction.status}, ${transaction.error}`)
-      } else {
-        dispatch(getTotal())
-        dispatch(getAccounts())
-      }
+      dispatch(getTotal())
+      dispatch(getAccounts())
     })
   }
 }
