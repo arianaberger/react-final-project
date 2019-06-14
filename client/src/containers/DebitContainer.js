@@ -13,6 +13,7 @@ class DebitContainer extends Component {
     this.state = {
       first_submit: false,
       authenticate: false,
+      value: '',
 
       //Initial state for form
       amount: '',
@@ -56,7 +57,7 @@ class DebitContainer extends Component {
         authenticate: true,
         amount: '',
         counterparty: '',
-        date: new Date(),
+        date: '',
         account_id: 1,
         parent_id: '',
         debit: true,

@@ -1,7 +1,6 @@
 import React from 'react';
 import {Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import InputRange from 'react-input-range';
 
 const DebitSecondInput = (props) => {
 
@@ -12,20 +11,32 @@ const DebitSecondInput = (props) => {
     return <option value={percent} key={percent}>{percent}</option>
   })
 
+/////SELECT FORM NOT WORKING
   return(
     <div>
+
+    <InputRange
+      maxValue={10}
+      minValue={0}
+      value={props.state.value}
+      onChange={props.handleOnChange} />
+
+      <input
+        id="slider"
+        type="range"
+        min="0" max="10"
+        name="percentage"
+        value={props.state.value}
+        onChange={props.handleOnChange}
+        step="1"/>
+
+
       <Form onSubmit={props.handleSecondSubmit}>
         <Form.Group controlId="formBasicPercentage">
           <Form.Label>What percentage of this deposit should be allocated to each fund?</Form.Label>
-          <Form.Control
-            componentClass="select"
-            name="percentage"
-            value={percentage}
-            select={percentage_select}
-            onChange={props.handleOnChange}
-           />
-        </Form.Group>
 
+
+        </Form.Group>
 
         <Button variant="dark" type="submit">
           Finish Deposit

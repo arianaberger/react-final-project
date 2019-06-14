@@ -37,7 +37,6 @@ const DebitFirstInput = (props) => {
           name="date"
           selected={date}
           onChange={props.handleDateChange}
-          placeholderText="Click to select a date"
           dateFormat="MMMM d, yyyy"
         />
       </Form.Group>
