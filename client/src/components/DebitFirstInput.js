@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const DebitFirstInput = (props) => {
 
-  const {amount, counterparty, date} = props.transactionFormData
+  const {amount, counterparty, date} = props.state
 
   return(
   <div>
@@ -35,10 +35,10 @@ const DebitFirstInput = (props) => {
       <Form.Label>Date:</Form.Label>
       <DatePicker
         name="date"
-        selected={date}
-        value={date}
-        onChange={props.handleChange}
+        selected={props.date}
+        onChange={props.handleDateChange}
         placeholderText="Click to select a date"
+        dateFormat="MMMM d, yyyy"
       />
     </Form.Group>
 

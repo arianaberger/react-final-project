@@ -9,10 +9,23 @@ import { createTransaction } from '../actions/transactions'
 
 class DebitContainer extends Component {
 
-  state = {
-    first_submit: false,
-    authenticate: false,
+  constructor(props) {
+    super(props);
+    this.state = {
+      first_submit: false,
+      authenticate: false,
+      //Initial state for form
+      amount: '',
+      counterparty: '',
+      date: new Date(),
+      account_id: 1,
+      parent_id: '',
+      debit: true,
+      percentage: '',
+    }
+    this.handleDateChange = this.handleDateChange.bind(this);
   }
+
 
   componentDidMount(){
     this.props.getAccounts()
@@ -20,10 +33,20 @@ class DebitContainer extends Component {
   }
 
   handleOnChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+
     const currentTransactionFormData = Object.assign({}, this.props.transactionFormData, {
       [event.target.name]: event.target.value
     });
     this.props.updateTransactionFormData(currentTransactionFormData);
+  }
+
+  handleDateChange(date) {
+    this.setState({
+      date: date
+    })
   }
 
   handleFirstSubmit = event => {
@@ -47,7 +70,7 @@ class DebitContainer extends Component {
 
     return(
       <>
-        {this.state.first_submit ? null : <DebitFirstInput transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange} handleFirstSubmit={this.handleFirstSubmit} />}
+        {this.state.first_submit ? null : <DebitFirstInput state={this.state} handleDateChange={this.handleDateChange} transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange} handleFirstSubmit={this.handleFirstSubmit} />}
         {this.state.first_submit ? <DebitSecondInput accounts={this.props.accounts} transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange} handleSecondSubmit={this.handleSecondSubmit}/> : null}
       </>
     )
