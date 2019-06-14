@@ -35,10 +35,10 @@ const DebitFirstInput = (props) => {
       <Form.Label>Date:</Form.Label>
       <DatePicker
         name="date"
-        selected={props.date}
+        selected={date}
         onChange={props.handleDateChange}
         placeholderText="Click to select a date"
-        dateFormat="MMMM d, yyyy"
+        dateFormat="d MMMM, yyyy"
       />
     </Form.Group>
 
