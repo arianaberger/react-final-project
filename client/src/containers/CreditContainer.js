@@ -26,6 +26,7 @@ class CreditContainer extends Component {
       debit: false,
     }
     this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
   }
 
   componentDidMount(){
@@ -41,6 +42,12 @@ class CreditContainer extends Component {
   handleDateChange(date) {
     this.setState({
       date: date
+    })
+  }
+
+  handleSelectChange(account) {
+    this.setState({
+      account_id: account.value
     })
   }
 
@@ -116,7 +123,7 @@ class CreditContainer extends Component {
         <Form.Group controlId="formBasicDate">
           <div>
             <Form.Label>Add expense to the following account:</Form.Label>
-            <Select options={accounts_list} />
+            <Select options={accounts_list} onChange={this.handleSelectChange}/>
           </div>
         </Form.Group>
 

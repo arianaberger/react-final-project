@@ -8,7 +8,7 @@ const NavBar = () => {
     <>
       <img src={splash} alt="Splash"/>
       <Navbar bg="light" variant="light" expand="sm">
-        <Navbar.Brand>Savvy Saver</Navbar.Brand>
+        <Navbar.Brand href="/">Savvy Saver</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">

@@ -22,11 +22,10 @@ class DebitContainer extends Component {
       account_id: 1,
       parent_id: '',
       debit: true,
-      percentage: 5,
+      percentage: '',
     }
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleSliderChange = this.handleSliderChange.bind(this);
-
   }
 
     componentDidMount(){
@@ -93,8 +92,6 @@ class DebitContainer extends Component {
             accounts={this.props.accounts}
             handleSecondSubmit={this.handleSecondSubmit}/> : null
           }
-
-          <DebitSecondInput state={this.state} accounts={this.props.accounts} handleSliderChange={this.handleSliderChange} handleOnChange={this.handleOnChange} handleSecondSubmit={this.handleSecondSubmit}/>
         </>
       )
     }
