@@ -1,0 +1,26 @@
+.FormContainer {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  padding-top: 20px;
+}
+
+.CreditForm {
+  width: 60%;
+  max-width: 450px;
+  border-radius: 10px;
+  border-spacing: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 5px 5px 8px #d1d1d1;
+}
+
+
+.SubmitButton {
+  padding-top: 20px;
+}
+
+.FormHeader {
+  color: #55088c;
+  text-align: center;
+}

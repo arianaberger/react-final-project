@@ -7,6 +7,7 @@ import { createTransaction } from '../actions/transactions'
 import {Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import '../css/Forms.css';
 
 
 class CreditContainer extends Component {
@@ -54,7 +55,6 @@ class CreditContainer extends Component {
   }
 
   render() {
-    const onChange = this.handleOnChange
     const {amount, counterparty, date} = this.state
     const accounts_list = this.props.accounts.map(account => {
       return <option value={account.id} key={account.id}>{account.name}</option>
@@ -67,63 +67,61 @@ class CreditContainer extends Component {
 
     //Render form
     return(
-      <div>
+      <div className='FormContainer'>
+
+      <div className="CreditForm">
+
+      <h3 className="FormHeader">Please Enter Credit Information</h3>
+      <hr />
 
       <Form onSubmit={this.handleOnSubmit}>
 
         <Form.Group controlId="formBasicAmount">
-          <Form.Label>Amount:</Form.Label>
+          <Form.Label>Amount</Form.Label>
           <Form.Control
             type="text"
             name="amount"
             value={amount}
-            onChange={onChange}
+            onChange={this.handleOnChange}
            />
         </Form.Group>
 
-        </Form>
+        <Form.Group controlId="formBasicInstitution">
+          <Form.Label>Institution</Form.Label>
+          <Form.Control
+            type="text"
+            name="counterparty"
+            value={counterparty}
+            onChange={this.handleOnChange}
+           />
+        </Form.Group>
 
-        <form onSubmit={this.handleOnSubmit}>
+        <Form.Group controlId="formBasicDate">
+          <Form.Label>Date</Form.Label>
           <div>
-            <label>Amount:
-              <input
-                type="text"
-                name="amount"
-                value={amount}
-                onChange={onChange} />
-            </label>
+          <DatePicker
+            name="date"
+            selected={date}
+            onChange={this.handleDateChange}
+            dateFormat="MMMM d, yyyy"
+          />
           </div>
-
-          <div>
-            <label>Institution:
-              <input
-                type="text"
-                name="counterparty"
-                value={counterparty}
-                onChange={onChange} />
-            </label>
-        </div>
+        </Form.Group>
 
         <div>
-          <label>Date:
-            <input
-              type="text"
-              name="date"
-              value={date}
-              onChange={this.handleOnChange} />
-          </label>
-        </div>
-
-        <div>
-          <label>Add expense to the following account:
-            <select onChange={onChange} name="account_id">
+          <label>Add expense to the following account:</label>
+            <select onChange={this.handleOnChange} name="account_id">
               {accounts_list}
             </select>
-          </label>
         </div>
 
-          <input type="submit" value="Add Transaction" />
-        </form>
+        <div className="SubmitButton">
+          <Button variant="dark" type="submit">
+            Add Deposit
+          </Button>
+        </div>
+        </Form>
+      </div>
       </div>
     )
   }
