@@ -122,7 +122,7 @@ class CreditContainer extends Component {
 
 
         <div className="SubmitButton">
-          <Button variant="dark" type="submit">
+          <Button variant="info" type="submit" block>
             Add Deposit
           </Button>
         </div>

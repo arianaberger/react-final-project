@@ -11,7 +11,7 @@ const DebitFirstInput = (props) => {
     <div className='FormContainer'>
     <div className="TransactionForm">
 
-    <h3 className="FormHeader">Enter Debit Information</h3>
+    <h3 className="FormHeader">Step 1: Enter Debit Information</h3>
     <hr />
 
     <Form onSubmit={props.handleFirstSubmit}>
@@ -49,7 +49,7 @@ const DebitFirstInput = (props) => {
       </Form.Group>
 
 
-      <Button variant="dark" type="submit">
+      <Button variant="info" type="submit" block>
         Add Deposit
       </Button>
     </Form>
