@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { getAccounts} from '../actions/accounts';
 import { createTransaction } from '../actions/transactions'
 
+import Select from 'react-select'
 import {Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -60,9 +61,11 @@ class CreditContainer extends Component {
 
   render() {
     const {amount, counterparty, date} = this.state
+
     const accounts_list = this.props.accounts.map(account => {
-      return <option value={account.id} key={account.id}>{account.name}</option>
+      return {value:`${account.id}`, key:`${account.id}`, label:`${account.name}`}
     })
+
 
     //Redirect to accounts page when form is submitted
     if (this.state.authenticate === true) {
@@ -75,7 +78,7 @@ class CreditContainer extends Component {
 
       <div className="CreditForm">
 
-      <h3 className="FormHeader">Please Enter Credit Information</h3>
+      <h3 className="FormHeader"> Enter Credit Information</h3>
       <hr />
 
       <Form onSubmit={this.handleOnSubmit}>
@@ -112,12 +115,13 @@ class CreditContainer extends Component {
           </div>
         </Form.Group>
 
-        <div>
-          <label>Add expense to the following account:</label>
-            <select onChange={this.handleOnChange} name="account_id">
-              {accounts_list}
-            </select>
-        </div>
+        <Form.Group controlId="formBasicDate">
+          <div>
+            <Form.Label>Add expense to the following account:</Form.Label>
+            <Select options={accounts_list} />
+          </div>
+        </Form.Group>
+
 
         <div className="SubmitButton">
           <Button variant="dark" type="submit">

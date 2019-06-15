@@ -1,7 +1,7 @@
 .FormContainer {
   display: flex;
   justify-content: center;
-  margin: 30px;
+  margin: 20px;
   padding-top: 20px;
 }
 
@@ -17,7 +17,7 @@
 
 
 .SubmitButton {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .FormHeader {
