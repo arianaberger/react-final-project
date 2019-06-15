@@ -11,12 +11,16 @@ class AccountsContainer extends Component {
     this.props.getAccounts();
   }
 
+  state = {
+    update: false
+  }
+
   render() {
     console.log("AccountsContainer props are:", this.props.accounts)
     return(
       <>
       <AccountTotal total={this.props.total} />
-      <Accounts accounts={this.props.accounts} />
+      <Accounts accounts={this.props.accounts} update={this.state.update} />
       </>
     )
   }
