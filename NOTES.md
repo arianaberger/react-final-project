@@ -1,4 +1,4 @@
-1. Move transaction form data to local state
+1. Debit form not working
 2. fix reducers so i don't have to do accounts.accounts
 3. Validations for transaction forms
 4. Add about page with info on the app
