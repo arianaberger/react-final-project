@@ -29,5 +29,9 @@
   color: #595959;
   text-align: center;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.5em;
+}
+
+.rangeslider-horizontal .rangeslider__fill {
+  background-color: #420865;
 }

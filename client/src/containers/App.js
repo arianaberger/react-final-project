@@ -8,12 +8,15 @@ import AccountsContainer from './AccountsContainer';
 import CreditContainer from './CreditContainer';
 import DebitContainer from './DebitContainer';
 import AccountContainer from './AccountContainer';
+import Footer from './Footer';
 import '../css/App.css';
+import '../css/Forms.css';
 
 class App extends Component {
   render() {
     return (
-      <>
+      <div className="app-container">
+        <div className="content-wrap">
       <Router>
         <NavBar />
 	      <Route exact path="/"
@@ -28,8 +31,10 @@ class App extends Component {
           <Route exact path="/accounts/:id"
             component={AccountContainer}
           />
+          <Footer />
     </Router>
-    </>
+    </div>
+    </div>
     );
   };
 }

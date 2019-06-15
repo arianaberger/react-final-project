@@ -8,7 +8,6 @@ import Select from 'react-select'
 import {Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import '../css/Forms.css';
 
 
 class CreditContainer extends Component {

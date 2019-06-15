@@ -2,6 +2,7 @@ import React from 'react';
 import {Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
 import Slider from 'react-rangeslider'
 import 'react-rangeslider/lib/index.css'
+import '../css/Forms.css'
 
 const DebitSecondInput = (props) => {
 
@@ -20,6 +21,7 @@ const DebitSecondInput = (props) => {
            <Slider
              min={0}
              max={10}
+             tooltip={false}
              value={percentage}
              orientation='horizontal'
              onChange={props.handleSliderChange}
