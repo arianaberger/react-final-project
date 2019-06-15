@@ -73,8 +73,20 @@ class DebitContainer extends Component {
 
       return(
         <>
-          {this.state.first_submit ? null : <DebitFirstInput state={this.state} handleDateChange={this.handleDateChange} transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange} handleFirstSubmit={this.handleFirstSubmit} />}
-          {this.state.first_submit ? <DebitSecondInput state={this.state} accounts={this.props.accounts} transactionFormData={this.props.transactionFormData} handleOnChange={this.handleOnChange} handleSecondSubmit={this.handleSecondSubmit}/> : null}
+          {this.state.first_submit ? null : <DebitFirstInput
+            state={this.state}
+            handleDateChange={this.handleDateChange}
+            handleOnChange={this.handleOnChange}
+            handleFirstSubmit={this.handleFirstSubmit} />
+          }
+          {this.state.first_submit ? <DebitSecondInput
+            state={this.state}
+            handleDateChange={this.handleDateChange}
+            accounts={this.props.accounts}
+            handleOnChange={this.handleOnChange}
+            handleSecondSubmit={this.handleSecondSubmit}/> : null
+          }
+          
           <DebitSecondInput state={this.state} accounts={this.props.accounts} handleOnChange={this.handleOnChange} handleSecondSubmit={this.handleSecondSubmit}/>
         </>
       )

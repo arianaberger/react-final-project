@@ -2,38 +2,60 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { getAccounts} from '../actions/accounts';
-import { updateTransactionFormData, resetTransactionForm } from '../actions/transactionForm'
 import { createTransaction } from '../actions/transactions'
+
+import {Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 
 class CreditContainer extends Component {
 
   state = {
-    authenticate: false
+    authenticate: false,
+
+    //Initial state for form
+    amount: '',
+    counterparty: '',
+    date: new Date(),
+    account_id: 1,
+    parent_id: '',
+    debit: false,
   }
 
   componentDidMount(){
     this.props.getAccounts()
-    this.props.resetTransactionForm()
   }
 
   handleOnChange = event => {
-    const currentTransactionFormData = Object.assign({}, this.props.transactionFormData, {
+    this.setState({
       [event.target.name]: event.target.value,
-      debit: false
-    });
-    this.props.updateTransactionFormData(currentTransactionFormData);
+    })
+  }
+
+  handleDateChange(date) {
+    this.setState({
+      date: date
+    })
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.createTransaction(this.props.transactionFormData)
-    this.props.resetTransactionForm()
-    this.setState({ authenticate: true })
-
+    this.props.createTransaction(this.state)
+    this.setState({
+      amount: '',
+      counterparty: '',
+      date: new Date(),
+      account_id: 1,
+      parent_id: '',
+      debit: false,
+      authenticate: true
+    })
   }
 
   render() {
-    const {amount, counterparty, date, account_id} = this.props.transactionFormData
+    const onChange = this.handleOnChange
+    const {amount, counterparty, date} = this.state
     const accounts_list = this.props.accounts.map(account => {
       return <option value={account.id} key={account.id}>{account.name}</option>
     })
@@ -43,8 +65,24 @@ class CreditContainer extends Component {
       return <Redirect to='/' />
     }
 
+    //Render form
     return(
       <div>
+
+      <Form onSubmit={this.handleOnSubmit}>
+
+        <Form.Group controlId="formBasicAmount">
+          <Form.Label>Amount:</Form.Label>
+          <Form.Control
+            type="text"
+            name="amount"
+            value={amount}
+            onChange={onChange}
+           />
+        </Form.Group>
+
+        </Form>
+
         <form onSubmit={this.handleOnSubmit}>
           <div>
             <label>Amount:
@@ -52,7 +90,7 @@ class CreditContainer extends Component {
                 type="text"
                 name="amount"
                 value={amount}
-                onChange={this.handleOnChange} />
+                onChange={onChange} />
             </label>
           </div>
 
@@ -62,7 +100,7 @@ class CreditContainer extends Component {
                 type="text"
                 name="counterparty"
                 value={counterparty}
-                onChange={this.handleOnChange} />
+                onChange={onChange} />
             </label>
         </div>
 
@@ -78,7 +116,7 @@ class CreditContainer extends Component {
 
         <div>
           <label>Add expense to the following account:
-            <select onChange={this.handleOnChange} name="account_id">
+            <select onChange={onChange} name="account_id">
               {accounts_list}
             </select>
           </label>
@@ -95,15 +133,12 @@ const mapStateToProps = (state) => {
   return {
     //is accounts.accounts. not considered best practice? Or is this okay?
     accounts: state.accounts.accounts,
-    transactionFormData: state.transactionFormData
   }
 }
 
 const mapDispatchToProps = {
     getAccounts,
-    updateTransactionFormData,
     createTransaction,
-    resetTransactionForm
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreditContainer)
