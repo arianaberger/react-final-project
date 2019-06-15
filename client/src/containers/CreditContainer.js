@@ -12,16 +12,20 @@ import '../css/Forms.css';
 
 class CreditContainer extends Component {
 
-  state = {
-    authenticate: false,
+  constructor(props) {
+    super(props);
+    this.state = {
+      authenticate: false,
 
-    //Initial state for form
-    amount: '',
-    counterparty: '',
-    date: new Date(),
-    account_id: 1,
-    parent_id: '',
-    debit: false,
+      //Initial state for form
+      amount: '',
+      counterparty: '',
+      date: new Date(),
+      account_id: 1,
+      parent_id: '',
+      debit: false,
+    }
+    this.handleDateChange = this.handleDateChange.bind(this);
   }
 
   componentDidMount(){
