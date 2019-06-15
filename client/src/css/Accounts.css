@@ -1,20 +1,33 @@
 .Accounts {
-  text-align: center;
-  padding: 50px;
-  border-style: solid;
-  background-color: #aaacaf;
-  border-width: 5px;
-  border-color: #848587;
   display: inline-block;
+  width: 100%;
+  clear: both;
+  text-align: center;
+  padding: 30px;
+  background-color: #fff;
   margin: 20px;
-  width: 10%;
-  box-shadow: 5px 7px 8px -3px rgba(0,0,0,0.34);
+  box-shadow: 5px 5px 8px #d1d1d1;
   -webkit-box-shadow: 5px 7px 8px -3px rgba(0,0,0,0.34);
   -moz-box-shadow: 5px 7px 8px -3px rgba(0,0,0,0.34);
 }
 
-.AccountTotalWrapper {
+.AccountWrapper {
+  display: inline-block;
   width: 100%;
   margin: 15px;
   clear: both;
+  text-align: center;
+}
+
+.TotalBalanceHeader {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  font-weight: bold;
+  text-decoration-color: gray;
+  color: gray;
+}
+
+.TotalBalance {
+  font-weight: bold;
+  color: #17a2b8;
 }

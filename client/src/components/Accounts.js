@@ -3,8 +3,9 @@ import '../css/Accounts.css';
 import { NavLink } from 'react-router-dom';
 import AccountForm from '../containers/AccountForm'
 
+
 const Accounts = (props) => (
-  <div className="wrapper">
+  <div className="AccountWrapper">
     {props.accounts.map(account =>
       <div className='Accounts' key={account.id}>
         <NavLink to={`/accounts/${account.id}`}><h3>{account.name}</h3></NavLink>
