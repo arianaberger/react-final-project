@@ -24,10 +24,12 @@
 .AccountTotal {
   width: 40%;
   float: left;
+  font-weight: bold;
+  color: #55088c;
 }
 
-.AccountBuffer {
-  width: 15%;
+.AccountEdit {
+  width: 30%;
   float: left;
 }
 
