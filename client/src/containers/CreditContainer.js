@@ -75,10 +75,9 @@ class CreditContainer extends Component {
     //Render form
     return(
       <div className='FormContainer'>
+      <div className="TransactionForm">
 
-      <div className="CreditForm">
-
-      <h3 className="FormHeader"> Enter Credit Information</h3>
+      <h3 className="FormHeader">Enter Credit Information</h3>
       <hr />
 
       <Form onSubmit={this.handleOnSubmit}>

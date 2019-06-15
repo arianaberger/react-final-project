@@ -8,7 +8,12 @@ const DebitFirstInput = (props) => {
   const {amount, counterparty, date} = props.state
 
   return(
-    <div>
+    <div className='FormContainer'>
+    <div className="TransactionForm">
+
+    <h3 className="FormHeader">Enter Debit Information</h3>
+    <hr />
+
     <Form onSubmit={props.handleFirstSubmit}>
 
       <Form.Group controlId="formBasicAmount">
@@ -33,12 +38,14 @@ const DebitFirstInput = (props) => {
 
       <Form.Group controlId="formBasicDate">
         <Form.Label>Date:</Form.Label>
-        <DatePicker
-          name="date"
-          selected={date}
-          onChange={props.handleDateChange}
-          dateFormat="MMMM d, yyyy"
-        />
+        <div>
+          <DatePicker
+            name="date"
+            selected={date}
+            onChange={props.handleDateChange}
+            dateFormat="MMMM d, yyyy"
+          />
+        </div>
       </Form.Group>
 
 
@@ -47,6 +54,8 @@ const DebitFirstInput = (props) => {
       </Button>
     </Form>
     </div>
+    </div>
+
   )
 }
 
