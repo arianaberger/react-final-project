@@ -17,7 +17,8 @@ class AccountsContainer extends Component {
     id: ''
   }
 
-  handleOnClick = (id) => {
+  handleOnClick = (event, id) => {
+    event.preventDefault();
     this.setState({
       update: true,
       id: id

@@ -8,9 +8,9 @@ import edit from '../images/edit.png'
 const Accounts = (props) => (
   <div className="AccountWrapper">
     <div className="Accounts">
-      <div className="AccountHeader">ACCOUNT NAME</div>
-      <div className="AccountHeader">ACCOUNT BALANCE</div>
-      <div className="AccountEditHeader">EDIT</div>
+      <div className="AccountsHeader">ACCOUNT NAME</div>
+      <div className="AccountsHeader">ACCOUNT BALANCE</div>
+      <div className="AccountsEditHeader">EDIT</div>
 
       {props.accounts.map(account =>
         <>
@@ -26,7 +26,7 @@ const Accounts = (props) => (
             <h3>{format.formatMoney(account.account_total)}</h3>
           </div>
           <div className="AccountEdit">
-            {account.id != 1 ? <img src={edit} alt="edit" onClick={() => props.handleOnClick(account.id)}/> : null}
+            {account.id != 1 ? <a href='#' onClick={(event) => props.handleOnClick(event, account.id)}><img src={edit} alt="edit" /></a> : null}
           </div>
         </div>
         </>

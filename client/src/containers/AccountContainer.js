@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { getAccount } from '../actions/accounts';
 import { updateTransaction } from '../actions/transactions'
 import  TransactionsContainer  from '../components/TransactionsContainer';
+import '../css/Accounts.css';
+import format from 'accounting-js';
 
 class AccountContainer extends Component {
 
@@ -25,16 +27,31 @@ class AccountContainer extends Component {
     const transactions = account.transactions || []
 
     return(
-      <div>
-      <h1>{name}</h1>
-      <h3>Current Balance: ${account_total}</h3>
-      <h4>Transactions:</h4>
-      <TransactionsContainer
-        transactions={transactions}
-        account_id={this.props.account.id}
-        onDeleteClick={this.onDeleteClick}
-      />
+      <>
+
+      <div className="AccountHeader">
+      <div className="bottom">
+        <h2>{format.formatMoney(account_total)}</h2>
+        <h6>Available Balance</h6>
+        </div>
       </div>
+
+
+
+      <div className="AccountWrapper">
+        <div>
+          <div className='TransactionsHeader'><h4>{name} - Recent Transactions:</h4></div>
+        </div>
+      </div>
+
+      <div className="AccountWrapper">
+        <TransactionsContainer
+          transactions={transactions}
+          account_id={this.props.account.id}
+          onDeleteClick={this.onDeleteClick}
+        />
+      </div>
+      </>
     )
   }
 }
