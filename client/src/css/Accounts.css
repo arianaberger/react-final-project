@@ -21,21 +21,45 @@
 }
 
 .AccountName {
-  width: 50%;
+  width: 48%;
   float: left;
 }
 
 .AccountTotal {
-  width: 47%;
+  width: 48%;
   float: left;
   font-weight: bold;
   color: #55088c;
 }
 
 .AccountEdit {
-  width: 3%;
+  width: 4%;
   float: left;
+  height: 70px;
 }
+
+.AccountHeader {
+  width: 48%;
+  float: left;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  color: #000;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  font-size: 0.75em
+}
+
+.AccountEditHeader {
+  width: 4%;
+  float: left;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  color: #000;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  font-size: 0.75em
+}
+
 
 .TotalBalanceHeader {
   text-decoration: underline;
@@ -57,4 +81,13 @@
   background-color: #17a2b8;
   margin-bottom: 30px;
   color: #fff;
+}
+
+a {
+  color: gray;
+}
+
+a:hover {
+  color: #666;
+  text-decoration: underline;
 }
