@@ -39,17 +39,18 @@ class AccountContainer extends Component {
 
 
       <div className="AccountWrapper">
-        <div>
           <div className='TransactionsHeader'><h4>{name} - Recent Transactions:</h4></div>
-        </div>
       </div>
 
       <div className="AccountWrapper">
+      <div className="Transactions">
+
         <TransactionsContainer
           transactions={transactions}
           account_id={this.props.account.id}
           onDeleteClick={this.onDeleteClick}
         />
+</div>
       </div>
       </>
     )

@@ -69,9 +69,44 @@
 }
 
 .TransactionsHeader {
-  border-bottom: 1px solid #000;
   float: left;
   margin: 0px;
+}
+
+.Transactions {
+  width: 60%;
+  background-color: #fff;
+  margin: 20px;
+  padding: 20px;
+  border-spacing: 10px;
+  border-radius: 10px;
+}
+
+.TransactionContainer {
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  padding-top: 10px;
+  width: 100%;
+  min-height: 70px;
+  border-bottom: 1px dotted #666
+}
+
+.Transaction1 {
+  float: left;
+  width: 50%
+}
+
+.Transaction2 {
+  float: left;
+  width: 40%;
+  text-align: right;
+  margin-right: 15%
+}
+
+.Transaction3 {
+  float: left;
+  width: 10%
 }
 
 .TotalBalanceHeader {
