@@ -11,15 +11,14 @@ const Accounts = (props) => (
       {props.accounts.map(account =>
         <div className="AccountInfo" key={account.id}>
           <div className="AccountName">
-            <NavLink to={`/accounts/${account.id}`}><h3>{account.name}</h3></NavLink>
+          {props.state.update && account.id === props.state.id ? <AccountForm accountId={account.id} /> : <NavLink to={`/accounts/${account.id}`}><h3>{account.name}</h3></NavLink>}
           </div>
           <div className="AccountTotal">
             <h2>{format.formatMoney(account.account_total)}</h2>
           </div>
           <div className="AccountEdit">
-            {account.id != 1 ? <img src={edit} alt="edit"/> : null}
+            {account.id != 1 ? <img src={edit} alt="edit" onClick={() => props.handleOnClick(account.id)}/> : null}
           </div>
-          {props.update ? <AccountForm accountId={account.id} /> : null}
         </div>
       )}
     </div>

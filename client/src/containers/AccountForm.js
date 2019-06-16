@@ -28,14 +28,12 @@ class AccountForm extends Component {
     return(
       <div>
         <form onSubmit={this.handleOnSubmit}>
-          <label>Name:
             <input
               type="text"
               onChange={this.handleOnChange}
               name="account_name"
               value={this.state.name}
               />
-          </label>
           <input type="submit" value="Update" />
         </form>
       </div>

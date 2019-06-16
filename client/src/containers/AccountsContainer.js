@@ -13,7 +13,15 @@ class AccountsContainer extends Component {
   }
 
   state = {
-    update: false
+    update: false,
+    id: 9
+  }
+
+  handleOnClick = (id) => {
+    this.setState({
+      update: true,
+      id: id
+    })
   }
 
   render() {
@@ -21,7 +29,11 @@ class AccountsContainer extends Component {
     return(
       <>
         <AccountTotal total={this.props.total} />
-        <Accounts accounts={this.props.accounts} update={this.state.update} />
+        <Accounts
+          accounts={this.props.accounts}
+          state={this.state}
+          handleOnClick={this.handleOnClick}
+        />
       </>
     )
   }
