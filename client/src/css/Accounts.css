@@ -109,6 +109,10 @@
   width: 10%
 }
 
+.credit {
+  color: red
+}
+
 .TotalBalanceHeader {
   text-decoration: underline;
   text-decoration-style: dashed;
