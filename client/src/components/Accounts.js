@@ -8,13 +8,13 @@ import edit from '../images/edit.png'
 const Accounts = (props) => (
   <div className="AccountWrapper">
     <div className="Accounts">
-    <div className="AccountHeader">ACCOUNT NAME</div>
-    <div className="AccountHeader">ACCOUNT BALANCE</div>
-    <div className="AccountEditHeader">EDIT</div>
+      <div className="AccountHeader">ACCOUNT NAME</div>
+      <div className="AccountHeader">ACCOUNT BALANCE</div>
+      <div className="AccountEditHeader">EDIT</div>
 
       {props.accounts.map(account =>
         <>
-        <div className="AccountInfo" key={account.id}>
+        <div key={account.id}>
           <div className="AccountName">
           {props.state.update && account.id === props.state.id ?
             <AccountForm account_id={account.id}
