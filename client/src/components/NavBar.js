@@ -1,12 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, NavItem, NavDropdown } from 'react-bootstrap';
-import splash from '../images/splash.png'
+import '../css/App.css'
 
 const NavBar = () => {
   return(
     <>
-      <img src={splash} alt="Splash"/>
+      <div className="splash"></div>
       <Navbar bg="light" variant="light" expand="sm">
         <Navbar.Brand href="/">Savvy Saver</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
