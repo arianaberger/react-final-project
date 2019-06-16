@@ -3,6 +3,7 @@ import Accounts from '../components/Accounts';
 import AccountTotal from '../components/AccountTotal';
 import { connect } from 'react-redux';
 import { getAccounts, getTotal} from '../actions/accounts';
+import '../css/Accounts.css';
 
 class AccountsContainer extends Component {
 
@@ -19,8 +20,8 @@ class AccountsContainer extends Component {
     console.log("AccountsContainer props are:", this.props.accounts)
     return(
       <>
-      <AccountTotal total={this.props.total} />
-      <Accounts accounts={this.props.accounts} update={this.state.update} />
+        <AccountTotal total={this.props.total} />
+        <Accounts accounts={this.props.accounts} update={this.state.update} />
       </>
     )
   }

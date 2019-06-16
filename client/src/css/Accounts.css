@@ -1,35 +1,38 @@
 .AccountWrapper {
-  display: inline-block;
-  justify-content: center;
-  width: 100%;
+  display: flex;
   margin: 15px;
-  text-align: center;
+  justify-content: center;
 }
 
 .Accounts {
-  display: flex;
-  padding: 30px;
+  width: 60%;
   background-color: #fff;
   margin: 20px;
+  padding: 20px;
+  border-spacing: 10px;
+  border-radius: 10px;
   box-shadow: 5px 5px 8px #d1d1d1;
   -webkit-box-shadow: 5px 7px 8px -3px rgba(0,0,0,0.34);
   -moz-box-shadow: 5px 7px 8px -3px rgba(0,0,0,0.34);
 }
 
+.AccountInfo {
+}
+
 .AccountName {
-  width: 30%;
+  width: 45%;
   float: left;
 }
 
 .AccountTotal {
-  width: 40%;
+  width: 50%;
   float: left;
   font-weight: bold;
   color: #55088c;
 }
 
 .AccountEdit {
-  width: 30%;
+  width: 5%;
   float: left;
 }
 
