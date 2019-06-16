@@ -6,22 +6,18 @@ import {Form, FormControl, FormGroup} from 'react-bootstrap';
 class AccountForm extends Component {
 
   state = {
-    id: 1,
-    name: ''
+    id: this.props.account_id,
+    name: this.props.account_name
   }
 
   handleOnChange = event => {
     this.setState({
       name: event.target.value,
-      id: this.props.accountId
     })
   }
 
-  handleOnSubmit = event => {
+  handleOnSubmit = () => {
     this.props.updateAccount(this.state);
-    this.setState({
-      name: '',
-    })
     this.props.handleFormSubmit();
   }
 
@@ -30,7 +26,9 @@ class AccountForm extends Component {
     if (event.key === 'Enter') {
       event.preventDefault();
       event.stopPropagation();
-      this.handleOnSubmit();
+      if (event.target.value != "") {
+        this.handleOnSubmit();
+      }
     }
   }
 

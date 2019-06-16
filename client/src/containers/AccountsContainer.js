@@ -14,7 +14,7 @@ class AccountsContainer extends Component {
 
   state = {
     update: false,
-    id: 9
+    id: ''
   }
 
   handleOnClick = (id) => {
@@ -34,6 +34,11 @@ class AccountsContainer extends Component {
     console.log("AccountsContainer props are:", this.props.accounts)
     return(
       <>
+        <div className="Welcome">
+        <h2>Welcome!</h2>
+        <h6>Your account overview is below. Happy saving :)</h6>
+        </div>
+
         <AccountTotal total={this.props.total} />
         <Accounts
           accounts={this.props.accounts}
