@@ -17,22 +17,23 @@
 }
 
 .AccountInfo {
+  height: 70px;
 }
 
 .AccountName {
-  width: 45%;
+  width: 50%;
   float: left;
 }
 
 .AccountTotal {
-  width: 50%;
+  width: 47%;
   float: left;
   font-weight: bold;
   color: #55088c;
 }
 
 .AccountEdit {
-  width: 5%;
+  width: 3%;
   float: left;
 }
 

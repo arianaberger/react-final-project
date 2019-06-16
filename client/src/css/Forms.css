@@ -38,3 +38,7 @@
 .rangeslider-horizontal .rangeslider__fill {
   background-color: #420865;
 }
+
+#formBasicName.form-control {
+  max-width: 200px;
+}

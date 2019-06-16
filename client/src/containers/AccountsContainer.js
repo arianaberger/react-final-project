@@ -24,6 +24,12 @@ class AccountsContainer extends Component {
     })
   }
 
+  handleFormSubmit = () => {
+    this.setState({
+      update: false
+    })
+  }
+
   render() {
     console.log("AccountsContainer props are:", this.props.accounts)
     return(
@@ -33,6 +39,7 @@ class AccountsContainer extends Component {
           accounts={this.props.accounts}
           state={this.state}
           handleOnClick={this.handleOnClick}
+          handleFormSubmit={this.handleFormSubmit}
         />
       </>
     )
