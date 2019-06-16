@@ -30,27 +30,26 @@ class AccountContainer extends Component {
       <>
 
       <div className="AccountHeader">
-      <div className="bottom">
-        <h2>{format.formatMoney(account_total)}</h2>
-        <h6>Available Balance</h6>
+        <div className="bottom">
+          <h2>{format.formatMoney(account_total)}</h2>
+          <h6>Available Balance</h6>
         </div>
       </div>
 
-
-
       <div className="AccountWrapper">
-          <div className='TransactionsHeader'><h4>{name} - Recent Transactions:</h4></div>
+        <div className='TransactionsHeader'>
+          <h2>{name}</h2>
+        </div>
       </div>
 
       <div className="AccountWrapper">
-      <div className="Transactions">
-
-        <TransactionsContainer
-          transactions={transactions}
-          account_id={this.props.account.id}
-          onDeleteClick={this.onDeleteClick}
-        />
-</div>
+        <div className="Transactions">
+          <TransactionsContainer
+            transactions={transactions}
+            account_id={this.props.account.id}
+            onDeleteClick={this.onDeleteClick}
+          />
+        </div>
       </div>
       </>
     )
