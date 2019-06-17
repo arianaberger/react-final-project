@@ -12,7 +12,7 @@ const DebitSecondInput = (props) => {
     <div className='FormContainer'>
     <div className="TransactionForm">
 
-    <h3 className="FormHeader">Step 2: What percentage should be allocated to each fund?</h3>
+    <h3 className="FormHeader">Step 2: What percentage should be allocated to each account?</h3>
     <hr />
 
     <Form onSubmit={props.handleSecondSubmit}>

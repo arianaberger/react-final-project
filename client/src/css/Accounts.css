@@ -120,6 +120,7 @@
 }
 
 .TotalBalanceHeader {
+  text-align: center;
   text-decoration: underline;
   text-decoration-style: dashed;
   font-weight: bold;
@@ -128,6 +129,7 @@
 }
 
 .TotalBalance {
+  text-align: center;
   font-weight: bold;
   color: #55088c;
 }
