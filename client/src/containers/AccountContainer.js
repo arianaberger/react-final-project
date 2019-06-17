@@ -31,7 +31,7 @@ class AccountContainer extends Component {
 
       <div className="AccountHeader">
         <div className="bottom">
-          {account_total ? <h1>{format.formatMoney(account_total)}</h1> : null}
+          {account_total ? <h1>format.formatMoney(account_total) }</h1> : <h1>$0.00</h1>}
           <h6>Available Balance</h6>
         </div>
       </div>
@@ -44,11 +44,14 @@ class AccountContainer extends Component {
 
       <div className="AccountWrapper">
         <div className="Transactions">
+        {transactions === [] ?
           <TransactionsContainer
             transactions={transactions}
             account_id={this.props.account.id}
-            onDeleteClick={this.onDeleteClick}
-          />
+            onDeleteClick={this.onDeleteClick} />
+          :
+          <p className="no-transactions">There are no transactions posted for this account</p>
+        }
         </div>
       </div>
       </>

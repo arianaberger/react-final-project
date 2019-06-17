@@ -159,3 +159,11 @@ a:hover {
 .edit-image {
   float: right;
 }
+
+.no-transactions {
+  text-align: center;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 1em;
+  color: #000
+}
