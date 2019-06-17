@@ -69,10 +69,10 @@ class CreditContainer extends Component {
     const {amount, counterparty, date} = this.state
 
     const accounts_list = this.props.accounts.map(account => {
-      return {value:`${account.id}`, key:`${account.id}`, label:`${account.name}`}
+      return {value:`${account.id}`, label:`${account.name}`}
     })
 
-
+console.log(accounts_list)
     //Redirect to accounts page when form is submitted
     if (this.state.authenticate === true) {
       return <Redirect to='/' />
@@ -91,6 +91,7 @@ class CreditContainer extends Component {
         <Form.Group controlId="formBasicAmount">
           <Form.Label>Amount</Form.Label>
           <Form.Control
+            required
             type="text"
             name="amount"
             value={amount}
@@ -101,6 +102,7 @@ class CreditContainer extends Component {
         <Form.Group controlId="formBasicInstitution">
           <Form.Label>Institution</Form.Label>
           <Form.Control
+            required
             type="text"
             name="counterparty"
             value={counterparty}
@@ -123,14 +125,18 @@ class CreditContainer extends Component {
         <Form.Group controlId="formBasicDate">
           <div>
             <Form.Label>Add expense to the following account:</Form.Label>
-            <Select options={accounts_list} onChange={this.handleSelectChange}/>
+            <Select
+              options={accounts_list}
+              onChange={this.handleSelectChange}
+              defaultValue={{value: 1, label: "Main Account"}}
+            />
           </div>
         </Form.Group>
 
 
         <div className="SubmitButton">
           <Button variant="info" type="submit" block>
-            Add Deposit
+            Add Transaction
           </Button>
         </div>
         </Form>

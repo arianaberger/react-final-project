@@ -155,3 +155,7 @@ a:hover {
   bottom: -25%;
   text-align: center;
 }
+
+.edit-image {
+  float: right;
+}

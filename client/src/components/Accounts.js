@@ -26,7 +26,7 @@ const Accounts = (props) => (
             <h3>{format.formatMoney(account.account_total)}</h3>
           </div>
           <div className="AccountEdit">
-            {account.id != 1 ? <a href='#' onClick={(event) => props.handleOnClick(event, account.id)}><img src={edit} alt="edit" /></a> : null}
+            {account.id != 1 ? <a href='#' onClick={(event) => props.handleOnClick(event, account.id)}><img src={edit} alt="edit" className="edit-image" /></a> : null}
           </div>
         </div>
         </>

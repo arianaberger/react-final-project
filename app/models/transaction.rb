@@ -30,6 +30,7 @@ class Transaction < ApplicationRecord
   def self.get_transaction_totals
     t_parent_debits = Transaction.all.map { |t| t if t.percentage == 100 }.compact
     t_credits = Transaction.all.map { |t| t if !t.debit }.compact
+    raise inspect
     total = t_parent_debits.sum(&:amount) - t_credits.sum(&:amount)
   end
 

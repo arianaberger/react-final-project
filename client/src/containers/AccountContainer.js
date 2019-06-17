@@ -31,7 +31,7 @@ class AccountContainer extends Component {
 
       <div className="AccountHeader">
         <div className="bottom">
-          <h2>{format.formatMoney(account_total)}</h2>
+          {account_total ? <h1>{format.formatMoney(account_total)}</h1> : null}
           <h6>Available Balance</h6>
         </div>
       </div>
