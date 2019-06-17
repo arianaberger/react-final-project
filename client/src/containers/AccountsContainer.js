@@ -31,18 +31,7 @@ class AccountsContainer extends Component {
   }
 
   render() {
-    const Accounts = (account) => {
-      return (
-        <Accounts
-          account={account}
-          key={account.id}
-          state={this.state}
-          handleOnClick={this.handleOnClick}
-          handleFormSubmit={this.handleFormSubmit}
-        />
-      )
-    }
-
+    console.log("AccountsContainer props are:", this.props.accounts)
     return(
       <>
         <div className="Welcome">
@@ -52,15 +41,12 @@ class AccountsContainer extends Component {
 
         <AccountTotal total={this.props.total} />
 
-        <div className="AccountWrapper">
-          <div className="Accounts">
-            <div className="AccountsHeader">ACCOUNT NAME</div>
-            <div className="AccountsHeader">ACCOUNT BALANCE</div>
-            <div className="AccountsEditHeader">EDIT</div>
-
-        {this.props.accounts.map(account => {Accounts(account)})}
-        </div>
-        </div>
+        <Accounts
+          accounts={this.props.accounts}
+          state={this.state}
+          handleOnClick={this.handleOnClick}
+          handleFormSubmit={this.handleFormSubmit}
+        />
       </>
     )
   }

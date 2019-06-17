@@ -1,6 +1,7 @@
 1. fix account overview page, divs are weird
 2. fix reducers so i don't have to do accounts.accounts
 3. Need validation that amount is a number (change DB to float?)
+4. Accounts and Transactions are not properly rendered (need a key)
 
 - can wrap component with withRouter to get access to this.props.match props, etc
 https://medium.com/@jeremylenz/react-router-basics-what-i-wish-theyd-told-me-37b29201d40a

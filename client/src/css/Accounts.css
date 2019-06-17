@@ -78,6 +78,7 @@
 
 .Transactions {
   width: 60%;
+  min-width: 350px;
   background-color: #fff;
   padding: 20px;
   border-spacing: 10px;
@@ -161,6 +162,7 @@ a:hover {
 
 .edit-image {
   float: right;
+  cursor: pointer;
 }
 
 .no-transactions {
