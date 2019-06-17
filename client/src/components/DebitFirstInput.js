@@ -50,7 +50,7 @@ const DebitFirstInput = (props) => {
 
 
       <Button variant="info" type="submit" block>
-        Add Deposit
+        Submit Deposit
       </Button>
     </Form>
     </div>
