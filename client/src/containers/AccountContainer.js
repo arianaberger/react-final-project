@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { getAccount } from '../actions/accounts';
 import { updateTransaction } from '../actions/transactions'
 import  TransactionsContainer  from '../components/TransactionsContainer';
-import '../css/Accounts.css';
 import accounting from 'accounting-js';
 
 class AccountContainer extends Component {

@@ -1,8 +1,7 @@
 import React from 'react';
-import {Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
+import {Form, Button} from 'react-bootstrap';
 import Slider from 'react-rangeslider'
 import 'react-rangeslider/lib/index.css'
-import '../css/Forms.css'
 
 const DebitSecondInput = (props) => {
 

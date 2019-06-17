@@ -1,5 +1,4 @@
 import React from 'react';
-import '../css/Accounts.css';
 import format from 'accounting-js';
 
 const AccountTotal = (props) => (

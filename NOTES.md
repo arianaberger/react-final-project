@@ -1,6 +1,6 @@
-2. fix account overview page, divs are weird
+1. fix account overview page, divs are weird
 2. fix reducers so i don't have to do accounts.accounts
-4. Add about page with info on the app
+3. Need validation that amount is a number (change DB to float?)
 
 - can wrap component with withRouter to get access to this.props.match props, etc
 https://medium.com/@jeremylenz/react-router-basics-what-i-wish-theyd-told-me-37b29201d40a

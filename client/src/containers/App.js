@@ -12,7 +12,8 @@ import About from '../components/About';
 import Footer from './Footer';
 import '../css/App.css';
 import '../css/Forms.css';
-
+import '../css/Accounts.css';
+import '../css/Footer.css';
 
 class App extends Component {
   render() {

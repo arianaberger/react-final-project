@@ -1,5 +1,4 @@
 import React from 'react';
-import '../css/Accounts.css';
 import {Button} from 'react-bootstrap';
 import format from 'accounting-js';
 import Moment from 'react-moment';

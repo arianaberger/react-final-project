@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateAccount } from '../actions/accounts'
-import {Form, FormControl, FormGroup} from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
 class AccountForm extends Component {
 
@@ -26,7 +26,7 @@ class AccountForm extends Component {
     if (event.key === 'Enter') {
       event.preventDefault();
       event.stopPropagation();
-      if (event.target.value != "") {
+      if (event.target.value !== "") {
         this.handleOnSubmit();
       }
     }

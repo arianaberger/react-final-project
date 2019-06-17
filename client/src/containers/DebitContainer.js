@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { createTransaction } from '../actions/transactions'
 import { getAccounts} from '../actions/accounts';
 import DebitFirstInput from '../components/DebitFirstInput'
 import DebitSecondInput from '../components/DebitSecondInput'
-import { createTransaction } from '../actions/transactions'
 
 class DebitContainer extends Component {
 

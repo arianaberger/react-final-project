@@ -3,7 +3,6 @@ import Accounts from '../components/Accounts';
 import AccountTotal from '../components/AccountTotal';
 import { connect } from 'react-redux';
 import { getAccounts, getTotal} from '../actions/accounts';
-import '../css/Accounts.css';
 
 class AccountsContainer extends Component {
 
@@ -32,7 +31,18 @@ class AccountsContainer extends Component {
   }
 
   render() {
-    console.log("AccountsContainer props are:", this.props.accounts)
+    const Accounts = (account) => {
+      return (
+        <Accounts
+          account={account}
+          key={account.id}
+          state={this.state}
+          handleOnClick={this.handleOnClick}
+          handleFormSubmit={this.handleFormSubmit}
+        />
+      )
+    }
+
     return(
       <>
         <div className="Welcome">
@@ -41,12 +51,16 @@ class AccountsContainer extends Component {
         </div>
 
         <AccountTotal total={this.props.total} />
-        <Accounts
-          accounts={this.props.accounts}
-          state={this.state}
-          handleOnClick={this.handleOnClick}
-          handleFormSubmit={this.handleFormSubmit}
-        />
+
+        <div className="AccountWrapper">
+          <div className="Accounts">
+            <div className="AccountsHeader">ACCOUNT NAME</div>
+            <div className="AccountsHeader">ACCOUNT BALANCE</div>
+            <div className="AccountsEditHeader">EDIT</div>
+
+        {this.props.accounts.map(account => {Accounts(account)})}
+        </div>
+        </div>
       </>
     )
   }

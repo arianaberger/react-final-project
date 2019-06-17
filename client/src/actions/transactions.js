@@ -1,6 +1,7 @@
 import { getTotal } from './accounts'
 import { getAccounts, getAccount } from './accounts'
 
+//Not being used:
 const API_URL = process.env.REACT_APP_API_URL;
 
 //FETCH FUNCTIONS
