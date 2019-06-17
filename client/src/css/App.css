@@ -3,8 +3,32 @@
   min-height: 100%;
 }
 
+.content-wrapper {
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+}
+
 .content-wrap {
   padding-bottom: 2.5rem;    /* Footer height */
+}
+
+.content {
+  width: 70%;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.header {
+  width: 100%;
+  font-size: 2.5em;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.list {
+  margin: 10px;
 }
 
 .splash {
