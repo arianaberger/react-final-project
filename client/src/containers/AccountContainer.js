@@ -24,6 +24,7 @@ class AccountContainer extends Component {
     const account = this.props.account
     const name = account.name
     const account_total = account.account_total
+    console.log("moniez:", account_total)
     const transactions = account.transactions || []
 
     return(
@@ -31,7 +32,7 @@ class AccountContainer extends Component {
 
       <div className="AccountHeader">
         <div className="bottom">
-          {account_total ? <h1>format.formatMoney(account_total) }</h1> : <h1>$0.00</h1>}
+          {account_total ? <h1>format.formatMoney(account_total)}</h1> : <h1>$0.00</h1>}
           <h6>Available Balance</h6>
         </div>
       </div>

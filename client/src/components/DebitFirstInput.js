@@ -19,6 +19,7 @@ const DebitFirstInput = (props) => {
       <Form.Group controlId="formBasicAmount">
         <Form.Label>Amount:</Form.Label>
         <Form.Control
+          required
           type="text"
           name="amount"
           value={amount}
@@ -29,6 +30,7 @@ const DebitFirstInput = (props) => {
       <Form.Group controlId="formBasicInstitution">
         <Form.Label>Institution:</Form.Label>
         <Form.Control
+          required
           type="text"
           name="counterparty"
           value={counterparty}

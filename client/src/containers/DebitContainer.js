@@ -12,8 +12,7 @@ class DebitContainer extends Component {
     super(props);
     this.state = {
       first_submit: false,
-      authenticate: false,
-      value: '',
+      submitted: false,
 
       //Initial state for form
       amount: '',
@@ -22,7 +21,7 @@ class DebitContainer extends Component {
       account_id: 1,
       parent_id: '',
       debit: true,
-      percentage: '',
+      percentage: 5,
     }
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleSliderChange = this.handleSliderChange.bind(this);
@@ -52,7 +51,6 @@ class DebitContainer extends Component {
 
     handleFirstSubmit = event => {
       event.preventDefault();
-      this.props.createTransaction(this.state)
       this.setState({ first_submit: true })
     }
 
@@ -61,20 +59,13 @@ class DebitContainer extends Component {
       this.props.createTransaction(this.state)
       this.setState({
         first_submit: false,
-        authenticate: true,
-        amount: '',
-        counterparty: '',
-        date: '',
-        account_id: 1,
-        parent_id: '',
-        debit: true,
-        percentage: '',
+        submitted: true,
      })
     }
 
     render() {
       //Redirect to accounts page when form is submitted
-      if (this.state.authenticate === true) {
+      if (this.state.submitted === true) {
         return <Redirect to='/' />
       }
 
