@@ -25,6 +25,7 @@ class AccountContainer extends Component {
     const name = account.name
     const account_total = account.account_total
     const transactions = account.transactions || []
+    console.log(transactions)
     return(
       <>
 
@@ -43,10 +44,12 @@ class AccountContainer extends Component {
 
       <div className="AccountWrapper">
         <div className="Transactions">
+        {account_total === 0 ? <p className="no-transactions">There are no transactions posted to this account</p> :
           <TransactionsContainer
             transactions={transactions}
             account_id={this.props.account.id}
             onDeleteClick={this.onDeleteClick} />
+          }
         </div>
       </div>
       </>
