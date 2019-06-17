@@ -7,8 +7,8 @@ const NavBar = () => {
   return(
     <>
       <div className="splash"></div>
-      <Navbar bg="light" variant="light" expand="sm">
-        <Navbar.Brand href="/">Savvy Saver</Navbar.Brand>
+      <Navbar bg="dark" variant="dark" expand="sm">
+        <Navbar.Brand href="/" className="logo">Savvy Saver</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
