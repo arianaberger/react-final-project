@@ -15,7 +15,7 @@ class CreditContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      authenticate: false,
+      submitted: false,
 
       //Initial state for form
       amount: '',
@@ -61,7 +61,7 @@ class CreditContainer extends Component {
       account_id: 1,
       parent_id: '',
       debit: false,
-      authenticate: true
+      submitted: true
     })
   }
 
@@ -74,7 +74,7 @@ class CreditContainer extends Component {
 
 console.log(accounts_list)
     //Redirect to accounts page when form is submitted
-    if (this.state.authenticate === true) {
+    if (this.state.submitted === true) {
       return <Redirect to='/' />
     }
 

@@ -16,34 +16,40 @@ class Api::TransactionsController < ApplicationController
   end
 
   def create
-    #Create parent debit
-    if transaction_params[:debit] && transaction_params[:percentage].empty?
-      t_new = Transaction.new(transaction_params)
-      if t_new.save
-        t_new.percentage = 100
-        t_new.parent_id = t_new.id
-        t_new.save
-      end
 
-    #Create child debits
-    elsif transaction_params[:debit] && transaction_params[:percentage]
-      Account.all.each_with_index do |a, i|
-        t_new = Transaction.new(transaction_params)
-        if a.main_account
-          t_new.amount = t_new.calc_main_amount
-        else
-          t_new.amount = t_new.calc_split_amount
-        end
-        t_new.account_id = a.id
-        t_new.parent_id = t_new.get_parent(i)
-        t_new.save
-      end
-
-    #Create credit
-    else
-      t_new = Transaction.new(transaction_params)
-      t_new.save
+    #Create Credit Transaction
+    if !transaction_params[:debit]
+      t_new = Transaction.create(transaction_params)
     end
+
+    #Create parent debit
+    # if transaction_params[:debit] && transaction_params[:percentage].empty?
+    #   t_new = Transaction.new(transaction_params)
+    #   if t_new.save
+    #     t_new.percentage = 100
+    #     t_new.parent_id = t_new.id
+    #     t_new.save
+    #   end
+    #
+    # #Create child debits
+    # elsif transaction_params[:debit] && transaction_params[:percentage]
+    #   Account.all.each_with_index do |a, i|
+    #     t_new = Transaction.new(transaction_params)
+    #     if a.main_account
+    #       t_new.amount = t_new.calc_main_amount
+    #     else
+    #       t_new.amount = t_new.calc_split_amount
+    #     end
+    #     t_new.account_id = a.id
+    #     t_new.parent_id = t_new.get_parent(i)
+    #     t_new.save
+    #   end
+    #
+    # #Create credit
+    # elsif
+    #   t_new = Transaction.new(transaction_params)
+    #   t_new.save
+    # end
 
     Account.update_account_totals
     render json: t_new
