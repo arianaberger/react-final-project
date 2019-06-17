@@ -8,6 +8,7 @@ import AccountsContainer from './AccountsContainer';
 import CreditContainer from './CreditContainer';
 import DebitContainer from './DebitContainer';
 import AccountContainer from './AccountContainer';
+import About from '../components/About';
 import Footer from './Footer';
 import '../css/App.css';
 import '../css/Forms.css';
@@ -31,6 +32,9 @@ class App extends Component {
           />
           <Route exact path="/accounts/:id"
             component={AccountContainer}
+          />
+          <Route exact path="/about"
+            component={About}
           />
           <Footer />
     </Router>

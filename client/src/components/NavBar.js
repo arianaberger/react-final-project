@@ -12,12 +12,13 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-           <Nav.Link href="/">View Accounts</Nav.Link>
+           <Nav.Link href="/">Dashboard</Nav.Link>
            <NavDropdown title="Add Transaction" id="basic-nav-dropdown">
            <NavDropdown.Item href="/debit">Debit</NavDropdown.Item>
            <NavDropdown.Divider />
            <NavDropdown.Item href="/credit">Credit</NavDropdown.Item>
            </NavDropdown>
+           <Nav.Link href="/about">About</Nav.Link>
          </Nav>
        </Navbar.Collapse>
       </Navbar>
