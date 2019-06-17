@@ -4,7 +4,7 @@ import { getAccount } from '../actions/accounts';
 import { updateTransaction } from '../actions/transactions'
 import  TransactionsContainer  from '../components/TransactionsContainer';
 import '../css/Accounts.css';
-import format from 'accounting-js';
+import accounting from 'accounting-js';
 
 class AccountContainer extends Component {
 
@@ -32,7 +32,7 @@ class AccountContainer extends Component {
 
       <div className="AccountHeader">
         <div className="bottom">
-          {account_total ? <h1>format.formatMoney(account_total)}</h1> : <h1>$0.00</h1>}
+          {account_total ? <h1>{accounting.formatMoney(account_total)}</h1> : <h1>$0.00</h1>}
           <h6>Available Balance</h6>
         </div>
       </div>
