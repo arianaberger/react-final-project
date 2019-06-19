@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { getAccounts, getTotal} from '../actions/accounts';
 
 class AccountsContainer extends Component {
-
+ 
   componentDidMount(){
     this.props.getTotal();
     this.props.getAccounts();

@@ -56,7 +56,9 @@ class DebitContainer extends Component {
 
     handleSecondSubmit = event => {
       event.preventDefault();
+      console.log('a')
       this.props.createTransaction(this.state)
+      console.log('b')
       this.setState({
         first_submit: false,
         submitted: true,

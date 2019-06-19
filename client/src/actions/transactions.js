@@ -6,12 +6,15 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 //FETCH FUNCTIONS
 export const createTransaction = (transaction) => {
+  console.log('c')
   return function(dispatch) {
     return postTransaction(transaction).then(transaction => {
+      console.log('d')
       dispatch(getTotal())
       dispatch(getAccounts())
     })
   }
+  console.log('e')
 }
 
 async function postTransaction(transaction) {

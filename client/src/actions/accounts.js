@@ -57,7 +57,10 @@ export const getTotal = () => {
   }
 }
 
-//NOT MY CODE, why wasn't what I had before not working?
+/////Why wasn't what I had before not working?
+
+//Thunk lets action creators return a function instead of an action (used for async requests) so we can dispatch multiple actions
+//Code only continues once promise is resolved
 export const updateAccount = account => {
   return function(dispatch) {
     return patchAccount(account).then(account => {
@@ -91,8 +94,7 @@ async function patchAccount(account) {
 //       headers: {
 //         Accept: 'application/json',
 //         'Content-Type': 'applications/json'
-//     }
-//   })
+//     })
 //   .then(response => response.json())
 //   .then(account => {
 //     console.log("updateaccount json response:", account)
