@@ -31,6 +31,7 @@ class Transaction < ApplicationRecord
     t_parent_debits = Transaction.all.map { |t| t if t.percentage == 100 }.compact
     t_credits = Transaction.all.map { |t| t if !t.debit }.compact
     total = t_parent_debits.sum(&:amount) - t_credits.sum(&:amount)
+    total.truncate(2).to_s('F') unless total === 0
   end
 
 end

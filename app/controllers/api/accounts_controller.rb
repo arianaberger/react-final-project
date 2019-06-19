@@ -36,7 +36,6 @@ class Api::AccountsController < ApplicationController
     end
 
       def account_params
-        # error: params is missing or value is empty
         params.require(:account).permit(:name, :main_account, :account_total)
       end
 

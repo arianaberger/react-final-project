@@ -1,3 +1,5 @@
+require 'pry'
+
 class Account < ApplicationRecord
   has_many :transactions
 
@@ -10,7 +12,8 @@ class Account < ApplicationRecord
   def self.update_account_totals
     Account.all.each do |a|
       account = Account.find_by(id: a.id)
-      account.account_total = account.calc_account_total
+      account.account_total = account.calc_account_total.truncate(2).to_s('F')
+      binding.pry
       account.save
     end
   end

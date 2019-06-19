@@ -8,6 +8,7 @@
 .TransactionForm {
   width: 60%;
   max-width: 450px;
+  min-width: 325px;
   border-radius: 10px;
   border-spacing: 10px;
   padding: 20px;

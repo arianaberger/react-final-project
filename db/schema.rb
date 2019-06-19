@@ -17,13 +17,13 @@ ActiveRecord::Schema.define(version: 2019_06_01_022656) do
     t.boolean "main_account"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "account_total", default: 0
+    t.decimal "account_total", default: "0.0"
   end
 
   create_table "transactions", force: :cascade do |t|
     t.string "counterparty"
     t.datetime "date"
-    t.integer "amount"
+    t.decimal "amount"
     t.integer "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
