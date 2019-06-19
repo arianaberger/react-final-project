@@ -11,7 +11,7 @@ const TransactionsContainer = (props) => (
 
           <div key={transaction.id} className="Transaction1">
             <h5>{transaction.counterparty}</h5>
-            <p><Moment format="MMM DD, YYYY">{transaction.date}</Moment></p>
+            <p className="date-format"><Moment format="MMM DD, YYYY">{transaction.date}</Moment></p>
           </div>
 
           <div className="Transaction2">

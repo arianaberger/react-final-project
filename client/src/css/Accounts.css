@@ -172,3 +172,7 @@ a:hover {
   font-size: 1em;
   color: #000
 }
+
+.date-format {
+  font-size: 0.75em
+}
