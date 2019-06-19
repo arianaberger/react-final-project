@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getAccount } from '../actions/accounts';
-import { updateTransaction } from '../actions/transactions'
-import  TransactionsContainer  from '../components/TransactionsContainer';
+import { updateTransaction } from '../actions/transactions';
+import sortTransactions from '../helpers/transactions';
+import TransactionsContainer from '../components/TransactionsContainer';
 import accounting from 'accounting-js';
 
 class AccountContainer extends Component {
@@ -24,7 +25,8 @@ class AccountContainer extends Component {
     const name = account.name
     const account_total = account.account_total
     const transactions = account.transactions || []
-    console.log(transactions)
+    const sorted_transactions = sortTransactions(transactions)
+
     return(
       <>
 
@@ -45,7 +47,7 @@ class AccountContainer extends Component {
         <div className="Transactions">
         {account_total === 0 ? <p className="no-transactions">There are no transactions posted to this account</p> :
           <TransactionsContainer
-            transactions={transactions}
+            transactions={sorted_transactions}
             account_id={this.props.account.id}
             onDeleteClick={this.onDeleteClick} />
           }
