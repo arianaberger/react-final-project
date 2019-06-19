@@ -13,7 +13,6 @@ class Account < ApplicationRecord
     Account.all.each do |a|
       account = Account.find_by(id: a.id)
       account.account_total = account.calc_account_total.truncate(2).to_s('F')
-      binding.pry
       account.save
     end
   end

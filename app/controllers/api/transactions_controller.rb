@@ -40,9 +40,9 @@ class Api::TransactionsController < ApplicationController
       end
 
     else #Create Credit Transaction
+      binding.pry
       t_new.save
     end
-    binding.pry
     Account.update_account_totals
     render json: t_new
   end
