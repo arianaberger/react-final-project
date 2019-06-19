@@ -3,12 +3,14 @@ class Api::AccountsController < ApplicationController
   before_action :set_account, only: [:show, :update]
 
   def index
+    Account.update_account_totals
     @accounts = Account.all
     render json: @accounts
   end
 
   def show
     account = @account.remove_parent_debits
+    account.update_account_totals
     render json: account
   end
 
