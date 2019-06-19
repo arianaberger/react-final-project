@@ -10,7 +10,6 @@ class Api::AccountsController < ApplicationController
 
   def show
     account = @account.remove_parent_debits
-    account.update_account_totals
     render json: account
   end
 
