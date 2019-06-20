@@ -1,22 +1,41 @@
 import React from 'react';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, NavDropdown } from 'react-bootstrap';
+import { LinkContainer } from "react-router-bootstrap";
+import { Link } from "react-router-dom";
+
 
 const NavBar = () => {
   return(
     <>
       <div className="splash"></div>
       <Navbar bg="dark" variant="dark" expand="sm">
-        <Navbar.Brand href="/" className="logo">Savvy Saver</Navbar.Brand>
+        <Navbar.Brand to="/" className="logo">Savvy Saver</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-           <Nav.Link href="/">Dashboard</Nav.Link>
+            <Nav.Link as={Link} to="/" >
+              Home
+            </Nav.Link>
            <NavDropdown title="Add Transaction" id="basic-nav-dropdown">
-           <NavDropdown.Item href="/debit">Debit</NavDropdown.Item>
-           <NavDropdown.Divider />
-           <NavDropdown.Item href="/credit">Credit</NavDropdown.Item>
+             <NavDropdown.Item>
+               <LinkContainer to="/debit">
+                 <NavItem>
+                   Debit
+                 </NavItem>
+               </LinkContainer>
+             </NavDropdown.Item>
+             <NavDropdown.Divider />
+             <NavDropdown.Item>
+               <LinkContainer to="/credit">
+                 <NavItem>
+                   Credit
+                 </NavItem>
+               </LinkContainer>
+             </NavDropdown.Item>
            </NavDropdown>
-           <Nav.Link href="/about">About</Nav.Link>
+           <Nav.Link as={Link} to="/about" >
+             About
+           </Nav.Link>
          </Nav>
        </Navbar.Collapse>
       </Navbar>
