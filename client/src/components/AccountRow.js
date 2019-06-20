@@ -21,7 +21,7 @@ class AccountRow extends Component {
     const account = this.props.account
 
     return (
-     <tr className="account-table-row">
+     <tr className={account.id === 1 ? "main-account-row" : "account-table-row"}>
        <td className="account-table-name">
          {props.state.update && account.id === props.state.id ?
            <AccountForm account_id={account.id}

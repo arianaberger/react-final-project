@@ -41,10 +41,10 @@
 }
 
 #formBasicName.form-control {
-  max-width: 200px;
+  max-width: 175px;
   height: 30px;
   padding: 5px;
   margin: 0;
   color: #17a2b8;
-  font-size: 0.95em;
+  font-size: .95em;
 }
