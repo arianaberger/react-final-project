@@ -12,6 +12,7 @@
   border-radius: 10px;
   border-spacing: 10px;
   padding: 20px;
+  margin-bottom: 30px;
   background-color: #fff;
   box-shadow: 5px 5px 8px #d1d1d1;
   -webkit-box-shadow: 5px 7px 8px -3px rgba(0,0,0,0.34);
@@ -40,11 +41,10 @@
 }
 
 #formBasicName.form-control {
-  width: 175px;
+  max-width: 200px;
   height: 30px;
-  padding: 2px;
+  padding: 5px;
   margin: 0;
-  background: #fffcfc;
   color: #17a2b8;
-  font-size: 1.5em
+  font-size: 0.95em;
 }

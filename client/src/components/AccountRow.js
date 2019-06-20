@@ -21,20 +21,20 @@ class AccountRow extends Component {
     const account = this.props.account
 
     return (
-     <tr>
-       <td>
+     <tr className="account-table-row">
+       <td className="account-table-name">
          {props.state.update && account.id === props.state.id ?
            <AccountForm account_id={account.id}
              account_name={account.name}
              handleFormSubmit={props.handleFormSubmit}/> :
            <NavLink to={`/accounts/${account.id}`}>
-             <h3>{account.name}</h3>
+             {account.name}
            </NavLink>
          }
        </td>
 
        <td>
-         <h3>{format.formatMoney(account.account_total)}</h3>
+         <span className="account-row-total">{format.formatMoney(account.account_total)}</span>
        </td>
 
        <td>

@@ -18,9 +18,9 @@ const AccountsTable = (props) => {
 
   return (
     <div className="AccountWrapper">
-      <table>
+      <table className="Accounts">
         <thead>
-          <tr>
+          <tr className="account-table-header">
             <th>ACCOUNT NAME</th>
             <th>ACCOUNT BALANCE</th>
             <th>EDIT</th>
@@ -29,7 +29,6 @@ const AccountsTable = (props) => {
         </thead>
         <tbody>{displayAccounts()}</tbody>
       </table>
-
     </div>
   )
 }

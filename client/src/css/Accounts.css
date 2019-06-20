@@ -5,8 +5,9 @@
 }
 
 .Accounts {
+  table-layout: auto;
   width: 60%;
-  min-width: 400px;
+  min-width: 500px;
   background-color: #fff;
   margin: 20px;
   padding: 20px;
@@ -19,7 +20,6 @@
 
 .AccountName {
   width: 40%;
-  float: left;
   border-bottom: 1px dotted #666;
 }
 
@@ -30,6 +30,30 @@
   color: #55088c;
   border-bottom: 1px dotted #666;
 
+}
+
+th, td {
+  padding: 15px
+}
+
+.account-table-row {
+  border-bottom: 1px dotted #666;
+}
+
+.account-table-header {
+  color: #000;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  font-size: 0.75em;
+}
+
+.account-row-total {
+  color: #55088c;
+  font-size: 2em;
+}
+
+.account-table-name {
+  font-size: 2em
 }
 
 .AccountEdit {
@@ -161,8 +185,8 @@ a:hover {
 }
 
 .edit-image {
-  float: right;
   cursor: pointer;
+  float: left;
 }
 
 .no-transactions {

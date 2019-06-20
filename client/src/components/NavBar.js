@@ -9,12 +9,12 @@ const NavBar = () => {
     <>
       <div className="splash"></div>
       <Navbar bg="dark" variant="dark" expand="sm">
-        <Navbar.Brand to="/" className="logo">Savvy Saver</Navbar.Brand>
+        <Navbar.Brand className="logo">Savvy Saver</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link as={Link} to="/" >
-              Home
+              Dashboard
             </Nav.Link>
            <NavDropdown title="Add Transaction" id="basic-nav-dropdown">
              <NavDropdown.Item>
