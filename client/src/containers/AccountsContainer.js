@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Accounts from '../components/Accounts';
+import AccountsTable from '../components/AccountsTable';
 import AccountTotal from '../components/AccountTotal';
 import { connect } from 'react-redux';
 import { getAccounts, getTotal} from '../actions/accounts';
 
 class AccountsContainer extends Component {
- 
+
   componentDidMount(){
     this.props.getTotal();
     this.props.getAccounts();
@@ -41,7 +41,7 @@ class AccountsContainer extends Component {
 
         <AccountTotal total={this.props.total} />
 
-        <Accounts
+        <AccountsTable
           accounts={this.props.accounts}
           state={this.state}
           handleOnClick={this.handleOnClick}
