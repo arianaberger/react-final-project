@@ -30,6 +30,9 @@
 }
 
 .Percentage {
+  float: right;
+  width: 30%;
+  padding: 9px;
   color: #595959;
   text-align: center;
   font-weight: bold;
@@ -38,6 +41,12 @@
 
 .rangeslider-horizontal .rangeslider__fill {
   background-color: #420865;
+}
+
+.slider-horizontal {
+  float: left;
+  width: 70%;
+  height: 70px;
 }
 
 #formBasicName.form-control {

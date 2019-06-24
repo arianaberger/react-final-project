@@ -3,15 +3,13 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { createTransaction } from '../actions/transactions'
 import { getAccounts} from '../actions/accounts';
-import DebitFirstInput from '../components/DebitFirstInput'
-import DebitSecondInput from '../components/DebitSecondInput'
+import DebitInput from '../components/DebitInput'
 
 class DebitContainer extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      first_submit: false,
       submitted: false,
 
       //Initial state for form
@@ -49,16 +47,10 @@ class DebitContainer extends Component {
       })
     }
 
-    handleFirstSubmit = event => {
-      event.preventDefault();
-      this.setState({ first_submit: true })
-    }
-
-    handleSecondSubmit = event => {
+    handleSubmit = event => {
       event.preventDefault();
       this.props.createTransaction(this.state)
       this.setState({
-        first_submit: false,
         submitted: true,
      })
     }
@@ -70,20 +62,13 @@ class DebitContainer extends Component {
       }
 
       return(
-        <>
-          {this.state.first_submit ? null : <DebitFirstInput
+          <DebitInput
             state={this.state}
             handleDateChange={this.handleDateChange}
-            handleOnChange={this.handleOnChange}
-            handleFirstSubmit={this.handleFirstSubmit} />
-          }
-          {this.state.first_submit ? <DebitSecondInput
-            state={this.state}
             handleSliderChange={this.handleSliderChange}
-            accounts={this.props.accounts}
-            handleSecondSubmit={this.handleSecondSubmit}/> : null
-          }
-        </>
+            handleOnChange={this.handleOnChange}
+            handleSubmit={this.handleSubmit}
+         />
       )
     }
   }
