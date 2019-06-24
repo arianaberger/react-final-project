@@ -16,7 +16,7 @@ const DebitInput = (props) => {
       <h3 className="FormHeader">Step 1: Enter Debit Information</h3>
       <hr />
 
-      <Form onSubmit={props.handleFirstSubmit}>
+      <Form onSubmit={props.handleSubmit}>
 
         <Form.Group controlId="formBasicAmount">
           <Form.Label>Amount:</Form.Label>
@@ -54,7 +54,7 @@ const DebitInput = (props) => {
 
         <Form.Group controlId="formBasicPercentage">
           <Form.Label>
-            Adjust slider to determine what percentage should be allocated to each account:
+            Choose a percentage to be allocated to each account:
           </Form.Label>
           <div className='slider-horizontal'>
            <Slider
@@ -75,7 +75,6 @@ const DebitInput = (props) => {
       </Form>
     </div>
   </div>
-
   )
 }
 
