@@ -16,8 +16,6 @@ class AccountRow extends Component {
     })
   }
 
-
-
   render() {
     const props = this.props
     const account = this.props.account

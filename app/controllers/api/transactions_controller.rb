@@ -10,7 +10,7 @@ class Api::TransactionsController < ApplicationController
   end
 
   def show
-    #Gets total of all parent transactions minus credits
+    #Gets account_total of all accounts
     t_total = Transaction.get_transaction_totals
     render json: t_total
   end
@@ -40,7 +40,6 @@ class Api::TransactionsController < ApplicationController
       end
 
     else #Create Credit Transaction
-      binding.pry
       t_new.save
     end
     Account.update_account_totals
