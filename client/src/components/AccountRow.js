@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import AccountForm from '../containers/AccountForm';
 import { NavLink } from 'react-router-dom';
+import Button from './Button';
 import format from 'accounting-js';
 import edit from '../images/edit.png';
 
 class AccountRow extends Component {
 
+  //////State and handler for Like Button
    state = {
     votes: 0
    }
@@ -15,6 +17,7 @@ class AccountRow extends Component {
       votes: this.state.votes += 1
     })
   }
+  //////
 
   render() {
     const props = this.props
@@ -35,28 +38,30 @@ class AccountRow extends Component {
        </td>
 
        <td>
-         <span className={account.id === 1 ? "main-row-total" : "account-row-total"}>{format.formatMoney(account.account_total)}</span>
+         <span className={account.id === 1 ? "main-row-total" : "account-row-total"}>
+           {format.formatMoney(account.account_total)}
+         </span>
        </td>
 
        <td>
          {account.id !== 1 ?
-           <img src={edit} alt="Edit Button" className="edit-image" onClick={
-             (event) => props.handleOnClick(event, account.id)
+           <img
+             src={edit}
+             alt="Edit Button"
+             className="edit-image"
+             onClick={
+               (event) => props.handleOnClick(event, account.id)
            } /> :
            null
          }
        </td>
 
        <td>
-         <button onClick={this.handleVoteClick}>+</button>
-         {this.state.votes}
+         <Button state={this.state} handleVoteClick={this.handleVoteClick} />
        </td>
-
-       </tr>
-
+     </tr>
     )
   }
-
 }
 
 export default AccountRow
