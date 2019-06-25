@@ -3,12 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { getAccounts} from '../actions/accounts';
 import { createTransaction } from '../actions/transactions'
-
-import Select from 'react-select'
-import {Form, Button} from 'react-bootstrap';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-
+import CreditInput from '../components/CreditInput'
 
 class CreditContainer extends Component {
 
@@ -51,28 +46,16 @@ class CreditContainer extends Component {
     })
   }
 
-  handleOnSubmit = event => {
+  handleSubmit = event => {
     event.preventDefault();
     this.props.createTransaction(this.state)
     this.setState({
-      amount: '',
-      counterparty: '',
-      date: new Date(),
-      account_id: 1,
-      parent_id: '',
-      debit: false,
       submitted: true
     })
   }
 
   render() {
-    const {amount, counterparty, date} = this.state
 
-    const accounts_list = this.props.accounts.map(account => {
-      return {value:`${account.id}`, label:`${account.name}`}
-    })
-
-console.log(accounts_list)
     //Redirect to accounts page when form is submitted
     if (this.state.submitted === true) {
       return <Redirect to='/' />
@@ -80,68 +63,14 @@ console.log(accounts_list)
 
     //Render form
     return(
-      <div className='FormContainer'>
-      <div className="TransactionForm">
-
-      <h3 className="FormHeader">Enter Credit Information</h3>
-      <hr />
-
-      <Form onSubmit={this.handleOnSubmit}>
-
-        <Form.Group controlId="formBasicAmount">
-          <Form.Label>Amount</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            name="amount"
-            value={amount}
-            onChange={this.handleOnChange}
-           />
-        </Form.Group>
-
-        <Form.Group controlId="formBasicInstitution">
-          <Form.Label>Institution</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            name="counterparty"
-            value={counterparty}
-            onChange={this.handleOnChange}
-           />
-        </Form.Group>
-
-        <Form.Group controlId="formBasicDate">
-          <Form.Label>Date</Form.Label>
-          <div>
-          <DatePicker
-            name="date"
-            selected={date}
-            onChange={this.handleDateChange}
-            dateFormat="MMMM d, yyyy"
-          />
-          </div>
-        </Form.Group>
-
-        <Form.Group controlId="formBasicDate">
-          <div>
-            <Form.Label>Add expense to the following account:</Form.Label>
-            <Select
-              options={accounts_list}
-              onChange={this.handleSelectChange}
-              defaultValue={{value: 1, label: "Main Account"}}
-            />
-          </div>
-        </Form.Group>
-
-
-        <div className="SubmitButton">
-          <Button variant="info" type="submit" block>
-            Add Transaction
-          </Button>
-        </div>
-        </Form>
-      </div>
-      </div>
+      <CreditInput
+        state={this.state}
+        accounts={this.props.accounts}
+        handleDateChange={this.handleDateChange}
+        handleSelectChange={this.handleSelectChange}
+        handleOnChange={this.handleOnChange}
+        handleSubmit={this.handleSubmit}
+     />
     )
   }
 }
