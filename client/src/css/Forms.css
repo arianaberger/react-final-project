@@ -1,11 +1,11 @@
-.FormContainer {
+.form-container {
   display: flex;
   justify-content: center;
   margin: 20px;
   padding-top: 20px;
 }
 
-.TransactionForm {
+.transaction-form {
   width: 60%;
   max-width: 450px;
   min-width: 325px;
@@ -20,16 +20,16 @@
 
 }
 
-.SubmitButton {
+.submit-button {
   padding-top: 10px;
 }
 
-.FormHeader {
+.form-header {
   color: #55088c;
   text-align: center;
 }
 
-.Percentage {
+.percentage {
   float: right;
   width: 30%;
   padding: 9px;

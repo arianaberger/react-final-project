@@ -17,8 +17,8 @@ const AccountsTable = (props) => {
   }
 
   return (
-    <div className="AccountWrapper">
-      <table className="Accounts">
+    <div className="account-wrapper">
+      <table className="accounts">
         <thead>
           <tr className="account-table-header">
             <th>ACCOUNT NAME</th>

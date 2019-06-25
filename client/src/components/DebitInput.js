@@ -10,10 +10,10 @@ const DebitInput = (props) => {
   const {amount, counterparty, date, percentage} = props.state
 
   return(
-    <div className='FormContainer'>
-      <div className="TransactionForm">
+    <div className='form-container'>
+      <div className="transaction-form">
 
-      <h3 className="FormHeader">Step 1: Enter Debit Information</h3>
+      <h3 className="form-header">Step 1: Enter Debit Information</h3>
       <hr />
 
       <Form onSubmit={props.handleSubmit}>
@@ -66,12 +66,14 @@ const DebitInput = (props) => {
              onChange={props.handleSliderChange}
            />
          </div>
-         <div className='Percentage'>{percentage}%</div>
+         <div className='percentage'>{percentage}%</div>
         </Form.Group>
 
-        <Button variant="info" type="submit" block>
-          Submit Deposit
-        </Button>
+        <div className="SubmitButton">
+          <Button variant="info" type="submit" block>
+            Submit Deposit
+          </Button>
+        </div>
       </Form>
     </div>
   </div>

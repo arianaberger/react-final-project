@@ -30,21 +30,21 @@ class AccountContainer extends Component {
     return(
       <>
 
-      <div className="AccountHeader">
+      <div className="account-header">
         <div className="bottom">
           {account_total ? <h1>{accounting.formatMoney(account_total)}</h1> : <h1>$0.00</h1>}
           <h6>Available Balance</h6>
         </div>
       </div>
 
-      <div className="AccountWrapper">
-        <div className='TransactionsHeader'>
+      <div className="account-wrapper">
+        <div className='transactions-header'>
           <h2>{name}</h2>
         </div>
       </div>
 
-      <div className="AccountWrapper">
-        <div className="Transactions">
+      <div className="account-wrapper">
+        <div className="transactions">
         {account_total === 0 ? <p className="no-transactions">There are no transactions posted to this account</p> :
           <TransactionsContainer
             transactions={sorted_transactions}

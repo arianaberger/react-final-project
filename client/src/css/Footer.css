@@ -1,5 +1,4 @@
-
-.FooterContainer {
+.footer-container {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -7,7 +6,7 @@
   background-color: #fff;
 }
 
-.Footer {
+.footer {
   display: flex;
   justify-content: center;
   padding-top: 20px;

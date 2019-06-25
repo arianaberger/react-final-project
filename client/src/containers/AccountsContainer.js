@@ -34,7 +34,7 @@ class AccountsContainer extends Component {
     console.log("AccountsContainer props are:", this.props.accounts)
     return(
       <>
-        <div className="Welcome">
+        <div className="welcome">
         <h2>Welcome!</h2>
         <h6>Your account overview is below. Happy saving :)</h6>
         </div>

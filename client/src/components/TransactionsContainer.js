@@ -7,21 +7,26 @@ const TransactionsContainer = (props) => (
   <>
     {props.transactions.map(transaction => {
       return (
-        <div className="TransactionContainer" key={transaction.id}>
+        <div className="transaction-container" key={transaction.id}>
 
-          <div key={transaction.id} className="Transaction1">
+          <div key={transaction.id} className="transaction1">
             <h5>{transaction.counterparty}</h5>
             <p className="date-format"><Moment format="MMM DD, YYYY">{transaction.date}</Moment></p>
           </div>
 
-          <div className="Transaction2">
+          <div className="transaction2">
           {transaction.debit ?
             <h5>{format.formatMoney(transaction.amount)}</h5> :
             <h5 className="credit">{format.formatMoney(transaction.amount)}</h5>}
           </div>
 
-          <div className="Transaction3">
-            {props.account_id === 1 ? null : <Button variant="outline-secondary" size="sm" onClick={() => props.onDeleteClick(transaction)}>X</Button>}
+          <div className="transaction3">
+            {props.account_id === 1 ? null : <Button
+              variant="outline-secondary"
+              size="sm"
+              onClick={() => props.onDeleteClick(transaction)}>
+              X
+            </Button>}
           </div>
         </div>
       )}

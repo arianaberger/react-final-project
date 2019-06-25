@@ -1,10 +1,10 @@
-.AccountWrapper {
+.account-wrapper {
   display: flex;
   margin: 20px;
   justify-content: center;
 }
 
-.Accounts {
+.accounts {
   table-layout: auto;
   width: 60%;
   min-width: 400px;
@@ -16,20 +16,6 @@
   box-shadow: 5px 5px 8px #d1d1d1;
   -webkit-box-shadow: 5px 7px 8px -3px rgba(0,0,0,0.34);
   -moz-box-shadow: 5px 7px 8px -3px rgba(0,0,0,0.34);
-}
-
-.AccountName {
-  width: 40%;
-  border-bottom: 1px dotted #666;
-}
-
-.AccountTotal {
-  width: 48%;
-  float: left;
-  font-weight: bold;
-  color: #55088c;
-  border-bottom: 1px dotted #666;
-
 }
 
 th, td {
@@ -66,35 +52,7 @@ th, td {
   font-size: 1.5em
 }
 
-.AccountEdit {
-  width: 4%;
-  float: left;
-  height: 70px;
-}
-
-.AccountsHeader {
-  width: 48%;
-  float: left;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  color: #000;
-  text-decoration: underline;
-  text-decoration-style: dashed;
-  font-size: 0.75em
-}
-
-.AccountsEditHeader {
-  width: 4%;
-  float: left;
-  margin-bottom: 25px;
-  margin-top: 10px;
-  color: #000;
-  text-decoration: underline;
-  text-decoration-style: dashed;
-  font-size: 0.75em
-}
-
-.AccountHeader {
+.account-header {
   display: flex;
   width: 100%;
   height: 125px;
@@ -104,14 +62,14 @@ th, td {
   margin-bottom: 20px;
 }
 
-.TransactionsHeader {
+.transactions-header {
   display: flex;
   width: 100%;
   justify-content: center;
   color: #55088c;
 }
 
-.Transactions {
+.transactions {
   width: 60%;
   min-width: 325px;
   background-color: #fff;
@@ -123,7 +81,7 @@ th, td {
   -moz-box-shadow: 5px 7px 8px -3px rgba(0,0,0,0.34);
 }
 
-.TransactionContainer {
+.transaction-container {
   display: flex;
   margin: 10px;
   justify-content: center;
@@ -133,19 +91,19 @@ th, td {
   border-bottom: 1px dotted #666
 }
 
-.Transaction1 {
+.transaction1 {
   float: left;
   width: 50%
 }
 
-.Transaction2 {
+.transaction2 {
   float: left;
   width: 40%;
   text-align: right;
   margin-right: 15%
 }
 
-.Transaction3 {
+.transaction3 {
   float: left;
   width: 10%
 }
@@ -154,7 +112,7 @@ th, td {
   color: red
 }
 
-.TotalBalanceHeader {
+.total-balance-header {
   text-align: center;
   text-decoration: underline;
   text-decoration-style: dashed;
@@ -163,13 +121,13 @@ th, td {
   color: gray;
 }
 
-.TotalBalance {
+.total-balance {
   text-align: center;
   font-weight: bold;
   color: #55088c;
 }
 
-.Welcome {
+.welcome {
   padding-top: 25px;
   padding-bottom: 25px;
   padding-left: 15px;

@@ -13,10 +13,10 @@ const CreditInput = (props) => {
   })
 
   return(
-    <div className='FormContainer'>
-      <div className="TransactionForm">
+    <div className='form-container'>
+      <div className="transaction-form">
 
-      <h3 className="FormHeader">Enter Credit Information</h3>
+      <h3 className="form-header">Enter Credit Information</h3>
       <hr />
 
       <Form onSubmit={props.handleSubmit}>
@@ -67,7 +67,7 @@ const CreditInput = (props) => {
         </Form.Group>
 
 
-        <div className="SubmitButton">
+        <div className="submit-button">
           <Button variant="info" type="submit" block>
             Add Transaction
           </Button>
