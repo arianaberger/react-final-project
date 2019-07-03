@@ -57,7 +57,10 @@ class AccountRow extends Component {
        </td>
 
        <td>
-         <Button state={this.state} handleVoteClick={this.handleVoteClick} />
+         <Button
+           state={this.state}
+           handleVoteClick={this.handleVoteClick}
+         />
        </td>
      </tr>
     )
