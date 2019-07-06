@@ -6,8 +6,6 @@ Savvy Saver
 
 <p align="center">
 <img src = https://forthebadge.com/images/badges/made-with-ruby.svg>
-</p>
-<p align="center">
 <img src = https://forthebadge.com/images/badges/made-with-javascript.svg>
 </p>
 
@@ -19,7 +17,7 @@ Savvy Saver
 </p>
 
 <p align="center">
-	<img src= "https://user-images.githubusercontent.com/26906993/50454297-924c9880-0914-11e9-9d8a-1416826e61aa.png" align="middle" width="80%" height="80%">
+	<img src= "https://user-images.githubusercontent.com/26906993/60761122-1e502300-a010-11e9-9db9-629f0bc86d2b.png" align="middle" width="80%" height="80%">
 </p>
 
 
