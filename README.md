@@ -10,13 +10,9 @@ Savvy Saver
   <a href="#license">License</a>
 </p>
 
-<hr>
-
 <p align="center">
 	<img src= "https://user-images.githubusercontent.com/26906993/60761122-1e502300-a010-11e9-9db9-629f0bc86d2b.png" align="middle" width="60%" height="60%">
 </p>
-
-<hr>
 
 ## Key Features
 
