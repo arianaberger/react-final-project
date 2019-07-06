@@ -1,5 +1,4 @@
 import React from 'react';
-import AccountForm from '../containers/AccountForm'
 import AccountRow from './AccountRow';
 
 const AccountsTable = (props) => {
@@ -24,7 +23,6 @@ const AccountsTable = (props) => {
             <th>ACCOUNT NAME</th>
             <th>ACCOUNT BALANCE</th>
             <th>EDIT</th>
-            <th>{'<3'}</th>
           </tr>
         </thead>
         <tbody>{displayAccounts()}</tbody>

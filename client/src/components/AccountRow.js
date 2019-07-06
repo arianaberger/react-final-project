@@ -1,70 +1,47 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AccountForm from '../containers/AccountForm';
 import { NavLink } from 'react-router-dom';
-import Button from './Button';
 import format from 'accounting-js';
 import edit from '../images/edit.png';
 
-class AccountRow extends Component {
+const AccountRow = (props) => {
 
-  //////State and handler for Like Button
-   state = {
-    votes: 0
-   }
+  const account = props.account
 
-  handleVoteClick = () => {
-    this.setState({
-      votes: this.state.votes += 1
-    })
-  }
-  //////
+  return (
+   <tr className={account.id === 1 ? "main-account-row" : "account-table-row"}>
+     <td className="account-table-name">
+       {props.state.update && account.id === props.state.id ?
+         <AccountForm account_id={account.id}
+          account_name={account.name}
+          handleFormSubmit={props.handleFormSubmit}/>
+        :
+         <NavLink to={`/accounts/${account.id}`}>
+           {account.name}
+         </NavLink>
+       }
+     </td>
 
-  render() {
-    const props = this.props
-    const account = this.props.account
+     <td>
+       <span className={account.id === 1 ? "main-row-total" : "account-row-total"}>
+         {format.formatMoney(account.account_total)}
+       </span>
+     </td>
 
-    return (
-     <tr className={account.id === 1 ? "main-account-row" : "account-table-row"}>
-       <td className="account-table-name">
-         {props.state.update && account.id === props.state.id ?
-           <AccountForm account_id={account.id}
-            account_name={account.name}
-            handleFormSubmit={props.handleFormSubmit}/>
-          :
-           <NavLink to={`/accounts/${account.id}`}>
-             {account.name}
-           </NavLink>
-         }
-       </td>
-
-       <td>
-         <span className={account.id === 1 ? "main-row-total" : "account-row-total"}>
-           {format.formatMoney(account.account_total)}
-         </span>
-       </td>
-
-       <td>
-         {account.id !== 1 ?
-           <img
-             src={edit}
-             alt="Edit Button"
-             className="edit-image"
-             onClick={
-               (event) => props.handleOnClick(event, account.id)
-           } /> :
-           null
-         }
-       </td>
-
-       <td>
-         <Button
-           state={this.state}
-           handleVoteClick={this.handleVoteClick}
-         />
-       </td>
-     </tr>
-    )
-  }
+     <td>
+       {account.id !== 1 ?
+         <img
+           src={edit}
+           alt="Edit Button"
+           className="edit-image"
+           onClick={
+             (event) => props.handleOnClick(event, account.id)
+         } /> :
+         null
+       }
+     </td>
+   </tr>
+  )
 }
 
 export default AccountRow
