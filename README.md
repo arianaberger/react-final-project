@@ -4,8 +4,6 @@ Savvy Saver
 
 <h4 align="center">Spend smart and save savvy so you can finally feel in control of your finances!</h4>
 
-<hr>
-
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#app-demo">App Demo</a> •
@@ -17,6 +15,8 @@ Savvy Saver
 <p align="center">
 	<img src= "https://user-images.githubusercontent.com/26906993/60761122-1e502300-a010-11e9-9db9-629f0bc86d2b.png" align="middle" width="60%" height="60%">
 </p>
+
+<hr>
 
 ## Key Features
 
