@@ -17,7 +17,20 @@ Savvy Saver
 </p>
 
 <p align="center">
-	<img src= "https://user-images.githubusercontent.com/26906993/60761122-1e502300-a010-11e9-9db9-629f0bc86d2b.png" align="middle" width="80%" height="80%">
+	<img src= "https://user-images.githubusercontent.com/26906993/60761122-1e502300-a010-11e9-9db9-629f0bc86d2b.png" align="middle" width="60%" height="60%">
 </p>
 
+## Key Features
+
+* ReactJS + Redux frontend
+* Boostrap and custom CSS styling
+* Ruby on Rails + SQLite backend
+
+## App Demo
+
+You can watch an overview of this app that I recorded on [youtube](https://youtu.be/-vp_ztoGX0A).
+
+## License
+
+MIT
 
