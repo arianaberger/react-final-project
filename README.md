@@ -1,29 +1,25 @@
-<<<<<<< HEAD
-# react-final-project
-Final project for React/Redux. A special savings app to make the most of your budget and attract more money in the long term!
-=======
-# README
+<h1 align="center">
+Savvy Saver
+</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h4 align="center">Spend smart and save savvy so you can finally feel in control of your finances!</h4>
 
-Things you may want to cover:
+<p align="center">
+<img src = https://forthebadge.com/images/badges/made-with-ruby.svg>
+</p>
+<p align="center">
+<img src = https://forthebadge.com/images/badges/made-with-javascript.svg>
+</p>
 
-* Ruby version
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#app-demo">App Demo</a> •
+  <a href="#license">License</a>
+</p>
 
-* System dependencies
+<p align="center">
+	<img src= "https://user-images.githubusercontent.com/26906993/50454297-924c9880-0914-11e9-9d8a-1416826e61aa.png" align="middle" width="80%" height="80%">
+</p>
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
->>>>>>> Create database and models
